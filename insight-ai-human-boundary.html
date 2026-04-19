@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Insight · AI 与人的边界在被重写 · AI 早报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,900;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+    background: #F1ECDF;
+    color: #1a1a1a;
+    font-size: 14px;
+    line-height: 1.8;
+    font-feature-settings: "palt";
+    background-image:
+      radial-gradient(rgba(0,0,0,0.018) 1px, transparent 1px),
+      radial-gradient(rgba(0,0,0,0.012) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 2px 3px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .serif-cn { font-family: "Noto Serif SC", serif; }
+  .serif-en { font-family: "Playfair Display", Georgia, serif; }
+  a { color: inherit; text-decoration: none; }
+
+  .topbar {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 16px 56px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    background: #F1ECDF;
+    position: sticky; top: 0; z-index: 10;
+  }
+  .top-brand { justify-self: start; display: flex; align-items: baseline; gap: 14px; }
+  .brand-small {
+    font-family: "Noto Serif SC", serif;
+    font-size: 14px; font-weight: 600; letter-spacing: 0.03em;
+    border-bottom: 1px solid #1a1a1a; padding-bottom: 2px;
+  }
+  .brand-small-en {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.3em; color: #666; text-transform: uppercase;
+  }
+  .top-nav { justify-self: center; display: flex; gap: 36px; font-size: 13px; }
+  .top-nav a {
+    color: #555; font-family: "Playfair Display", Georgia, serif;
+    font-weight: 500; letter-spacing: 0.1em; padding: 6px 2px; position: relative;
+  }
+  .top-nav a.active { color: #1a1a1a; font-weight: 600; }
+  .top-nav a.active::after {
+    content: ""; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 1px; background: #1a1a1a;
+  }
+  .top-nav a:hover:not(.active) { color: #1a1a1a; }
+  .top-tag {
+    justify-self: end; font-size: 10px; letter-spacing: 0.28em;
+    padding: 5px 12px; border: 1px solid rgba(0,0,0,0.3); text-transform: uppercase;
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  .main {
+    flex: 1 1 auto;
+    max-width: 820px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 56px 80px;
+  }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 48px;
+    transition: color 160ms ease;
+  }
+  .back-link:hover { color: #1a1a1a; }
+  .back-link .arrow { transition: transform 180ms ease; }
+  .back-link:hover .arrow { transform: translateX(-3px); }
+
+  /* Kicker */
+  .kicker {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.35em;
+    text-transform: uppercase; color: #8a5a2b;
+    margin-bottom: 22px;
+  }
+  .kicker::before {
+    content: "◆ "; color: #8a5a2b; font-size: 14px;
+  }
+
+  /* Title */
+  .article-title {
+    font-family: "Noto Serif SC", serif;
+    font-size: 40px; font-weight: 700;
+    line-height: 1.25; letter-spacing: 0.005em;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+  }
+  .article-sub-en {
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic; font-weight: 500;
+    font-size: 22px; color: #444;
+    margin-bottom: 32px;
+    line-height: 1.4;
+  }
+
+  /* Article meta */
+  .article-meta {
+    display: flex; gap: 16px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.18em;
+    color: #888; text-transform: uppercase;
+    padding-bottom: 18px; margin-bottom: 36px;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+  }
+  .article-meta span::before { content: "· "; color: #bbb; margin-right: 8px; }
+  .article-meta span:first-child::before { content: ""; margin-right: 0; }
+
+  /* Lede */
+  .lede {
+    font-family: "Noto Serif SC", serif;
+    font-size: 18px; font-weight: 500;
+    line-height: 1.75; color: #1a1a1a;
+    margin-bottom: 36px;
+    border-left: 3px solid #8a5a2b;
+    padding-left: 22px;
+  }
+
+  /* Builder badges row */
+  .builder-row {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 48px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .builder-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 8px 14px;
+    border: 1px solid rgba(0,0,0,0.25);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 12px; letter-spacing: 0.08em;
+    transition: all 160ms ease;
+  }
+  .builder-badge:hover {
+    background: #1a1a1a; color: #F1ECDF;
+    border-color: #1a1a1a;
+  }
+  .builder-badge .mono {
+    font-weight: 900; font-size: 14px; letter-spacing: -0.02em;
+  }
+
+  /* Section */
+  .article-section { margin-bottom: 52px; }
+  .section-num {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 500; font-size: 14px;
+    letter-spacing: 0.25em; color: #8a5a2b;
+    margin-bottom: 10px;
+  }
+  .section-h {
+    font-family: "Noto Serif SC", serif;
+    font-size: 26px; font-weight: 600;
+    line-height: 1.35; color: #1a1a1a;
+    margin-bottom: 20px;
+  }
+  .section-h .en {
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic; font-size: 22px; font-weight: 500;
+    color: #444; margin-right: 10px;
+  }
+  .section-body {
+    font-size: 15px; line-height: 1.9; color: #222;
+  }
+  .section-body p { margin-bottom: 16px; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  /* Pull quote */
+  .pull-quote {
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic; font-weight: 500;
+    font-size: 22px; line-height: 1.5; color: #1a1a1a;
+    padding: 20px 0; margin: 22px 0;
+    border-top: 1px solid rgba(0,0,0,0.15);
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    text-align: center;
+  }
+
+  /* Source link inline */
+  .src-inline {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.14em;
+    color: #8a5a2b; text-transform: uppercase;
+    border-bottom: 1px solid #8a5a2b; padding-bottom: 1px;
+    margin-left: 8px;
+    white-space: nowrap;
+  }
+
+  /* Synthesis section (last one) */
+  .article-section.synthesis {
+    background: rgba(138,90,43,0.05);
+    padding: 32px 32px 36px;
+    border: 1px solid rgba(138,90,43,0.2);
+    margin-top: 8px;
+  }
+  .article-section.synthesis .section-num { color: #1a1a1a; }
+  .article-section.synthesis .section-h { color: #1a1a1a; }
+
+  /* References */
+  .references {
+    margin-top: 56px; padding-top: 28px;
+    border-top: 2px solid #1a1a1a;
+  }
+  .ref-label {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: #888; margin-bottom: 16px;
+  }
+  .ref-item {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 14px 0; gap: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    font-size: 13px;
+    transition: opacity 160ms ease;
+  }
+  .ref-item:last-child { border-bottom: none; }
+  .ref-item:hover { opacity: 0.6; }
+  .ref-left { flex: 1; }
+  .ref-who {
+    font-family: "Noto Serif SC", serif;
+    font-weight: 600; font-size: 14px; color: #1a1a1a;
+  }
+  .ref-title { color: #444; margin-top: 2px; }
+  .ref-right {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.12em;
+    color: #666; text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .foot {
+    flex: 0 0 auto; padding: 18px 56px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 10.5px; color: #888; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: flex; justify-content: space-between;
+    max-width: 1100px; margin: 0 auto; width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    .topbar { grid-template-columns: auto auto; grid-template-rows: auto auto; }
+    .top-brand { grid-row: 1; } .top-tag { grid-row: 1; grid-column: 2; }
+    .top-nav { grid-row: 2; grid-column: 1 / -1; justify-self: center; padding-top: 8px; }
+    .main { padding: 40px 24px 60px; }
+    .article-title { font-size: 30px; }
+    .ref-item { flex-direction: column; align-items: flex-start; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="top-brand">
+    <span class="brand-small">AI 早报</span>
+    <span class="brand-small-en">· Daily Briefing</span>
+  </div>
+  <nav class="top-nav">
+    <a class="active" href="feed.html">Feed</a>
+    <a href="builders.html">Builders</a>
+    <a href="archive.html">Archive</a>
+  </nav>
+  <div class="top-tag">Daily · 004</div>
+</div>
+
+<main class="main">
+
+  <a class="back-link" href="feed.html">
+    <span class="arrow">←</span> Back to Daily 004
+  </a>
+
+  <div class="kicker">Insight · 主题聚合</div>
+
+  <h1 class="article-title">AI 的"人的边界"正在被重写</h1>
+  <div class="article-sub-en">Three CEOs, one unspoken question.</div>
+
+  <div class="article-meta">
+    <span>Daily 004</span>
+    <span>2026-04-20</span>
+    <span>3 Sources</span>
+    <span>4 Min Read</span>
+  </div>
+
+  <div class="lede">
+    Altman 的算力人权论、Amjad 的 4 亿融资人本宣言、Dario 的国防部边界声明——三条看似不搭的公开表态，其实在回答同一个问题：<b>AI 与人的边界应该由谁、按什么规则来划</b>。
+  </div>
+
+  <div class="builder-row">
+    <a class="builder-badge" href="https://blog.samaltman.com/abundant-intelligence" target="_blank" rel="noopener">
+      <span class="mono">SA</span>
+      <span>Sam Altman</span>
+      <span style="color:#888">· OpenAI</span>
+    </a>
+    <a class="builder-badge" href="https://blog.replit.com/replit-raises-400-million-dollars" target="_blank" rel="noopener">
+      <span class="mono">AM</span>
+      <span>Amjad Masad</span>
+      <span style="color:#888">· Replit</span>
+    </a>
+    <a class="builder-badge" href="https://www.anthropic.com/news" target="_blank" rel="noopener">
+      <span class="mono">DA</span>
+      <span>Dario Amodei</span>
+      <span style="color:#888">· Anthropic</span>
+    </a>
+  </div>
+
+  <section class="article-section">
+    <div class="section-num">§ 01</div>
+    <h2 class="section-h"><span class="en">Altman.</span>把 AI 访问权等同于水和电</h2>
+    <div class="section-body">
+      <p>Altman 在个人博客发表的《Abundant Intelligence》里提出了一个尺度非常大的论点：AI 访问权应当成为人类权利底层设施，像电力、自来水那样不属于"服务"而属于"基础"。OpenAI 对这件事的回应方式也不是一个新模型发布，而是一份产能宣言——<b>"建一个每周生产一吉瓦新 AI 基础设施的工厂"</b>。<a class="src-inline" href="https://blog.samaltman.com/abundant-intelligence" target="_blank">↗ Blog</a></p>
+      <p>值得拆解的不是这篇本身，而是它暗含的定位：当 Altman 说 AI 像电力一样基础时，他其实在告诉整个生态"OpenAI 不是做 AI 应用的公司，是做 AI 水电网的公司"。这对所有下游 AI 产品 PM 是一次划线——当基础设施白菜化，你的产品到底留下什么。</p>
+    </div>
+  </section>
+
+  <section class="article-section">
+    <div class="section-num">§ 02</div>
+    <h2 class="section-h"><span class="en">Amjad.</span>"the future of technology is deeply human"</h2>
+    <div class="section-body">
+      <p>Amjad 在 Replit 宣布 4 亿美元融资（估值 90 亿、半年翻三倍）时没有按照创始人惯常的"做大做强"调性写，而是把这次融资放进了一个哲学框架。他说 AI 的意义不是取代人类创造力，而是让几十亿人绕过"学习机器语言"这道门槛直接把想法落地。<a class="src-inline" href="https://blog.replit.com/replit-raises-400-million-dollars" target="_blank">↗ Blog</a></p>
+      <div class="pull-quote">"The future of technology is deeply human."</div>
+      <p>Amjad 的切入点和 Altman 不一样——Altman 说的是 AI 基础设施的"普及权"，Amjad 说的是 AI 工具形态的"人本取向"。两者都在重新定义"人与 AI 的相处关系"，只是一个在 infrastructure 层、一个在 tooling 层。</p>
+    </div>
+  </section>
+
+  <section class="article-section">
+    <div class="section-num">§ 03</div>
+    <h2 class="section-h"><span class="en">Dario.</span>在国家安全里划一条 AI 的"能与不能"</h2>
+    <div class="section-body">
+      <p>Dario 在 Anthropic 官方 News 页发了一份"statement from our CEO"，标题是《Where things stand with the Department of War》。这是少见的 CEO 个人署名公开声明——不是公司公告，不是产品发布，是就 Anthropic 与美国国防部合作事务的边界单独表态。<a class="src-inline" href="https://www.anthropic.com/news" target="_blank">↗ Statement</a></p>
+      <p>这条动态的信号价值不在具体措辞，在于它本身发生了：<b>顶级 AI 公司的 CEO 已经开始把"国防合作"当成需要单独发声的边界问题</b>。当你的公司走到必须 CEO 亲自出面划线的阶段，意味着 AI 能做什么、不能做什么，从技术问题变成了公共问题。</p>
+    </div>
+  </section>
+
+  <section class="article-section synthesis">
+    <div class="section-num">§ 04</div>
+    <h2 class="section-h"><span class="en">Synthesis.</span>三条线指向同一个问题</h2>
+    <div class="section-body">
+      <p>把三个人的表态并排摆出来就会发现：他们都在回答一个没被公开问出来的问题——<b>AI 与人的边界应该由谁、按什么规则来划</b>。</p>
+      <p>Altman 的回答是"应该像公共基础设施那样由产能普及决定"（供给侧定义），Amjad 的回答是"应该让人成为更大市场的主角"（需求侧定义），Dario 的回答是"至少在国家安全议题上需要 CEO 个人站出来划线"（边界侧定义）。三个人分别从 <b>供给、需求、边界</b> 三个侧面切入同一个问题。</p>
+      <p>对中国 AI 产品 PM 的启示不是"学这三个人的说法"，而是意识到一件事：<b>"AI 能不能做这件事"的答案越来越取决于社会共识而非模型能力</b>。过去评审一个 AI 功能时，我们主要问"它够聪明吗"；未来要加一个问题——"它应不应该"。而这个"应不应该"的答案，会越来越多地由用户、监管、业内 CEO 的公开表态共同塑造，不再是产品团队内部能独立回答的事。</p>
+      <p>评审 checklist 里，这个维度该给它一行。</p>
+    </div>
+  </section>
+
+  <div class="references">
+    <div class="ref-label">Sources · 3 References</div>
+
+    <a class="ref-item" href="https://blog.samaltman.com/abundant-intelligence" target="_blank" rel="noopener">
+      <div class="ref-left">
+        <div class="ref-who">Sam Altman · OpenAI</div>
+        <div class="ref-title">Abundant Intelligence</div>
+      </div>
+      <div class="ref-right">↗ Blog · 日期未标注</div>
+    </a>
+
+    <a class="ref-item" href="https://blog.replit.com/replit-raises-400-million-dollars" target="_blank" rel="noopener">
+      <div class="ref-left">
+        <div class="ref-who">Amjad Masad · Replit</div>
+        <div class="ref-title">The Future Is Actually Very Human</div>
+      </div>
+      <div class="ref-right">↗ Blog · 2026-03-11</div>
+    </a>
+
+    <a class="ref-item" href="https://www.anthropic.com/news" target="_blank" rel="noopener">
+      <div class="ref-left">
+        <div class="ref-who">Dario Amodei · Anthropic</div>
+        <div class="ref-title">Where things stand with the Department of War</div>
+      </div>
+      <div class="ref-right">↗ Statement · 2026-03-05</div>
+    </a>
+
+  </div>
+
+</main>
+
+<div class="foot">
+  <div>AI 早报 · Insight · 主题聚合</div>
+  <div>Daily 004 · 2026-04-20</div>
+</div>
+
+</body>
+</html>

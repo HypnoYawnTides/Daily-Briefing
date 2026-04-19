@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>AI 早报 · Archive 历史期刊</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,900;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+    background: #F1ECDF;
+    color: #1a1a1a;
+    font-size: 14px;
+    line-height: 1.75;
+    font-feature-settings: "palt";
+    background-image:
+      radial-gradient(rgba(0,0,0,0.018) 1px, transparent 1px),
+      radial-gradient(rgba(0,0,0,0.012) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 2px 3px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .serif-cn { font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif; }
+  .serif-en { font-family: "Playfair Display", Georgia, serif; }
+  a { color: inherit; text-decoration: none; }
+
+  .topbar {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 16px 56px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    background: #F1ECDF;
+    position: sticky; top: 0; z-index: 10;
+  }
+  .top-brand { justify-self: start; display: flex; align-items: baseline; gap: 14px; }
+  .brand-small {
+    font-family: "Noto Serif SC", serif;
+    font-size: 14px; font-weight: 600; letter-spacing: 0.03em;
+    border-bottom: 1px solid #1a1a1a; padding-bottom: 2px;
+  }
+  .brand-small-en {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.3em; color: #666; text-transform: uppercase;
+  }
+  .top-nav { justify-self: center; display: flex; gap: 36px; font-size: 13px; }
+  .top-nav a {
+    color: #555; font-family: "Playfair Display", Georgia, serif;
+    font-weight: 500; letter-spacing: 0.1em; padding: 6px 2px; position: relative;
+  }
+  .top-nav a.active { color: #1a1a1a; font-weight: 600; }
+  .top-nav a.active::after {
+    content: ""; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 1px; background: #1a1a1a;
+  }
+  .top-nav a:hover:not(.active) { color: #1a1a1a; }
+  .top-tag {
+    justify-self: end; font-size: 10px; letter-spacing: 0.28em;
+    padding: 5px 12px; border: 1px solid rgba(0,0,0,0.3); text-transform: uppercase;
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  .main { flex: 1 1 auto; max-width: 1100px; width: 100%; margin: 0 auto; padding: 56px 56px 80px; }
+
+  .page-head { margin-bottom: 44px; }
+  .page-title {
+    font-family: "Noto Serif SC", serif;
+    font-size: 42px; font-weight: 600; line-height: 1.2;
+    letter-spacing: 0.01em; margin-bottom: 12px;
+  }
+  .page-title .en {
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic; font-weight: 500; font-size: 38px; margin-right: 14px;
+  }
+  .page-meta {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 12px; letter-spacing: 0.15em; color: #666; text-transform: uppercase;
+  }
+  .page-meta .cn {
+    font-family: "Noto Serif SC", serif; text-transform: none;
+    letter-spacing: 0.04em; color: #666;
+  }
+  .page-meta .dot { margin: 0 10px; color: #aaa; }
+
+  .archive-note {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.08em; color: #8a5a2b;
+    padding: 8px 12px;
+    border: 1px dashed #8a5a2b;
+    background: rgba(138,90,43,0.04);
+    margin-bottom: 36px;
+    display: inline-block;
+  }
+  .archive-note .cn {
+    font-family: "Noto Serif SC", serif;
+    letter-spacing: 0.04em;
+  }
+
+  /* Issue list */
+  .issue-list { display: flex; flex-direction: column; }
+
+  .issue-row {
+    display: grid;
+    grid-template-columns: 160px 1fr auto;
+    gap: 32px;
+    align-items: center;
+    padding: 28px 20px;
+    margin: 0 -20px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    transition: background 160ms ease;
+    cursor: pointer;
+  }
+  .issue-row:last-child { border-bottom: none; }
+  .issue-row:hover { background: rgba(0,0,0,0.035); }
+  .issue-row:hover .row-arrow { transform: translateX(4px); }
+
+  .issue-row.mock {
+    opacity: 0.5;
+  }
+  .issue-row.mock .issue-num { color: #888; }
+
+  .issue-left {}
+  .issue-num {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 900;
+    font-size: 52px;
+    line-height: 1.0;
+    letter-spacing: -0.03em;
+    color: #1a1a1a;
+  }
+  .issue-date-label {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 10.5px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: #666;
+    margin-top: 8px;
+  }
+
+  .issue-body {}
+  .issue-type-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .issue-type-tag {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 10px; letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border: 1px solid rgba(0,0,0,0.25);
+    color: #555;
+  }
+  .issue-title {
+    font-family: "Noto Serif SC", serif;
+    font-size: 18px; font-weight: 600;
+    color: #1a1a1a;
+    line-height: 1.5;
+    margin-bottom: 6px;
+  }
+  .issue-excerpt {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .issue-meta {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 10.5px; letter-spacing: 0.14em;
+    color: #888; text-transform: uppercase;
+  }
+  .issue-meta span { padding-right: 10px; margin-right: 10px; border-right: 1px solid #ccc; }
+  .issue-meta span:last-child { border-right: none; }
+
+  .issue-right {
+    text-align: right;
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic;
+    font-size: 15px;
+    color: #1a1a1a;
+  }
+  .row-arrow {
+    display: inline-block;
+    transition: transform 180ms ease;
+    margin-left: 4px;
+    font-style: normal;
+  }
+
+  .mock-tag {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 9px; letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #8a5a2b;
+    padding: 2px 8px;
+    border: 1px dashed #8a5a2b;
+    background: rgba(138,90,43,0.04);
+  }
+
+  .foot {
+    flex: 0 0 auto; padding: 18px 56px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 10.5px; color: #888; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: flex; justify-content: space-between;
+    max-width: 1100px; margin: 0 auto; width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    .topbar { grid-template-columns: auto auto; grid-template-rows: auto auto; }
+    .top-brand { grid-row: 1; } .top-tag { grid-row: 1; grid-column: 2; }
+    .top-nav { grid-row: 2; grid-column: 1 / -1; justify-self: center; padding-top: 8px; }
+    .issue-row { grid-template-columns: 1fr; gap: 12px; }
+    .issue-right { text-align: left; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="top-brand">
+    <span class="brand-small">AI 早报</span>
+    <span class="brand-small-en">· Daily Briefing</span>
+  </div>
+  <nav class="top-nav">
+    <a href="feed.html">Feed</a>
+    <a href="builders.html">Builders</a>
+    <a class="active" href="#">Archive</a>
+  </nav>
+  <div class="top-tag">Daily · 004</div>
+</div>
+
+<main class="main">
+
+  <div class="page-head">
+    <h1 class="page-title"><span class="en">Archive.</span>历史期刊</h1>
+    <div class="page-meta">
+      <span>4 Issues</span>
+      <span class="dot">·</span>
+      <span class="cn">最新</span>
+      <span>2026-04-20</span>
+      <span class="dot">·</span>
+      <span class="cn">最早</span>
+      <span>2026-04-15</span>
+    </div>
+  </div>
+
+  <div class="issue-list">
+
+    <!-- DAILY 004 — REAL -->
+    <a class="issue-row" href="feed.html">
+      <div class="issue-left">
+        <div class="issue-num">004</div>
+        <div class="issue-date-label">Apr 20 · Mon · 2026</div>
+      </div>
+      <div class="issue-body">
+        <div class="issue-type-row">
+          <span class="issue-type-tag">Daily</span>
+          <span class="issue-type-tag">Current</span>
+        </div>
+        <div class="issue-title">三位 CEO 的"AI 与人"共同母题，叠 Linear / Cursor 工具形态转向</div>
+        <div class="issue-excerpt">Altman、Amjad、Dario 近期表态指向 AI 与人边界被重写；Linear 宣告 issue tracking 已死、Cursor 3 定位为"与 agent 协作的统一工作区"——PM 工具和开发工具底层范式在 4 月同步转向。</div>
+        <div class="issue-meta">
+          <span>Strategy 3</span><span>Product 3</span><span>Insight 2</span><span>11 Min</span>
+        </div>
+      </div>
+      <div class="issue-right">
+        Open<span class="row-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- DAILY 003 — MOCK -->
+    <a class="issue-row mock" href="#">
+      <div class="issue-left">
+        <div class="issue-num">003</div>
+        <div class="issue-date-label">Apr 17 · Fri · 2026</div>
+      </div>
+      <div class="issue-body">
+        <div class="issue-title">本期占位 · Archive 结构示意</div>
+        <div class="issue-excerpt">真实运营时此处展示当期封面主题 + 2-3 行摘要。点击整行进入当期 Feed 阅读页。</div>
+        <div class="issue-meta">
+          <span>Strategy —</span><span>Product —</span><span>Insight —</span><span>— Min</span>
+        </div>
+      </div>
+      <div class="issue-right">
+        Open<span class="row-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- DAILY 002 — MOCK -->
+    <a class="issue-row mock" href="#">
+      <div class="issue-left">
+        <div class="issue-num">002</div>
+        <div class="issue-date-label">Apr 16 · Thu · 2026</div>
+      </div>
+      <div class="issue-body">
+        <div class="issue-title">本期占位 · Archive 结构示意</div>
+        <div class="issue-excerpt">真实运营时此处展示当期封面主题 + 2-3 行摘要。点击整行进入当期 Feed 阅读页。</div>
+        <div class="issue-meta">
+          <span>Strategy —</span><span>Product —</span><span>Insight —</span><span>— Min</span>
+        </div>
+      </div>
+      <div class="issue-right">
+        Open<span class="row-arrow">→</span>
+      </div>
+    </a>
+
+    <!-- DAILY 001 — MOCK -->
+    <a class="issue-row mock" href="#">
+      <div class="issue-left">
+        <div class="issue-num">001</div>
+        <div class="issue-date-label">Apr 15 · Wed · 2026</div>
+      </div>
+      <div class="issue-body">
+        <div class="issue-type-row">
+          <span class="issue-type-tag">First</span>
+        </div>
+        <div class="issue-title">本期占位 · Archive 结构示意</div>
+        <div class="issue-excerpt">创刊号占位。真实运营时这里是第一期 Daily 的封面主题与摘要。</div>
+        <div class="issue-meta">
+          <span>Strategy —</span><span>Product —</span><span>Insight —</span><span>— Min</span>
+        </div>
+      </div>
+      <div class="issue-right">
+        Open<span class="row-arrow">→</span>
+      </div>
+    </a>
+
+  </div>
+
+</main>
+
+<div class="foot">
+  <div>AI 早报 · Archive</div>
+  <div>Internal · Product Team · 2026</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Insight · PM 工具和开发工具的形态转向 · AI 早报</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,900;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+    background: #F1ECDF;
+    color: #1a1a1a;
+    font-size: 14px;
+    line-height: 1.8;
+    font-feature-settings: "palt";
+    background-image:
+      radial-gradient(rgba(0,0,0,0.018) 1px, transparent 1px),
+      radial-gradient(rgba(0,0,0,0.012) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 2px 3px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .serif-cn { font-family: "Noto Serif SC", serif; }
+  .serif-en { font-family: "Playfair Display", Georgia, serif; }
+  a { color: inherit; text-decoration: none; }
+
+  .topbar {
+    flex: 0 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 16px 56px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    background: #F1ECDF;
+    position: sticky; top: 0; z-index: 10;
+  }
+  .top-brand { justify-self: start; display: flex; align-items: baseline; gap: 14px; }
+  .brand-small {
+    font-family: "Noto Serif SC", serif;
+    font-size: 14px; font-weight: 600; letter-spacing: 0.03em;
+    border-bottom: 1px solid #1a1a1a; padding-bottom: 2px;
+  }
+  .brand-small-en {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.3em; color: #666; text-transform: uppercase;
+  }
+  .top-nav { justify-self: center; display: flex; gap: 36px; font-size: 13px; }
+  .top-nav a {
+    color: #555; font-family: "Playfair Display", Georgia, serif;
+    font-weight: 500; letter-spacing: 0.1em; padding: 6px 2px; position: relative;
+  }
+  .top-nav a.active { color: #1a1a1a; font-weight: 600; }
+  .top-nav a.active::after {
+    content: ""; position: absolute; bottom: 0; left: 0; right: 0;
+    height: 1px; background: #1a1a1a;
+  }
+  .top-nav a:hover:not(.active) { color: #1a1a1a; }
+  .top-tag {
+    justify-self: end; font-size: 10px; letter-spacing: 0.28em;
+    padding: 5px 12px; border: 1px solid rgba(0,0,0,0.3); text-transform: uppercase;
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  .main {
+    flex: 1 1 auto;
+    max-width: 820px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 56px 80px;
+  }
+
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic; font-size: 13px; color: #666;
+    margin-bottom: 48px; transition: color 160ms ease;
+  }
+  .back-link:hover { color: #1a1a1a; }
+  .back-link .arrow { transition: transform 180ms ease; }
+  .back-link:hover .arrow { transform: translateX(-3px); }
+
+  .kicker {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.35em;
+    text-transform: uppercase; color: #8a5a2b;
+    margin-bottom: 22px;
+  }
+  .kicker::before { content: "◆ "; color: #8a5a2b; font-size: 14px; }
+
+  .article-title {
+    font-family: "Noto Serif SC", serif;
+    font-size: 40px; font-weight: 700;
+    line-height: 1.25; letter-spacing: 0.005em;
+    color: #1a1a1a; margin-bottom: 24px;
+  }
+  .article-sub-en {
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic; font-weight: 500;
+    font-size: 22px; color: #444;
+    margin-bottom: 32px; line-height: 1.4;
+  }
+
+  .article-meta {
+    display: flex; gap: 16px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.18em;
+    color: #888; text-transform: uppercase;
+    padding-bottom: 18px; margin-bottom: 36px;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+  }
+  .article-meta span::before { content: "· "; color: #bbb; margin-right: 8px; }
+  .article-meta span:first-child::before { content: ""; margin-right: 0; }
+
+  .lede {
+    font-family: "Noto Serif SC", serif;
+    font-size: 18px; font-weight: 500;
+    line-height: 1.75; color: #1a1a1a;
+    margin-bottom: 36px;
+    border-left: 3px solid #8a5a2b;
+    padding-left: 22px;
+  }
+
+  .builder-row {
+    display: flex; flex-wrap: wrap; gap: 10px;
+    margin-bottom: 48px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+  }
+  .builder-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 8px 14px;
+    border: 1px solid rgba(0,0,0,0.25);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 12px; letter-spacing: 0.08em;
+    transition: all 160ms ease;
+  }
+  .builder-badge:hover { background: #1a1a1a; color: #F1ECDF; border-color: #1a1a1a; }
+  .builder-badge .mono { font-weight: 900; font-size: 14px; letter-spacing: -0.02em; }
+
+  .article-section { margin-bottom: 52px; }
+  .section-num {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 500; font-size: 14px;
+    letter-spacing: 0.25em; color: #8a5a2b;
+    margin-bottom: 10px;
+  }
+  .section-h {
+    font-family: "Noto Serif SC", serif;
+    font-size: 26px; font-weight: 600;
+    line-height: 1.35; color: #1a1a1a;
+    margin-bottom: 20px;
+  }
+  .section-h .en {
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic; font-size: 22px; font-weight: 500;
+    color: #444; margin-right: 10px;
+  }
+  .section-body { font-size: 15px; line-height: 1.9; color: #222; }
+  .section-body p { margin-bottom: 16px; }
+  .section-body p:last-child { margin-bottom: 0; }
+
+  .pull-quote {
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic; font-weight: 500;
+    font-size: 22px; line-height: 1.5; color: #1a1a1a;
+    padding: 20px 0; margin: 22px 0;
+    border-top: 1px solid rgba(0,0,0,0.15);
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    text-align: center;
+  }
+
+  .src-inline {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.14em;
+    color: #8a5a2b; text-transform: uppercase;
+    border-bottom: 1px solid #8a5a2b; padding-bottom: 1px;
+    margin-left: 8px; white-space: nowrap;
+  }
+
+  .article-section.synthesis {
+    background: rgba(138,90,43,0.05);
+    padding: 32px 32px 36px;
+    border: 1px solid rgba(138,90,43,0.2);
+    margin-top: 8px;
+  }
+  .article-section.synthesis .section-num { color: #1a1a1a; }
+  .article-section.synthesis .section-h { color: #1a1a1a; }
+
+  .references {
+    margin-top: 56px; padding-top: 28px;
+    border-top: 2px solid #1a1a1a;
+  }
+  .ref-label {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase;
+    color: #888; margin-bottom: 16px;
+  }
+  .ref-item {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding: 14px 0; gap: 16px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    font-size: 13px;
+    transition: opacity 160ms ease;
+  }
+  .ref-item:last-child { border-bottom: none; }
+  .ref-item:hover { opacity: 0.6; }
+  .ref-left { flex: 1; }
+  .ref-who {
+    font-family: "Noto Serif SC", serif;
+    font-weight: 600; font-size: 14px; color: #1a1a1a;
+  }
+  .ref-title { color: #444; margin-top: 2px; }
+  .ref-right {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px; letter-spacing: 0.12em;
+    color: #666; text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .foot {
+    flex: 0 0 auto; padding: 18px 56px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 10.5px; color: #888; letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: flex; justify-content: space-between;
+    max-width: 1100px; margin: 0 auto; width: 100%;
+  }
+
+  @media (max-width: 900px) {
+    .topbar { grid-template-columns: auto auto; grid-template-rows: auto auto; }
+    .top-brand { grid-row: 1; } .top-tag { grid-row: 1; grid-column: 2; }
+    .top-nav { grid-row: 2; grid-column: 1 / -1; justify-self: center; padding-top: 8px; }
+    .main { padding: 40px 24px 60px; }
+    .article-title { font-size: 30px; }
+    .ref-item { flex-direction: column; align-items: flex-start; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="top-brand">
+    <span class="brand-small">AI 早报</span>
+    <span class="brand-small-en">· Daily Briefing</span>
+  </div>
+  <nav class="top-nav">
+    <a class="active" href="feed.html">Feed</a>
+    <a href="builders.html">Builders</a>
+    <a href="archive.html">Archive</a>
+  </nav>
+  <div class="top-tag">Daily · 004</div>
+</div>
+
+<main class="main">
+
+  <a class="back-link" href="feed.html">
+    <span class="arrow">←</span> Back to Daily 004
+  </a>
+
+  <div class="kicker">Insight · 行业观察</div>
+
+  <h1 class="article-title">从 Issue Tracking 到 Canvas：PM 工具和开发工具的形态 4 月同步转向</h1>
+  <div class="article-sub-en">Two tools, one paradigm shift.</div>
+
+  <div class="article-meta">
+    <span>Daily 004</span>
+    <span>2026-04-20</span>
+    <span>2 Organizations</span>
+    <span>3 Sources</span>
+    <span>4 Min Read</span>
+  </div>
+
+  <div class="lede">
+    Linear 宣告 issue tracking 已死、Cursor 3 把旗舰产品重新定位为"与 agent 协作的统一工作区"、Cursor 推出 canvases 让用户直接和 agent 生成物互动——<b>三件事发生在不同公司、不同赛道，但形态转向完全一致</b>。
+  </div>
+
+  <div class="builder-row">
+    <a class="builder-badge" href="https://linear.app/next" target="_blank" rel="noopener">
+      <span class="mono">KS</span>
+      <span>Karri Saarinen</span>
+      <span style="color:#888">· Linear</span>
+    </a>
+    <a class="builder-badge" href="https://cursor.com/blog" target="_blank" rel="noopener">
+      <span class="mono">CT</span>
+      <span>Cursor 团队</span>
+      <span style="color:#888">· Anysphere</span>
+    </a>
+  </div>
+
+  <section class="article-section">
+    <div class="section-num">§ 01</div>
+    <h2 class="section-h"><span class="en">Linear.</span>Karri 宣告 issue tracking 已死</h2>
+    <div class="section-body">
+      <p>Karri 在 Linear 官网发布了一篇标题克制但内核激进的长文，配合 Linear Agent 产品方向一起推出。文章主论点只有一句话——<b>下一代产品开发建立在 context 和 agency 之上，而不是记录任务</b>。<a class="src-inline" href="https://linear.app/next" target="_blank">↗ Blog</a></p>
+      <div class="pull-quote">"The next era of product development is built on context and agency."</div>
+      <p>把这句话翻译成 PM 工具的行业语言就是：过去 15 年里 Jira / Asana / Linear 这类工具的底层隐喻都是"把事情记下来，让人按记录执行"——<b>工具是记账本</b>。Karri 的意思是，下一代工具的底层隐喻会是"给 agent 足够的上下文和授权，让它们去推进"——<b>工具是调度员</b>。记账本和调度员是两种完全不同的产品形态。</p>
+    </div>
+  </section>
+
+  <section class="article-section">
+    <div class="section-num">§ 02</div>
+    <h2 class="section-h"><span class="en">Cursor 3.</span>从"AI 辅助编辑器"改称"与 agent 协作的统一工作区"</h2>
+    <div class="section-body">
+      <p>Cursor 3 不是版本迭代，是一次 positioning 重写。官方定位从 "AI code editor" 换成 <b>"a unified workspace for building software with agents"</b>。核心转变是：编辑器不再是"替你写代码的 AI"，而是"你和多个 agent 协作的空间"。<a class="src-inline" href="https://cursor.com/blog/cursor-3" target="_blank">↗ Blog</a></p>
+      <p>这个改名看起来小，实际上把产品的核心交互从"人用工具"换成了"人管理一群 agent"。前者用户的主要动作是"按"按钮，后者的主要动作是"分配"和"审核"——是两种完全不同的界面语言、不同的 onboarding 路径、甚至不同的计费模型。</p>
+    </div>
+  </section>
+
+  <section class="article-section">
+    <div class="section-num">§ 03</div>
+    <h2 class="section-h"><span class="en">Canvases.</span>让用户直接与 agent 生成的可视化互动</h2>
+    <div class="section-body">
+      <p>紧接着 Cursor 3 之后，团队推出 canvases 功能：让用户可以直接在 agent 生成的图表、UI、流程图里进行互动，而不是等着看最终产物。这个动作补齐了"agent 协作"里长期缺失的一块——<b>过程可见 + 用户干预</b>。<a class="src-inline" href="https://cursor.com/blog/canvas" target="_blank">↗ Blog</a></p>
+      <p>很多 AI 产品只做"输入 → 输出"的端到端，但当 agent 执行时间超过几十秒，用户的参与需求就会自然冒出来——"让我看看它到底在干嘛"、"这一步不对我想插手"。Canvases 给出一个结构化的回答：在 agent 产物上开一块互动画布，用户可以在 agent 还在推进时就介入调整。</p>
+    </div>
+  </section>
+
+  <section class="article-section synthesis">
+    <div class="section-num">§ 04</div>
+    <h2 class="section-h"><span class="en">Synthesis.</span>"工具帮你干活" → "工具和你一起管 agent"</h2>
+    <div class="section-body">
+      <p>把三件事并排摆出来看就会发现：Karri、Cursor 3、canvases 都在解决同一个设计难题——<b>当产品里真正的执行者从"人"变成了"agent"，工具的交互语法应该怎么重写</b>。</p>
+      <p>Karri 从需求管理侧切入：抛弃"记录 → 派单 → 人执行"的旧模型，转向"context → agent 推进"。Cursor 3 从交互定位侧切入：从"人用 AI"换成"人管 agents"。Canvases 从过程可见侧切入：让用户在 agent 生成过程中有干预面。三条线共同组成一个新范式：<b>工具不再帮用户干活，工具帮用户管理一群帮他干活的 agent</b>。</p>
+      <p>对做 PM 工具 / SaaS 的同行的直接提醒：</p>
+      <p>— 你产品首页的核心 value prop 是"帮你更快完成 X"还是"帮你管理帮你做 X 的 agent"？这两个答案对应完全不同的 onboarding、计费、用户分层。<br>
+      — 你产品的核心交互动作是不是还是"按按钮 / 填表单 / 点提交"？如果是，这套动作在"用户管 agents"的语境下是不够的——至少需要"分配、审核、打断、回滚"这四种新动作作为一等公民存在。<br>
+      — 你产品的核心度量标是不是还是"任务完成率 / 响应时长"？当执行者是 agents，度量应该换成"agents 交付质量 + 用户干预次数"——后者越低越说明产品成熟。</p>
+      <p>这次范式转向不会一夜发生，但 4 月里 Linear 和 Cursor 的动作已经把方向亮出来了——值得做 PM 工具的团队正面回应，而不是等行业共识再反应。</p>
+    </div>
+  </section>
+
+  <div class="references">
+    <div class="ref-label">Sources · 3 References</div>
+
+    <a class="ref-item" href="https://linear.app/next" target="_blank" rel="noopener">
+      <div class="ref-left">
+        <div class="ref-who">Karri Saarinen · Linear</div>
+        <div class="ref-title">Issue tracking is dead</div>
+      </div>
+      <div class="ref-right">↗ Blog · 2026-03-24</div>
+    </a>
+
+    <a class="ref-item" href="https://cursor.com/blog/cursor-3" target="_blank" rel="noopener">
+      <div class="ref-left">
+        <div class="ref-who">Cursor 团队 · Anysphere</div>
+        <div class="ref-title">Meet the new Cursor</div>
+      </div>
+      <div class="ref-right">↗ Blog · 2026-04-02</div>
+    </a>
+
+    <a class="ref-item" href="https://cursor.com/blog/canvas" target="_blank" rel="noopener">
+      <div class="ref-left">
+        <div class="ref-who">Cursor 团队 · Anysphere</div>
+        <div class="ref-title">Interact with agent-created visualizations in canvases</div>
+      </div>
+      <div class="ref-right">↗ Blog · 2026-04-15</div>
+    </a>
+
+  </div>
+
+</main>
+
+<div class="foot">
+  <div>AI 早报 · Insight · 行业观察</div>
+  <div>Daily 004 · 2026-04-20</div>
+</div>
+
+</body>
+</html>

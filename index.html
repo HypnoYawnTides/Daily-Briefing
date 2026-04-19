@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>AI 早报 · 落地页封面 v8（日报插画 + AI builder 标题）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,400;1,500;1,600;1,700;1,900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; overflow: hidden; }
+  body {
+    font-family: "Noto Sans SC", "PingFang SC", sans-serif;
+    background: #F1ECDF;
+    color: #1a1a1a;
+    font-size: 14px;
+    line-height: 1.7;
+    font-feature-settings: "palt";
+    background-image:
+      radial-gradient(rgba(0,0,0,0.018) 1px, transparent 1px),
+      radial-gradient(rgba(0,0,0,0.012) 1px, transparent 1px);
+    background-size: 3px 3px, 7px 7px;
+    background-position: 0 0, 2px 3px;
+    display: flex;
+    flex-direction: column;
+  }
+  .serif-cn { font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", serif; }
+  .serif-en { font-family: "Playfair Display", Georgia, serif; }
+  .italic-en { font-family: "Playfair Display", Georgia, serif; font-style: italic; }
+  a { color: inherit; text-decoration: none; }
+
+  .topbar {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 56px;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .top-brand { display: flex; align-items: baseline; gap: 14px; }
+  .brand-small {
+    font-family: "Noto Serif SC", serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 2px;
+  }
+  .brand-small-en {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: #666;
+    text-transform: uppercase;
+  }
+  .top-nav { display: flex; gap: 28px; font-size: 13px; }
+  .top-nav a { color: #555; }
+  .top-nav a:hover { color: #1a1a1a; }
+  .top-tag {
+    font-size: 10px;
+    letter-spacing: 0.28em;
+    padding: 5px 12px;
+    border: 1px solid rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    font-family: "Playfair Display", Georgia, serif;
+  }
+
+  .main {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1500px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 32px 56px;
+  }
+
+  .hero {
+    display: block;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .hero-left { display: flex; flex-direction: column; }
+  .hero-question {
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(46px, 5.8vw, 78px);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+    color: #1a1a1a;
+    text-align: center;
+  }
+  .hero-divider {
+    width: 54px;
+    height: 1px;
+    background: #1a1a1a;
+    margin: 30px auto 16px;
+  }
+  .hero-caption {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #2a2a28;
+    font-weight: 500;
+    text-align: center;
+  }
+  .hero-caption .cn {
+    font-family: "Noto Serif SC", serif;
+    text-transform: none;
+    letter-spacing: 0.05em;
+    color: #2a2a28;
+    font-weight: 500;
+  }
+
+  .latest-block {
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.18);
+    display: block;
+    cursor: pointer;
+    transition: all 160ms ease;
+  }
+  .latest-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 12px;
+  }
+  .latest-label {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #2a2a28;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .latest-num {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 900;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+  }
+  .latest-date {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: #666;
+    text-transform: uppercase;
+  }
+  .latest-title {
+    font-family: "Noto Serif SC", serif;
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+  }
+  .latest-meta {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .latest-meta span { padding-right: 10px; margin-right: 10px; border-right: 1px solid #ccc; }
+  .latest-meta span:last-child { border-right: none; }
+
+  .latest-enter {
+    background: #1a1a1a;
+    color: #F1ECDF;
+    padding: 18px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 500;
+    transition: background 180ms ease;
+    position: relative;
+  }
+  .latest-enter::before {
+    content: "";
+    position: absolute;
+    top: 8px; left: 8px; right: 8px; bottom: 8px;
+    border: 1px solid rgba(241,236,223,0.2);
+    pointer-events: none;
+  }
+  .enter-label {
+    font-size: 13px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+  }
+  .enter-cn {
+    font-family: "Noto Serif SC", serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: rgba(241,236,223,0.72);
+    margin-left: 14px;
+    text-transform: none;
+  }
+  .enter-arrow {
+    font-size: 26px;
+    transition: transform 220ms ease;
+    font-family: "Playfair Display", Georgia, serif;
+    position: relative;
+    z-index: 1;
+  }
+  .latest-block:hover .latest-enter { background: #000; }
+  .latest-block:hover .latest-enter::before { border-color: rgba(241,236,223,0.38); }
+  .latest-block:hover .enter-arrow { transform: translateX(8px); }
+  .latest-block:hover .latest-title { color: #000; }
+
+  .hero-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-right svg {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    max-height: 62vh;
+  }
+
+  .foot {
+    flex: 0 0 auto;
+    padding: 12px 56px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 10.5px;
+    color: #888;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1500px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  @media (max-width: 1000px) {
+    html, body { overflow: auto; }
+    .hero { grid-template-columns: 1fr; gap: 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="top-brand">
+    <span class="brand-small">AI 早报</span>
+    <span class="brand-small-en">· Daily Briefing</span>
+  </div>
+  <nav class="top-nav">
+    <a href="feed.html">Feed</a>
+    <a href="builders.html">Builders</a>
+    <a href="archive.html">Archive</a>
+  </nav>
+  <div class="top-tag">Est · 2026</div>
+</div>
+
+<section class="main">
+  <div class="hero">
+
+    <div class="hero-left">
+      <h1 class="hero-question">
+        Reading<br>
+        the minds<br>
+        behind AI.
+      </h1>
+
+      <div class="hero-divider"></div>
+
+      <div class="hero-caption">
+        AI Builders Daily &nbsp;·&nbsp; <span class="cn">给 PM 的全球 AI 圈思考速览</span>
+      </div>
+
+      <a class="latest-block" href="feed.html">
+        <div class="latest-top">
+          <div class="latest-label">
+            <span>Latest Issue</span>
+            <span class="latest-num">004</span>
+          </div>
+          <div class="latest-date">Apr 20 · Monday · 2026</div>
+        </div>
+
+        <div class="latest-title">
+          三位 CEO 的"AI 与人"共同母题，叠 Linear / Cursor 工具形态转向
+        </div>
+
+        <div class="latest-meta">
+          <span>Strategy 3</span>
+          <span>Product 3</span>
+          <span>Insight 2</span>
+          <span>9 Min Read</span>
+        </div>
+
+        <div class="latest-enter">
+          <div>
+            <span class="enter-label">Enter the brief</span>
+            <span class="enter-cn">· 进入本期</span>
+          </div>
+          <span class="enter-arrow">→</span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<div class="foot">
+  <div>AI 早报 · Daily Briefing</div>
+  <div>Internal · Product Team · 2026</div>
+</div>
+
+</body>
+</html>
