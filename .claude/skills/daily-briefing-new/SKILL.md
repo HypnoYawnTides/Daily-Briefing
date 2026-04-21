@@ -42,6 +42,22 @@ description: |
 - 新增一期流程 = `feed.html` → `feed-旧期号.html` + 重写 `feed.html` 为新期
 - 这个约定让用户分享 URL 永远是稳定的 `feed.html`，所有上一期 bookmark 也不会断
 
+### 4. 所有页面的 `<title>` 标签统一
+
+**所有 HTML 文件的 `<head>` 里 `<title>` 必须写死为**：
+
+```html
+<title>给 PM 的全球 AI 圈思考速览</title>
+```
+
+这是对外的 tab 标题 / 分享预览标题 / SEO 锚点，任何页面都不例外（index / feed / feed-NNN / archive / builders / 所有 insight 页）。
+
+- **不要**写 "AI 早报 · 主页 Feed v5（顶部导航 · 居中 · 客观 meta）" 这类开发代号标题
+- **不要**写 "DAILY NNN · 给 PM..." 这类带期号的复合标题（曾讨论过但被用户否决）
+- 唯一例外：如果未来用户明确要求，才能换——本 skill 默认按这一条执行
+
+新建 feed.html / insight-*.html 时，`<title>` 必须直接写统一字符串，不要从旧文件复制出来又改，以免带上开发代号。
+
 ---
 
 ## 候选源池（16 家，可在本 SKILL.md 内编辑扩展）
