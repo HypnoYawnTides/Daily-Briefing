@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>Insight · AI 与人的边界在被重写 · AI 早报</title>
+<title>Insight · 模型公司开始做产品 · AI 早报</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,900;1,400;1,500&display=swap" rel="stylesheet">
@@ -73,7 +73,6 @@
     padding: 40px 56px 80px;
   }
 
-  /* Back link */
   .back-link {
     display: inline-flex; align-items: center; gap: 8px;
     font-family: "Playfair Display", Georgia, serif;
@@ -87,7 +86,6 @@
   .back-link .arrow { transition: transform 180ms ease; }
   .back-link:hover .arrow { transform: translateX(-3px); }
 
-  /* Kicker */
   .kicker {
     font-family: "Playfair Display", Georgia, serif;
     font-size: 11px; letter-spacing: 0.35em;
@@ -98,7 +96,6 @@
     content: "◆ "; color: #8a5a2b; font-size: 14px;
   }
 
-  /* Title */
   .article-title {
     font-family: "Noto Serif SC", serif;
     font-size: 40px; font-weight: 700;
@@ -114,7 +111,6 @@
     line-height: 1.4;
   }
 
-  /* Article meta */
   .article-meta {
     display: flex; gap: 16px;
     font-family: "Playfair Display", Georgia, serif;
@@ -126,7 +122,6 @@
   .article-meta span::before { content: "· "; color: #bbb; margin-right: 8px; }
   .article-meta span:first-child::before { content: ""; margin-right: 0; }
 
-  /* Lede */
   .lede {
     font-family: "Noto Serif SC", serif;
     font-size: 18px; font-weight: 500;
@@ -136,7 +131,6 @@
     padding-left: 22px;
   }
 
-  /* Builder badges row */
   .builder-row {
     display: flex; flex-wrap: wrap; gap: 10px;
     margin-bottom: 48px;
@@ -159,7 +153,6 @@
     font-weight: 900; font-size: 14px; letter-spacing: -0.02em;
   }
 
-  /* Section */
   .article-section { margin-bottom: 52px; }
   .section-num {
     font-family: "Playfair Display", Georgia, serif;
@@ -184,7 +177,6 @@
   .section-body p { margin-bottom: 16px; }
   .section-body p:last-child { margin-bottom: 0; }
 
-  /* Pull quote */
   .pull-quote {
     font-family: "Playfair Display", Georgia, serif;
     font-style: italic; font-weight: 500;
@@ -195,7 +187,6 @@
     text-align: center;
   }
 
-  /* Source link inline */
   .src-inline {
     font-family: "Playfair Display", Georgia, serif;
     font-size: 11px; letter-spacing: 0.14em;
@@ -205,7 +196,6 @@
     white-space: nowrap;
   }
 
-  /* Synthesis section (last one) */
   .article-section.synthesis {
     background: rgba(138,90,43,0.05);
     padding: 32px 32px 36px;
@@ -215,7 +205,6 @@
   .article-section.synthesis .section-num { color: #1a1a1a; }
   .article-section.synthesis .section-h { color: #1a1a1a; }
 
-  /* References */
   .references {
     margin-top: 56px; padding-top: 28px;
     border-top: 2px solid #1a1a1a;
@@ -279,113 +268,116 @@
     <a href="builders.html">Builders</a>
     <a href="archive.html">Archive</a>
   </nav>
-  <div class="top-tag">Daily · 004</div>
+  <div class="top-tag">Daily · 005</div>
 </div>
 
 <main class="main">
 
-  <a class="back-link" href="feed-004.html">
-    <span class="arrow">←</span> Back to Daily 004
+  <a class="back-link" href="feed.html">
+    <span class="arrow">←</span> Back to Daily 005
   </a>
 
   <div class="kicker">Insight · 主题聚合</div>
 
-  <h1 class="article-title">AI 的"人的边界"正在被重写</h1>
-  <div class="article-sub-en">Three CEOs, one unspoken question.</div>
+  <h1 class="article-title">模型公司开始做产品：Anthropic 一周三连发的位阶重排</h1>
+  <div class="article-sub-en">When the base model company ships the app.</div>
 
   <div class="article-meta">
-    <span>Daily 004</span>
-    <span>2026-04-20</span>
+    <span>Daily 005</span>
+    <span>2026-04-21</span>
     <span>3 Sources</span>
     <span>4 Min Read</span>
   </div>
 
   <div class="lede">
-    Altman 的算力人权论、Amjad 的 4 亿融资人本宣言、Dario 的国防部边界声明——三条看似不搭的公开表态，其实在回答同一个问题：<b>AI 与人的边界应该由谁、按什么规则来划</b>。
+    4/14 Narasimhan 入 Anthropic LTBT 董事会、4/16 Claude Opus 4.7 发布、4/17 Claude Design 上线——Anthropic 在同一周里把<b>治理、模型、应用</b>三条线同时往前推。串起来看，这不是三个独立动作，是一次位阶重排：<b>一家以"我做模型、你做应用"闻名的公司，正在把自己改写成全栈 AI 公司</b>。
   </div>
 
   <div class="builder-row">
-    <a class="builder-badge" href="https://blog.samaltman.com/abundant-intelligence" target="_blank" rel="noopener">
-      <span class="mono">SA</span>
-      <span>Sam Altman</span>
-      <span style="color:#888">· OpenAI</span>
+    <a class="builder-badge" href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">
+      <span class="mono">C4.7</span>
+      <span>Claude Opus 4.7</span>
+      <span style="color:#888">· 4/16</span>
     </a>
-    <a class="builder-badge" href="https://blog.replit.com/replit-raises-400-million-dollars" target="_blank" rel="noopener">
-      <span class="mono">AM</span>
-      <span>Amjad Masad</span>
-      <span style="color:#888">· Replit</span>
+    <a class="builder-badge" href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noopener">
+      <span class="mono">CD</span>
+      <span>Claude Design</span>
+      <span style="color:#888">· 4/17</span>
     </a>
-    <a class="builder-badge" href="https://www.anthropic.com/news" target="_blank" rel="noopener">
-      <span class="mono">DA</span>
-      <span>Dario Amodei</span>
-      <span style="color:#888">· Anthropic</span>
+    <a class="builder-badge" href="https://www.anthropic.com/news/narasimhan-board" target="_blank" rel="noopener">
+      <span class="mono">LTBT</span>
+      <span>Narasimhan 入董事会</span>
+      <span style="color:#888">· 4/14</span>
     </a>
   </div>
 
   <section class="article-section">
     <div class="section-num">§ 01</div>
-    <h2 class="section-h"><span class="en">Altman.</span>把 AI 访问权等同于水和电</h2>
+    <h2 class="section-h"><span class="en">Model.</span>Opus 4.7 把 agent 能力单独列成 KPI</h2>
     <div class="section-body">
-      <p>Altman 在个人博客发表的《Abundant Intelligence》里提出了一个尺度非常大的论点：AI 访问权应当成为人类权利底层设施，像电力、自来水那样不属于"服务"而属于"基础"。OpenAI 对这件事的回应方式也不是一个新模型发布，而是一份产能宣言——<b>"建一个每周生产一吉瓦新 AI 基础设施的工厂"</b>。<a class="src-inline" href="https://blog.samaltman.com/abundant-intelligence" target="_blank">↗ Blog</a></p>
-      <p>值得拆解的不是这篇本身，而是它暗含的定位：当 Altman 说 AI 像电力一样基础时，他其实在告诉整个生态"OpenAI 不是做 AI 应用的公司，是做 AI 水电网的公司"。这对所有下游 AI 产品 PM 是一次划线——当基础设施白菜化，你的产品到底留下什么。</p>
+      <p>Opus 4.7 的官方描述强调模型在 <b>coding / agents / vision / multi-step tasks</b> 四条轴线上"更强、更一致"。跑分意义不大——过去每个大厂都说自己更强——但"agents"被单列成一个维度是一件值得注意的事。<a class="src-inline" href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank">↗ News</a></p>
+      <p>这个措辞差异意味着：模型厂商开始把"<b>我的模型能不能当 agent 用</b>"当成独立 KPI，而不再是某个 benchmark 上的 side effect。对 PM 的直接影响：下次你在做基座选型时，你买的是"综合能力更强"还是"为 agent 专门调优"，是两件事。而这两件事的定价、SLA、契合场景，也会逐渐分叉。</p>
     </div>
   </section>
 
   <section class="article-section">
     <div class="section-num">§ 02</div>
-    <h2 class="section-h"><span class="en">Amjad.</span>"the future of technology is deeply human"</h2>
+    <h2 class="section-h"><span class="en">App.</span>Claude Design：模型公司第一次下场做应用层</h2>
     <div class="section-body">
-      <p>Amjad 在 Replit 宣布 4 亿美元融资（估值 90 亿、半年翻三倍）时没有按照创始人惯常的"做大做强"调性写，而是把这次融资放进了一个哲学框架。他说 AI 的意义不是取代人类创造力，而是让几十亿人绕过"学习机器语言"这道门槛直接把想法落地。<a class="src-inline" href="https://blog.replit.com/replit-raises-400-million-dollars" target="_blank">↗ Blog</a></p>
-      <div class="pull-quote">"The future of technology is deeply human."</div>
-      <p>Amjad 的切入点和 Altman 不一样——Altman 说的是 AI 基础设施的"普及权"，Amjad 说的是 AI 工具形态的"人本取向"。两者都在重新定义"人与 AI 的相处关系"，只是一个在 infrastructure 层、一个在 tooling 层。</p>
+      <p>Opus 4.7 发布的第二天，Anthropic Labs 推出 Claude Design——一款面向"协作创建视觉产出（设计稿、原型、幻灯片、一页文档）"的产品，对标方向是 Cursor Canvas / ChatGPT Canvas / Figma Make。<a class="src-inline" href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank">↗ News</a></p>
+      <p>这不是一次普通新品发布，是位阶上移。过去两年 Anthropic 的公开姿态一直是"我们做模型和安全，应用层交给生态"——API 调用方、合作伙伴、下游创业者都按这个姿态规划了自己的位置。现在基座方自己下场，整个位阶图要重新画。</p>
+      <div class="pull-quote">"护城河如果只是把 API 包一层 UI，基座方可以随时从你底下抽牌。"</div>
+      <p>值得玩味的是<b>时间点</b>：4/17 Claude Design、4/15 Cursor 同一时间发布《Better AI models enable more ambitious work》。前者说"我也做应用了"，后者说"我用的模型变强了所以我能做更雄心的工作"——基座和应用层在隔空对话，但两边都在往对方的位置挪。</p>
     </div>
   </section>
 
   <section class="article-section">
     <div class="section-num">§ 03</div>
-    <h2 class="section-h"><span class="en">Dario.</span>在国家安全里划一条 AI 的"能与不能"</h2>
+    <h2 class="section-h"><span class="en">Governance.</span>从药厂 CEO 进董事会，读出"合规对标医药级"</h2>
     <div class="section-body">
-      <p>Dario 在 Anthropic 官方 News 页发了一份"statement from our CEO"，标题是《Where things stand with the Department of War》。这是少见的 CEO 个人署名公开声明——不是公司公告，不是产品发布，是就 Anthropic 与美国国防部合作事务的边界单独表态。<a class="src-inline" href="https://www.anthropic.com/news" target="_blank">↗ Statement</a></p>
-      <p>这条动态的信号价值不在具体措辞，在于它本身发生了：<b>顶级 AI 公司的 CEO 已经开始把"国防合作"当成需要单独发声的边界问题</b>。当你的公司走到必须 CEO 亲自出面划线的阶段，意味着 AI 能做什么、不能做什么，从技术问题变成了公共问题。</p>
+      <p>前诺华（Novartis）CEO Vas Narasimhan 加入 Anthropic Long-Term Benefit Trust 董事会。LTBT 不是普通董事会，它是 Anthropic 独特的治理层，专门用来仲裁可能和商业利益冲突的 AI 安全问题。<a class="src-inline" href="https://www.anthropic.com/news/narasimhan-board" target="_blank">↗ Announcement</a></p>
+      <p>挑一个从 <b>药厂</b>（另一个高度受监管的全球行业）走出来的 CEO 进治理层，不是偶然。这是 Anthropic 在告诉外界：<b>我把未来可能面对的监管规格对标到医药级</b>。对国内 toB PM 的映射：你做的 AI 产品如果落到金融、医疗、司法这类行业，你的合规参照系可能也要从"互联网标准"升级到"医药/金融标准"——这不是夸张，是你的基座厂商自己在这么对表。</p>
     </div>
   </section>
 
   <section class="article-section synthesis">
     <div class="section-num">§ 04</div>
-    <h2 class="section-h"><span class="en">Synthesis.</span>三条线指向同一个问题</h2>
+    <h2 class="section-h"><span class="en">Synthesis.</span>三条线其实在回答同一个问题</h2>
     <div class="section-body">
-      <p>把三个人的表态并排摆出来就会发现：他们都在回答一个没被公开问出来的问题——<b>AI 与人的边界应该由谁、按什么规则来划</b>。</p>
-      <p>Altman 的回答是"应该像公共基础设施那样由产能普及决定"（供给侧定义），Amjad 的回答是"应该让人成为更大市场的主角"（需求侧定义），Dario 的回答是"至少在国家安全议题上需要 CEO 个人站出来划线"（边界侧定义）。三个人分别从 <b>供给、需求、边界</b> 三个侧面切入同一个问题。</p>
-      <p>对中国 AI 产品 PM 的启示不是"学这三个人的说法"，而是意识到一件事：<b>"AI 能不能做这件事"的答案越来越取决于社会共识而非模型能力</b>。过去评审一个 AI 功能时，我们主要问"它够聪明吗"；未来要加一个问题——"它应不应该"。而这个"应不应该"的答案，会越来越多地由用户、监管、业内 CEO 的公开表态共同塑造，不再是产品团队内部能独立回答的事。</p>
-      <p>评审 checklist 里，这个维度该给它一行。</p>
+      <p>把三件事并排摆出来就会看到它们的内在连贯性：<b>一家模型公司要变成一家全栈 AI 公司</b>。</p>
+      <p>§01 的模型升级是它作为"AI 供应商"身份的底色，§02 的 Claude Design 是它伸进"AI 产品商"身份的第一只手，§03 的治理结构升级是它给自己"受监管的全栈 AI 公司"身份提前办的合规证。三件事缺任何一件，这次身份转换都做不完。</p>
+      <p>对下游 AI 产品 PM 的启示有两层：</p>
+      <p><b>第一，护城河定义要升级</b>——如果你的产品护城河只是"调用基座模型"，那么当基座自己做应用时，你的壁垒等于 0。你的护城河必须是"调用之上还有什么"：行业 know-how、工作流嵌入、数据权属、使用习惯、或者干脆做一件基座不屑做的小生态。</p>
+      <p><b>第二，合规叙事窗口在被抬高</b>——当基座厂商自己把监管对标提到医药级，下游产品的"合规讲究"从"竞争差异"变成"入场券"。你的产品如果在 toB 场景想继续讲"我们很谨慎"，这句话的门槛已经被 Anthropic 抬上去了。</p>
+      <p>这一周 Anthropic 发了三件事，其实只发了一件事：<b>"我不再只是一个模型厂"</b>。</p>
     </div>
   </section>
 
   <div class="references">
     <div class="ref-label">Sources · 3 References</div>
 
-    <a class="ref-item" href="https://blog.samaltman.com/abundant-intelligence" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Sam Altman · OpenAI</div>
-        <div class="ref-title">Abundant Intelligence</div>
+        <div class="ref-who">Anthropic · 官方 News</div>
+        <div class="ref-title">Introducing Claude Opus 4.7</div>
       </div>
-      <div class="ref-right">↗ Blog · 日期未标注</div>
+      <div class="ref-right">↗ News · 2026-04-16</div>
     </a>
 
-    <a class="ref-item" href="https://blog.replit.com/replit-raises-400-million-dollars" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Amjad Masad · Replit</div>
-        <div class="ref-title">The Future Is Actually Very Human</div>
+        <div class="ref-who">Anthropic Labs · 官方 News</div>
+        <div class="ref-title">Introducing Claude Design by Anthropic Labs</div>
       </div>
-      <div class="ref-right">↗ Blog · 2026-03-11</div>
+      <div class="ref-right">↗ News · 2026-04-17</div>
     </a>
 
-    <a class="ref-item" href="https://www.anthropic.com/news" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://www.anthropic.com/news/narasimhan-board" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Dario Amodei · Anthropic</div>
-        <div class="ref-title">Where things stand with the Department of War</div>
+        <div class="ref-who">Anthropic LTBT · 官方 Announcement</div>
+        <div class="ref-title">Long-Term Benefit Trust appoints Vas Narasimhan to Board of Directors</div>
       </div>
-      <div class="ref-right">↗ Statement · 2026-03-05</div>
+      <div class="ref-right">↗ Announcement · 2026-04-14</div>
     </a>
 
   </div>
@@ -394,7 +386,7 @@
 
 <div class="foot">
   <div>AI 早报 · Insight · 主题聚合</div>
-  <div>Daily 004 · 2026-04-20</div>
+  <div>Daily 005 · 2026-04-21</div>
 </div>
 
 </body>
