@@ -268,97 +268,100 @@
     <a href="builders.html">Builders</a>
     <a href="archive.html">Archive</a>
   </nav>
-  <div class="top-tag">Daily · 005</div>
+  <div class="top-tag">Daily · 006</div>
 </div>
 
 <main class="main">
 
-  <a class="back-link" href="feed-005.html">
-    <span class="arrow">←</span> Back to Daily 005
+  <a class="back-link" href="feed.html">
+    <span class="arrow">←</span> Back to Daily 006
   </a>
 
-  <div class="kicker">Insight · 行业观察</div>
+  <div class="kicker">Insight · 主题聚合</div>
 
-  <h1 class="article-title">Agent 从 Demo 走进 Production：这一周两条"真实在用"的证据</h1>
-  <div class="article-sub-en">From showcase to shop floor.</div>
+  <h1 class="article-title">Vibe coding 进入信任审查期：从 hype 概念到需要产品责任的 stack</h1>
+  <div class="article-sub-en">When the vibe becomes a responsibility.</div>
 
   <div class="article-meta">
-    <span>Daily 005</span>
-    <span>2026-04-21</span>
-    <span>2 Organizations</span>
+    <span>Daily 006</span>
+    <span>2026-04-22</span>
     <span>2 Sources</span>
     <span>4 Min Read</span>
   </div>
 
   <div class="lede">
-    过去一年 agent 相关的公开叙事大多停留在 demo、跑分、showcase。最近几周突然出现另一种口径的文章——4/14 Cursor 披露用 multi-agent 系统给自己的 GPU kernel 提速 38%、4/10 Linear PM Rhea 发文复盘"我们自己团队怎么在公司里用 Linear Agent"——同一周两条<b>"agent 走进真实生产环境里长成什么样"</b>的证据。
+    Replit 在 4 月 20-21 的两次公开动作——Luis Chávez 的《Defense in Depth》长文 + 产品化的 Security Agent——串起来看是一次姿态重排。Karpathy 2025 年初造出 "vibe coding" 这个词至今一年，它第一次被当成<b>需要全栈防御的 stack</b>，而不是炫技 demo。
   </div>
 
   <div class="builder-row">
-    <a class="builder-badge" href="https://cursor.com/blog/multi-agent-kernels" target="_blank" rel="noopener">
-      <span class="mono">CT</span>
-      <span>Cursor 团队</span>
-      <span style="color:#888">· Anysphere</span>
+    <a class="builder-badge" href="https://blog.replit.com/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack" target="_blank" rel="noopener">
+      <span class="mono">LC</span>
+      <span>Luis Chávez</span>
+      <span style="color:#888">· Replit</span>
     </a>
-    <a class="builder-badge" href="https://linear.app/now/how-we-use-linear-agent-at-linear" target="_blank" rel="noopener">
-      <span class="mono">RP</span>
-      <span>Rhea Purohit</span>
-      <span style="color:#888">· Linear</span>
+    <a class="builder-badge" href="https://blog.replit.com/meet-replit-security-agent" target="_blank" rel="noopener">
+      <span class="mono">SA</span>
+      <span>Security Agent</span>
+      <span style="color:#888">· Replit</span>
     </a>
   </div>
 
   <section class="article-section">
     <div class="section-num">§ 01</div>
-    <h2 class="section-h"><span class="en">Cursor.</span>Multi-agent 跑进了性能关键工程环节</h2>
+    <h2 class="section-h"><span class="en">Stack.</span>Vibe coding 第一次被当成可建模的三层 stack</h2>
     <div class="section-body">
-      <p>Cursor 团队发文披露他们用一套多 agent 系统给 CUDA kernel 自动提速 38%。<a class="src-inline" href="https://cursor.com/blog/multi-agent-kernels" target="_blank">↗ Blog</a> 这段话如果只当成技术披露读，它是"我们用了 agent，性能涨了"——很像过去一年无数 showcase。但是换个视角：Cursor 靠自己的推理延迟和成本吃饭，GPU kernel 的 38% 是<b>这家公司利润表上的直接数字</b>，不是演讲稿话术。</p>
-      <p>这是一件值得 PM 标记的事——agent 第一次真实地进入了一家 AI 公司<b>内部的性能关键工程环节</b>，而不是跑在 demo 路径上。意味着 agent 的风险容忍度已经高到：可以把自家商业模式的关键指标交出去一部分。</p>
-      <div class="pull-quote">"用户正从'好奇 agent'过渡到'敢让 agent 干关键活'。"</div>
-      <p>对做 AI 工具类 PM 的直接映射：当你的用户开始考虑把 agent 接进关键流程（不是尝鲜流程），产品里的<b>置信度展示、过程可观测、可回滚设计</b>会从"锦上添花"变成采购决策点。你功能表里的"透明度"那一栏，权重该往上调了。</p>
+      <p>Luis Chávez 的文章里，vibe coding 不再是"你跟 AI 聊聊它就帮你写代码"的模糊描述，而是一个有明确架构的 stack：<b>生成代码的 AI 层 / 运行代码的沙箱层 / 部署代码的权限层</b>。每一层都有自己的失败模式，都需要独立防御。<a class="src-inline" href="https://blog.replit.com/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack" target="_blank">↗ Blog</a></p>
+      <p>这个框架把一个抽象的 buzzword 变成了产品术语。过去谈 vibe coding 没有共同词汇——每家的"AI 写代码"都不一样，买家也说不出自己想要什么。现在有了 stack 视角，讨论就可以变得精确：<b>你家的沙箱隔离到什么程度？你的 AI 层和部署层之间有 human-in-the-loop 吗？权限粒度是 repo 级还是 file 级？</b> 这些问题是 stack 被建模后才能被提出来的。</p>
+      <div class="pull-quote">"vibe coding 终于有了可以和甲方 checklist 对齐的词汇表。"</div>
     </div>
   </section>
 
   <section class="article-section">
     <div class="section-num">§ 02</div>
-    <h2 class="section-h"><span class="en">Linear.</span>PM 的"产品自用说明书"</h2>
+    <h2 class="section-h"><span class="en">Product.</span>Security 从 feature 升到独立 agent</h2>
     <div class="section-body">
-      <p>Linear 产品经理 Rhea Purohit 发文记录 Linear 自己团队如何使用 Linear Agent——哪些场景派 agent、哪些保留人工判断、agent 输出如何进入人的 triage 流。文章读起来像一份 <b>产品自用说明书</b>。<a class="src-inline" href="https://linear.app/now/how-we-use-linear-agent-at-linear" target="_blank">↗ Blog</a></p>
-      <p>这篇文章的产品意义不在具体做法，在于<b>它存在本身</b>。对做 PM 工具的同行是一面镜子：当你对外号称"用 agent 重做 SaaS"，你自己的团队有没有先把自家产品里的 agent 用顺？Linear 在公开示范"我们自己在吃自己的 agent 狗粮"——而这件事，正在变成一类工具公司的新合规要求。</p>
-      <p>"Dogfooding" 从工程文化词变成了营销素材。过去写 case study 要去找一个大客户，现在最具说服力的 case study 是"我们自己"——因为它回答了一个最难的问题：<b>你们对自己的产品有多少信心</b>。</p>
+      <p>同一天 Replit 发布 Security Agent——一个**独立的、监控 AI 生成代码安全问题的 agent**。这是一个产品化层面的 signal。<a class="src-inline" href="https://blog.replit.com/meet-replit-security-agent" target="_blank">↗ Blog</a></p>
+      <p>过去一年 AI 安全工具大多嵌在 IDE 里做一条 linter 规则或一个小图标；现在它是独立 product，甚至是独立定价的 agent。这通常意味着市场结构的微调：<b>某个买家群体已经足够大、愿意单独为这个能力付钱</b>。Replit 把 Security 单拎出来做 agent，不是在 feature 层面做差异化，是在 <b>产品品类层面</b> 做差异化——它在赌："会有一批买家愿意为'专门有 AI 安全监控'这件事付钱"。</p>
+      <p>对做 AI 编码工具的 PM：盯住竞品"内嵌能力独立商业化"的动作。那个动作是一个市场发出的信号——某能力已经进入"愿意独立付费"的成熟度。如果你的工具里也有类似能力（agent 行为审计、权限细粒度、沙箱日志可视化），可能到了独立包装的时候。</p>
     </div>
   </section>
 
   <section class="article-section synthesis">
     <div class="section-num">§ 03</div>
-    <h2 class="section-h"><span class="en">Synthesis.</span>这一波增长不是模型能力驱动，是 social proof 驱动</h2>
+    <h2 class="section-h"><span class="en">Synthesis.</span>分水岭不是能力，是责任</h2>
     <div class="section-body">
-      <p>把这两条放到一起看，你会发现它们回答了一个正在浮现的问题——<b>agent 到底靠什么破圈</b>。</p>
-      <p>过去一年的默认假设是"模型更强 → 使用率上升"。但 agent 的落地呈现出另一种曲线：<b>用户敢不敢让 agent 干活，不由模型多强决定，由他们能不能看见"别人已经真的在用"决定</b>。这是一条 social proof 曲线，不是能力曲线。</p>
-      <p>所以 4/14 Cursor 这篇、4/10 Linear 这篇的真正产品作用不是技术披露，是 <b>social proof 基础设施</b>——它们把 agent 从"展台"变成"生产线"这件事可视化出来，让后面一波买家有东西可以指着说"像他们那样"。</p>
-      <p>对做 AI 产品的 PM 有两层启示：</p>
-      <p><b>第一，你的案例故事格式要更新</b>。过去一年管用的格式是"before 什么样 / after 什么样 / 提升百分之几"。下一阶段管用的格式是"<b>它在真实生产环境里长成什么样</b>"——怎么嵌入流程、怎么和人协作、怎么在出错时回滚。买家不再被绝对数字打动，他们被"看得见的日常"打动。</p>
-      <p><b>第二，公开透明 dogfooding 正在变成采购决策的显性变量</b>。买家的新问题不是"你们效果好不好"，而是"<b>你们自己用不用</b>"。如果你号称卖 AI 产品却不把自己团队挂在这个产品上，你的销售故事会越来越难讲。</p>
-      <p>一句话总结这一周：<b>agent 的下一程，不靠模型更强，靠"被看见在用"</b>。</p>
+      <p>把这两件事放在一起，会发现一个不太好听但对 PM 特别重要的真相：<b>vibe coding 的下一程不是"AI 写得更好"，是"谁来对后果负责"</b>。</p>
+      <p>过去一年比赛的是"AI 能写多复杂的代码"——上下文窗口、多文件编辑、repo 级理解。那条赛道的冠军很明确（Cursor / Claude Code / Replit Agent 都在同一梯队），差距也越来越小。但赛道之外冒出来的新问题，是一年前没人问的：</p>
+      <p><b>你输出的代码谁负责？</b> 如果 AI 写的代码带 SQL 注入，被攻击，账由谁担？<br>
+      <b>你的沙箱跑谁的任务？</b> 如果用户要 AI 执行"我们生产 DB 备份一下"，sandbox 有没有边界？<br>
+      <b>你的部署权限给谁？</b> 如果 AI 一键 push 到生产，谁来 review、回滚？</p>
+      <p>这三个问题是 vibe coding 从 hype 到 production 必须回答的。Luis 的 Defense in Depth 从架构侧回答；Security Agent 从产品侧回答。两个动作合起来是一个信号：<b>Replit 已经把 vibe coding 当成"对用户负责的产品"来维护</b>，而不是一个 demo 时期的炫技 feature。</p>
+      <p>对 PM 的最终映射：你在评估 AI 编码工具（给自己团队用 or 作为产品参考）时，<b>buying criteria 需要升级</b>。过去问"它写得多聪明"，未来要问：</p>
+      <p>1. 沙箱是每个 session 独立的吗？还是共享的？<br>
+      2. 生产环境部署有没有 human-in-the-loop？<br>
+      3. 有没有 agent 行为审计？出问题后能查到谁让它做了什么？<br>
+      4. 权限最小化是怎么做的？AI 能 sudo 吗？</p>
+      <p>这不是安全工程师的问题，是 PM 在产品决策时就要纳入的 criteria。因为 <b>一旦这些问题出事，负责的是产品，不是安全部门</b>。</p>
     </div>
   </section>
 
   <div class="references">
     <div class="ref-label">Sources · 2 References</div>
 
-    <a class="ref-item" href="https://cursor.com/blog/multi-agent-kernels" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://blog.replit.com/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Cursor · Team</div>
-        <div class="ref-title">Speeding up GPU kernels by 38% with a multi-agent system</div>
+        <div class="ref-who">Luis Héctor Chávez · Replit</div>
+        <div class="ref-title">Defense in Depth: How Replit Secures Every Layer of the Vibe Coding Stack</div>
       </div>
-      <div class="ref-right">↗ Blog · 2026-04-14</div>
+      <div class="ref-right">↗ Blog · 2026-04-20</div>
     </a>
 
-    <a class="ref-item" href="https://linear.app/now/how-we-use-linear-agent-at-linear" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://blog.replit.com/meet-replit-security-agent" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Rhea Purohit · Linear</div>
-        <div class="ref-title">How we use Linear Agent at Linear</div>
+        <div class="ref-who">Replit Team</div>
+        <div class="ref-title">Meet Replit Security Agent</div>
       </div>
-      <div class="ref-right">↗ Blog · 2026-04-10</div>
+      <div class="ref-right">↗ Blog · 2026-04-21</div>
     </a>
 
   </div>
@@ -366,8 +369,8 @@
 </main>
 
 <div class="foot">
-  <div>AI 早报 · Insight · 行业观察</div>
-  <div>Daily 005 · 2026-04-21</div>
+  <div>AI 早报 · Insight · 主题聚合</div>
+  <div>Daily 006 · 2026-04-22</div>
 </div>
 
 </body>

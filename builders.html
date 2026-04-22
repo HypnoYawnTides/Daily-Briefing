@@ -182,6 +182,7 @@
   .latest-meta {
     font-family: "Playfair Display", Georgia, serif;
     font-size: 11px; color: #888; letter-spacing: 0.08em;
+    line-height: 1.55;
   }
 
   .card-footer {
@@ -198,6 +199,41 @@
     display: inline-block; transition: transform 180ms ease;
     font-size: 18px; color: #1a1a1a;
   }
+
+  /* Show-more fold for layers with >6 cards */
+  details.more-cards {
+    margin-top: 18px;
+  }
+  details.more-cards summary {
+    cursor: pointer;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: #888;
+    padding: 10px 18px;
+    list-style: none;
+    border: 1px dashed rgba(0,0,0,0.22);
+    background: rgba(255,255,255,0.2);
+    transition: all 160ms ease;
+    display: inline-block;
+  }
+  details.more-cards summary::-webkit-details-marker { display: none; }
+  details.more-cards summary::marker { content: ""; }
+  details.more-cards summary::before {
+    content: "+ ";
+    color: #aaa;
+    margin-right: 4px;
+    font-weight: 500;
+  }
+  details.more-cards[open] summary::before { content: "− "; }
+  details.more-cards summary:hover {
+    color: #1a1a1a;
+    border-color: rgba(0,0,0,0.4);
+    background: rgba(255,255,255,0.5);
+  }
+  details.more-cards[open] summary { margin-bottom: 18px; }
+  details.more-cards .card-grid { margin-top: 0; }
 
   .foot {
     flex: 0 0 auto; padding: 18px 56px;
@@ -229,7 +265,7 @@
     <a class="active" href="#">Builders</a>
     <a href="archive.html">Archive</a>
   </nav>
-  <div class="top-tag">Daily · 005</div>
+  <div class="top-tag">Daily · 006</div>
 </div>
 
 <main class="main">
@@ -237,13 +273,15 @@
   <div class="page-head">
     <h1 class="page-title"><span class="en">AI Builders.</span>追踪对象</h1>
     <div class="page-meta">
-      <span>8 Followed</span>
+      <span>14 Followed</span>
       <span class="dot">·</span>
-      <span class="cn">战略层 5</span>
+      <span class="cn">战略层 7</span>
       <span class="dot">·</span>
-      <span class="cn">产品层 3</span>
+      <span class="cn">产品层 7</span>
       <span class="dot">·</span>
-      <span>共收录 6 条动态</span>
+      <span class="cn">跨 3 期累计 18 条动态</span>
+      <span class="dot">·</span>
+      <span class="cn">当期 6 条</span>
     </div>
   </div>
 
@@ -252,7 +290,7 @@
     <div class="section-head">
       <span class="section-label">Strategy</span>
       <h3 class="section-title">战略层</h3>
-      <span class="section-count">5 / 8</span>
+      <span class="section-count">7 / 14</span>
     </div>
 
     <div class="card-grid">
@@ -278,19 +316,19 @@
 
       <a class="builder-card" href="https://www.anthropic.com/news" target="_blank" rel="noopener">
         <div class="card-top">
-          <div class="monogram">DA</div>
+          <div class="monogram">AN</div>
           <div class="card-who">
-            <div class="builder-name">Dario Amodei</div>
-            <div class="builder-role">Anthropic · CEO</div>
+            <div class="builder-name">Anthropic</div>
+            <div class="builder-role">AI Safety Lab · Org</div>
           </div>
         </div>
         <div class="card-latest">
           <div class="latest-label">Latest</div>
-          <div class="latest-title">Where things stand with the Department of War</div>
-          <div class="latest-meta">官方 News · 2026-03-05</div>
+          <div class="latest-title">Introducing Claude Design by Anthropic Labs</div>
+          <div class="latest-meta">官方 News · 2026-04-17<br>另含 Opus 4.7 (4/16) · Narasimhan 入 LTBT (4/14) · Dept of War (3/5)</div>
         </div>
         <div class="card-footer">
-          <span class="count">1 Entry</span>
+          <span class="count">4 Entries</span>
           <span class="card-arrow">→</span>
         </div>
       </a>
@@ -299,14 +337,52 @@
         <div class="card-top">
           <div class="monogram">AM</div>
           <div class="card-who">
-            <div class="builder-name">Amjad Masad</div>
-            <div class="builder-role">Replit · CEO</div>
+            <div class="builder-name">Amjad Masad / Replit</div>
+            <div class="builder-role">Replit · CEO + Team</div>
           </div>
         </div>
         <div class="card-latest">
           <div class="latest-label">Latest</div>
-          <div class="latest-title">The Future Is Actually Very Human</div>
-          <div class="latest-meta">官方博客 · 2026-03-11</div>
+          <div class="latest-title">Meet Replit Security Agent</div>
+          <div class="latest-meta">官方博客 · 2026-04-21<br>另含 The Future Is Very Human (3/11)</div>
+        </div>
+        <div class="card-footer">
+          <span class="count">2 Entries</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="builder-card" href="https://huggingface.co/blog" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="monogram">HF</div>
+          <div class="card-who">
+            <div class="builder-name">HuggingFace</div>
+            <div class="builder-role">开源生态 · Org</div>
+          </div>
+        </div>
+        <div class="card-latest">
+          <div class="latest-label">Latest</div>
+          <div class="latest-title">AI and the Future of Cybersecurity: Why Openness Matters</div>
+          <div class="latest-meta">官方博客 · 2026-04-21</div>
+        </div>
+        <div class="card-footer">
+          <span class="count">1 Entry</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="builder-card" href="https://vercel.com/blog" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="monogram">VR</div>
+          <div class="card-who">
+            <div class="builder-name">Vercel</div>
+            <div class="builder-role">AI Infra · Org</div>
+          </div>
+        </div>
+        <div class="card-latest">
+          <div class="latest-label">Latest</div>
+          <div class="latest-title">How Zo Computer improved AI reliability 20x on Vercel</div>
+          <div class="latest-meta">官方博客 · 2026-04-17</div>
         </div>
         <div class="card-footer">
           <span class="count">1 Entry</span>
@@ -333,26 +409,34 @@
         </div>
       </a>
 
-      <a class="builder-card pending" href="https://mustafa-suleyman.ai/" target="_blank" rel="noopener">
-        <div class="card-top">
-          <div class="monogram">MS</div>
-          <div class="card-who">
-            <div class="builder-name">Mustafa Suleyman</div>
-            <div class="builder-role">Microsoft AI · CEO</div>
-          </div>
-        </div>
-        <div class="card-latest">
-          <div class="latest-label">Latest</div>
-          <div class="latest-title">追踪中 · 本期未收录</div>
-          <div class="latest-meta">—</div>
-        </div>
-        <div class="card-footer">
-          <span class="count">0 Entries</span>
-          <span class="card-arrow">→</span>
-        </div>
-      </a>
-
     </div>
+
+    <details class="more-cards">
+      <summary>展开查看更多（1）</summary>
+      <div class="card-grid">
+
+        <a class="builder-card pending" href="https://mustafa-suleyman.ai/" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="monogram">MS</div>
+            <div class="card-who">
+              <div class="builder-name">Mustafa Suleyman</div>
+              <div class="builder-role">Microsoft AI · CEO</div>
+            </div>
+          </div>
+          <div class="card-latest">
+            <div class="latest-label">Latest</div>
+            <div class="latest-title">追踪中 · 本期未收录</div>
+            <div class="latest-meta">—</div>
+          </div>
+          <div class="card-footer">
+            <span class="count">0 Entries</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </a>
+
+      </div>
+    </details>
+
   </section>
 
   <!-- PRODUCT LAYER -->
@@ -360,7 +444,7 @@
     <div class="section-head">
       <span class="section-label">Product</span>
       <h3 class="section-title">产品层</h3>
-      <span class="section-count">3 / 8</span>
+      <span class="section-count">7 / 14</span>
     </div>
 
     <div class="card-grid">
@@ -394,35 +478,119 @@
         </div>
         <div class="card-latest">
           <div class="latest-label">Latest</div>
-          <div class="latest-title">Interact with agent-created visualizations in canvases</div>
-          <div class="latest-meta">官方博客 · 2026-04-15 <span style="color:#aaa">·</span> 另含 Cursor 3 (04-02)</div>
+          <div class="latest-title">Keeping the Cursor app stable</div>
+          <div class="latest-meta">Andrew & Kevin · 2026-04-21<br>另含 multi-agent kernels (4/14) · canvases (4/15) · Cursor 3 (4/2)</div>
         </div>
         <div class="card-footer">
-          <span class="count">2 Entries</span>
+          <span class="count">4 Entries</span>
           <span class="card-arrow">→</span>
         </div>
       </a>
 
-      <a class="builder-card pending" href="https://www.notion.com/blog" target="_blank" rel="noopener">
+      <a class="builder-card" href="https://cursor.com/blog" target="_blank" rel="noopener">
         <div class="card-top">
-          <div class="monogram">IZ</div>
+          <div class="monogram">LM</div>
           <div class="card-who">
-            <div class="builder-name">Ivan Zhao</div>
-            <div class="builder-role">Notion · CEO</div>
+            <div class="builder-name">Luke Melas-Kyriazi</div>
+            <div class="builder-role">Cursor · 研究</div>
           </div>
         </div>
         <div class="card-latest">
           <div class="latest-label">Latest</div>
-          <div class="latest-title">追踪中 · 本期未收录</div>
-          <div class="latest-meta">—</div>
+          <div class="latest-title">Better AI models enable more ambitious work</div>
+          <div class="latest-meta">官方博客 · 2026-04-15</div>
         </div>
         <div class="card-footer">
-          <span class="count">0 Entries</span>
+          <span class="count">1 Entry</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="builder-card" href="https://blog.replit.com/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="monogram">LC</div>
+          <div class="card-who">
+            <div class="builder-name">Luis Héctor Chávez</div>
+            <div class="builder-role">Replit · 安全工程</div>
+          </div>
+        </div>
+        <div class="card-latest">
+          <div class="latest-label">Latest</div>
+          <div class="latest-title">Defense in Depth: Securing Every Layer of the Vibe Coding Stack</div>
+          <div class="latest-meta">官方博客 · 2026-04-20</div>
+        </div>
+        <div class="card-footer">
+          <span class="count">1 Entry</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="builder-card" href="https://linear.app/blog" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="monogram">RP</div>
+          <div class="card-who">
+            <div class="builder-name">Rhea Purohit</div>
+            <div class="builder-role">Linear · PM</div>
+          </div>
+        </div>
+        <div class="card-latest">
+          <div class="latest-label">Latest</div>
+          <div class="latest-title">How we use Linear Agent at Linear</div>
+          <div class="latest-meta">官方博客 · 2026-04-10</div>
+        </div>
+        <div class="card-footer">
+          <span class="count">1 Entry</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="builder-card" href="https://github.blog/" target="_blank" rel="noopener">
+        <div class="card-top">
+          <div class="monogram">JB</div>
+          <div class="card-who">
+            <div class="builder-name">Joe Binder</div>
+            <div class="builder-role">GitHub · Copilot PM</div>
+          </div>
+        </div>
+        <div class="card-latest">
+          <div class="latest-label">Latest</div>
+          <div class="latest-title">Changes to GitHub Copilot Individual plans</div>
+          <div class="latest-meta">官方 Company News · 2026-04-20</div>
+        </div>
+        <div class="card-footer">
+          <span class="count">1 Entry</span>
           <span class="card-arrow">→</span>
         </div>
       </a>
 
     </div>
+
+    <details class="more-cards">
+      <summary>展开查看更多（1）</summary>
+      <div class="card-grid">
+
+        <a class="builder-card pending" href="https://www.notion.com/blog" target="_blank" rel="noopener">
+          <div class="card-top">
+            <div class="monogram">IZ</div>
+            <div class="card-who">
+              <div class="builder-name">Ivan Zhao</div>
+              <div class="builder-role">Notion · CEO</div>
+            </div>
+          </div>
+          <div class="card-latest">
+            <div class="latest-label">Latest</div>
+            <div class="latest-title">追踪中 · 本期未收录</div>
+            <div class="latest-meta">—</div>
+          </div>
+          <div class="card-footer">
+            <span class="count">0 Entries</span>
+            <span class="card-arrow">→</span>
+          </div>
+        </a>
+
+      </div>
+    </details>
+
   </section>
 
 </main>

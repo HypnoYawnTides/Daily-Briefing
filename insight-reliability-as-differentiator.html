@@ -268,97 +268,122 @@
     <a href="builders.html">Builders</a>
     <a href="archive.html">Archive</a>
   </nav>
-  <div class="top-tag">Daily · 005</div>
+  <div class="top-tag">Daily · 006</div>
 </div>
 
 <main class="main">
 
-  <a class="back-link" href="feed-005.html">
-    <span class="arrow">←</span> Back to Daily 005
+  <a class="back-link" href="feed.html">
+    <span class="arrow">←</span> Back to Daily 006
   </a>
 
   <div class="kicker">Insight · 行业观察</div>
 
-  <h1 class="article-title">Agent 从 Demo 走进 Production：这一周两条"真实在用"的证据</h1>
-  <div class="article-sub-en">From showcase to shop floor.</div>
+  <h1 class="article-title">安全/可靠性成为 AI 产品的新差异化：从可用性竞争升级到信任度竞争</h1>
+  <div class="article-sub-en">From "does it work" to "can I trust it."</div>
 
   <div class="article-meta">
-    <span>Daily 005</span>
-    <span>2026-04-21</span>
-    <span>2 Organizations</span>
-    <span>2 Sources</span>
+    <span>Daily 006</span>
+    <span>2026-04-22</span>
+    <span>3 Sources</span>
     <span>4 Min Read</span>
   </div>
 
   <div class="lede">
-    过去一年 agent 相关的公开叙事大多停留在 demo、跑分、showcase。最近几周突然出现另一种口径的文章——4/14 Cursor 披露用 multi-agent 系统给自己的 GPU kernel 提速 38%、4/10 Linear PM Rhea 发文复盘"我们自己团队怎么在公司里用 Linear Agent"——同一周两条<b>"agent 走进真实生产环境里长成什么样"</b>的证据。
+    HuggingFace 在 4/21 发文明确"开放性才是安全的来源"、Vercel 在 4/17 用客户案例晒"可靠性提升 20x"、Cursor 团队在 4/21 反思"如何让自家应用保持稳定"——三家不同位阶玩家同一周不约而同把<b>"信任 / 可靠性"讲成差异化卖点</b>。模型能力趋同后，新的护城河不在能力侧，在信任侧。
   </div>
 
   <div class="builder-row">
-    <a class="builder-badge" href="https://cursor.com/blog/multi-agent-kernels" target="_blank" rel="noopener">
-      <span class="mono">CT</span>
-      <span>Cursor 团队</span>
-      <span style="color:#888">· Anysphere</span>
+    <a class="builder-badge" href="https://huggingface.co/blog/cybersecurity-openness" target="_blank" rel="noopener">
+      <span class="mono">HF</span>
+      <span>HuggingFace</span>
+      <span style="color:#888">· 开源</span>
     </a>
-    <a class="builder-badge" href="https://linear.app/now/how-we-use-linear-agent-at-linear" target="_blank" rel="noopener">
-      <span class="mono">RP</span>
-      <span>Rhea Purohit</span>
-      <span style="color:#888">· Linear</span>
+    <a class="builder-badge" href="https://vercel.com/blog/how-zo-computer-improved-ai-reliability-20x-on-vercel" target="_blank" rel="noopener">
+      <span class="mono">VR</span>
+      <span>Vercel</span>
+      <span style="color:#888">· AI infra</span>
+    </a>
+    <a class="builder-badge" href="https://cursor.com/blog/app-stability" target="_blank" rel="noopener">
+      <span class="mono">CT</span>
+      <span>Cursor</span>
+      <span style="color:#888">· AI 编码工具</span>
     </a>
   </div>
 
   <section class="article-section">
     <div class="section-num">§ 01</div>
-    <h2 class="section-h"><span class="en">Cursor.</span>Multi-agent 跑进了性能关键工程环节</h2>
+    <h2 class="section-h"><span class="en">Openness.</span>开源生态把"安全"讲成立场，不是功能</h2>
     <div class="section-body">
-      <p>Cursor 团队发文披露他们用一套多 agent 系统给 CUDA kernel 自动提速 38%。<a class="src-inline" href="https://cursor.com/blog/multi-agent-kernels" target="_blank">↗ Blog</a> 这段话如果只当成技术披露读，它是"我们用了 agent，性能涨了"——很像过去一年无数 showcase。但是换个视角：Cursor 靠自己的推理延迟和成本吃饭，GPU kernel 的 38% 是<b>这家公司利润表上的直接数字</b>，不是演讲稿话术。</p>
-      <p>这是一件值得 PM 标记的事——agent 第一次真实地进入了一家 AI 公司<b>内部的性能关键工程环节</b>，而不是跑在 demo 路径上。意味着 agent 的风险容忍度已经高到：可以把自家商业模式的关键指标交出去一部分。</p>
-      <div class="pull-quote">"用户正从'好奇 agent'过渡到'敢让 agent 干关键活'。"</div>
-      <p>对做 AI 工具类 PM 的直接映射：当你的用户开始考虑把 agent 接进关键流程（不是尝鲜流程），产品里的<b>置信度展示、过程可观测、可回滚设计</b>会从"锦上添花"变成采购决策点。你功能表里的"透明度"那一栏，权重该往上调了。</p>
+      <p>HuggingFace 4/21 的文章主张是一个哲学姿态——<b>AI 安全不能靠"藏起来"解决，要靠"被更多人看到"</b>。<a class="src-inline" href="https://huggingface.co/blog/cybersecurity-openness" target="_blank">↗ Blog</a></p>
+      <p>这不是一个"我们又加了一个安全 feature"的产品公告，是一个方向声明。它的目的是改变 toB 基座选型的评估语言——让"开源"这个属性从"便宜 + 可定制"扩展成"更多人看过、补丁响应更快、漏洞无处藏"。HuggingFace 要把自己定位成 AI 时代的 Linux，而不是 AI 时代的 Red Hat。</p>
+      <p>对 PM：当你的基座选型 checklist 里有"安全"这一栏时，开源方的论据会越来越完整。不再只是"他们社区大"这种模糊描述，而是可以引用"公开的安全审计、公开的漏洞列表、公开的响应时间"这种硬指标。</p>
     </div>
   </section>
 
   <section class="article-section">
     <div class="section-num">§ 02</div>
-    <h2 class="section-h"><span class="en">Linear.</span>PM 的"产品自用说明书"</h2>
+    <h2 class="section-h"><span class="en">Infra.</span>AI 基础设施把 reliability 做成核心叙事</h2>
     <div class="section-body">
-      <p>Linear 产品经理 Rhea Purohit 发文记录 Linear 自己团队如何使用 Linear Agent——哪些场景派 agent、哪些保留人工判断、agent 输出如何进入人的 triage 流。文章读起来像一份 <b>产品自用说明书</b>。<a class="src-inline" href="https://linear.app/now/how-we-use-linear-agent-at-linear" target="_blank">↗ Blog</a></p>
-      <p>这篇文章的产品意义不在具体做法，在于<b>它存在本身</b>。对做 PM 工具的同行是一面镜子：当你对外号称"用 agent 重做 SaaS"，你自己的团队有没有先把自家产品里的 agent 用顺？Linear 在公开示范"我们自己在吃自己的 agent 狗粮"——而这件事，正在变成一类工具公司的新合规要求。</p>
-      <p>"Dogfooding" 从工程文化词变成了营销素材。过去写 case study 要去找一个大客户，现在最具说服力的 case study 是"我们自己"——因为它回答了一个最难的问题：<b>你们对自己的产品有多少信心</b>。</p>
+      <p>Vercel 4/17 发的是一篇客户案例："Zo Computer 在我们平台上 AI 可靠性提升 20x"。<a class="src-inline" href="https://vercel.com/blog/how-zo-computer-improved-ai-reliability-20x-on-vercel" target="_blank">↗ Blog</a> 数字本身可以打折，但<b>叙事的转变值得注意</b>：</p>
+      <div class="pull-quote">"一年前这类文章讲的是'跑模型多快'，现在讲的是'跑得稳'。"</div>
+      <p>这个转变符合周期规律。AI infra 2023-2024 年的故事是延迟 + 成本（"推理快、token 省"），2025 年的故事开始夹杂"吞吐量 + 稳定性"，2026 年 Q2 开始明显往"可靠性保障"侧重。模型能力趋同后，infra 公司必须讲得出自己的差异化——可观测性、故障恢复、SLA 等级、uptime 承诺，这些是它们真正能竞争的维度。</p>
+      <p>对做 AI 产品的 PM：<b>选 infra 的算账方式应该升级</b>。过去主要看 $/1M tokens 和 p99 延迟，未来要加两列——过去一个月的 uptime %、重大故障的 post-mortem 质量。后两者直接决定你在出事时能不能给你的用户一个像样交代。</p>
+    </div>
+  </section>
+
+  <section class="article-section">
+    <div class="section-num">§ 03</div>
+    <h2 class="section-h"><span class="en">Maturity.</span>AI 编码工具从 demo 走向 daily driver</h2>
+    <div class="section-body">
+      <p>Cursor 4/21 的博客讨论他们怎么让应用保持稳定。<a class="src-inline" href="https://cursor.com/blog/app-stability" target="_blank">↗ Blog</a> 重要的不是他们做了什么具体工程决定，是<b>他们公开谈这件事这件事本身</b>——一家 AI 工具公司的官方博客过去一年都在讲新功能，这周开始讲"怎么让已有功能不崩"。</p>
+      <p>这是产品成熟度的信号。当一个工具开始公开谈稳定性工程时，意味着它的用户画像变了——早期是"想看看新奇东西"的 tech-curious，现在是"每天要用它上班"的 daily driver。用户的问题从"它还能做什么"变成"它今天为什么卡了"。产品团队的工作重心随之迁移：从"发新 feature"到"保护已有可用性"。</p>
+      <p>对做 AI 工具的 PM：这个转折很隐蔽但关键。**从你的用户开始抱怨"崩"而不是"不会"那一刻开始，你的产品实际上已经穿越了一个增长曲线的拐点**。增长曲线的下半段靠留存，不靠新奇——你得开始给工程排产稳定性预算，即使这在短期看不到 metric 涨幅。</p>
     </div>
   </section>
 
   <section class="article-section synthesis">
-    <div class="section-num">§ 03</div>
-    <h2 class="section-h"><span class="en">Synthesis.</span>这一波增长不是模型能力驱动，是 social proof 驱动</h2>
+    <div class="section-num">§ 04</div>
+    <h2 class="section-h"><span class="en">Synthesis.</span>新护城河：谁的产品更让人敢把关键流程交出去</h2>
     <div class="section-body">
-      <p>把这两条放到一起看，你会发现它们回答了一个正在浮现的问题——<b>agent 到底靠什么破圈</b>。</p>
-      <p>过去一年的默认假设是"模型更强 → 使用率上升"。但 agent 的落地呈现出另一种曲线：<b>用户敢不敢让 agent 干活，不由模型多强决定，由他们能不能看见"别人已经真的在用"决定</b>。这是一条 social proof 曲线，不是能力曲线。</p>
-      <p>所以 4/14 Cursor 这篇、4/10 Linear 这篇的真正产品作用不是技术披露，是 <b>social proof 基础设施</b>——它们把 agent 从"展台"变成"生产线"这件事可视化出来，让后面一波买家有东西可以指着说"像他们那样"。</p>
-      <p>对做 AI 产品的 PM 有两层启示：</p>
-      <p><b>第一，你的案例故事格式要更新</b>。过去一年管用的格式是"before 什么样 / after 什么样 / 提升百分之几"。下一阶段管用的格式是"<b>它在真实生产环境里长成什么样</b>"——怎么嵌入流程、怎么和人协作、怎么在出错时回滚。买家不再被绝对数字打动，他们被"看得见的日常"打动。</p>
-      <p><b>第二，公开透明 dogfooding 正在变成采购决策的显性变量</b>。买家的新问题不是"你们效果好不好"，而是"<b>你们自己用不用</b>"。如果你号称卖 AI 产品却不把自己团队挂在这个产品上，你的销售故事会越来越难讲。</p>
-      <p>一句话总结这一周：<b>agent 的下一程，不靠模型更强，靠"被看见在用"</b>。</p>
+      <p>把这三家放在一起看——HF 讲 openness、Vercel 讲 reliability、Cursor 讲 stability——它们其实在<b>说同一件事的三个侧面</b>：AI 产品的差异化已经从"能不能用"升级到"敢不敢用"。</p>
+      <p>过去两年赛道的竞争在"能不能"这一层：能不能写更长代码、能不能调用更多工具、能不能处理多模态。这一层的差距越来越小——能力被商品化了。所以现在浮出水面的竞争是"敢不敢"的这一层：</p>
+      <p><b>敢不敢让它 push 到生产？</b>——这是 stability 问题<br>
+      <b>敢不敢让它碰关键数据？</b>——这是 security 问题<br>
+      <b>敢不敢让它在我不在的时候自己跑？</b>——这是 reliability 问题</p>
+      <p>这三种"敢不敢"加起来是一个新的概念——<b>AI 产品的信任度</b>。它是护城河的下一个战场。过去决定用户选谁的是功能强度（谁的 AI 更聪明），未来决定用户选谁的是信任度（谁家出了事能接住、谁家 post-mortem 能看、谁家透明度高）。</p>
+      <p>对 PM 的两层实用建议：</p>
+      <p><b>第一，你的产品 roadmap 要有"信任建设"这一栏</b>。不是说每个 sprint 都要做安全功能，而是整体产品叙事里要显式体现"你对可靠性有态度"：uptime dashboard 公开、post-mortem 公开、agent 行为审计内建。这些不是用来打 feature 牌的，是用来建立信任地层的。</p>
+      <p><b>第二，你评估投资 / 并购标的时，要看信任维度</b>。过去看 benchmark + DAU，未来要看 uptime + post-mortem 质量 + 用户把 agent 接入关键流程的深度。一个 DAU 高但信任度低的产品，下一阶段会失去价值；一个 DAU 中等但用户真的把关键流程托付给它的产品，是下一阶段的价值新高地。</p>
+      <p>一句话总结：<b>能用，是 2024 的 criteria；敢用，是 2026 的 criteria</b>。</p>
     </div>
   </section>
 
   <div class="references">
-    <div class="ref-label">Sources · 2 References</div>
+    <div class="ref-label">Sources · 3 References</div>
 
-    <a class="ref-item" href="https://cursor.com/blog/multi-agent-kernels" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://huggingface.co/blog/cybersecurity-openness" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Cursor · Team</div>
-        <div class="ref-title">Speeding up GPU kernels by 38% with a multi-agent system</div>
+        <div class="ref-who">HuggingFace · 官方</div>
+        <div class="ref-title">AI and the Future of Cybersecurity: Why Openness Matters</div>
       </div>
-      <div class="ref-right">↗ Blog · 2026-04-14</div>
+      <div class="ref-right">↗ Blog · 2026-04-21</div>
     </a>
 
-    <a class="ref-item" href="https://linear.app/now/how-we-use-linear-agent-at-linear" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://vercel.com/blog/how-zo-computer-improved-ai-reliability-20x-on-vercel" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Rhea Purohit · Linear</div>
-        <div class="ref-title">How we use Linear Agent at Linear</div>
+        <div class="ref-who">Vercel · 官方</div>
+        <div class="ref-title">How Zo Computer improved AI reliability 20x on Vercel</div>
       </div>
-      <div class="ref-right">↗ Blog · 2026-04-10</div>
+      <div class="ref-right">↗ Blog · 2026-04-17</div>
+    </a>
+
+    <a class="ref-item" href="https://cursor.com/blog/app-stability" target="_blank" rel="noopener">
+      <div class="ref-left">
+        <div class="ref-who">Andrew & Kevin · Cursor</div>
+        <div class="ref-title">Keeping the Cursor app stable</div>
+      </div>
+      <div class="ref-right">↗ Blog · 2026-04-21</div>
     </a>
 
   </div>
@@ -367,7 +392,7 @@
 
 <div class="foot">
   <div>AI 早报 · Insight · 行业观察</div>
-  <div>Daily 005 · 2026-04-21</div>
+  <div>Daily 006 · 2026-04-22</div>
 </div>
 
 </body>

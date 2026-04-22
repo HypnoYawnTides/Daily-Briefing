@@ -183,9 +183,19 @@ Today's Briefing 三行速览:
    - page-meta: Issues 数 +1、最新日期更新
    - 顶部新增新期 Current 行（href="feed.html"）
    - 原 Current 行：去掉 "Current" tag、href 改为 `feed-NNN.html`
-8. 改 `builders.html`：topbar tag → 新期号
-9. 自检 grep：验所有新 href 都在候选池；验所有 `feed-NNN.html` 文件真实存在；验所有 insight 页 Back 链接有效
-10. `git status` 汇报改动面（预期 rename + 3M + 3U 左右）
+8. 改 `builders.html`（两部分）：
+   - **8a · topbar tag** → 新期号
+   - **8b · 更新追踪对象**（不要漏！）：
+     - 检查本期 feed.html 的 6 条 builder 动态，抽出里面的"作者"或"发布方"
+     - 对每个已在 builders.html 出现的 builder：更新 `.card-latest` 的 Latest title / meta（最新动态和日期），bump `.card-footer .count` 里的 N Entries 数字
+     - 对每个**新出现的 builder**，决定：
+       - **归入现有组织卡**（当"作者"是某公司员工且已有该公司的 org 卡）
+       - **开独立卡**（当作者有持续个人声音、或来自未追踪公司）
+     - 每层 >6 张卡要用 `<details class="more-cards">` 包裹超出部分，summary 文字："展开查看更多（N）"
+     - 更新 `.section-count`（X / Y）和 `.page-meta`："N Followed · 战略层 X · 产品层 Y · 跨 N 期累计 M 条 · 当期 K 条"（跨期累计 + 当期双交代）
+     - 注意：builder 是"组织"还是"个人"要保持项目原有选择（Altman / Karri 是个人，Cursor 团队是组织；保持不要混）
+9. 自检 grep：验所有新 href 都在候选池；验所有 `feed-NNN.html` 文件真实存在；验所有 insight 页 Back 链接有效；验 builders.html 的 section-count 和 page-meta 数字对齐
+10. `git status` 汇报改动面（预期 rename + 4M + 3U 左右，含 builders.html 的 M）
 
 ### 阶段 6 · 浏览器人工核验（打开后停下）
 

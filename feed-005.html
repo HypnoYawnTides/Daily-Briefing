@@ -320,6 +320,33 @@
     width: 100%;
   }
 
+  /* Toast for insight items */
+  .toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #1a1a1a;
+    color: #F1ECDF;
+    padding: 14px 22px;
+    font-family: "Noto Sans SC", sans-serif;
+    font-size: 13px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: all 240ms ease;
+    pointer-events: none;
+    max-width: 520px;
+    z-index: 100;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+  .toast .route {
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic;
+    color: rgba(241,236,223,0.72);
+    margin-top: 4px;
+    font-size: 12px;
+  }
+
   @media (max-width: 900px) {
     .topbar { grid-template-columns: auto auto; grid-template-rows: auto auto; }
     .top-brand { grid-row: 1; }
@@ -333,7 +360,7 @@
 </head>
 <body>
 
-<!-- TOPBAR -->
+<!-- TOPBAR: brand L | nav CENTER | tag R -->
 <div class="topbar">
   <div class="top-brand">
     <span class="brand-small">AI 早报</span>
@@ -344,16 +371,16 @@
     <a href="builders.html">Builders</a>
     <a href="archive.html">Archive</a>
   </nav>
-  <div class="top-tag">Daily · 006</div>
+  <div class="top-tag">Daily · 005</div>
 </div>
 
-<!-- MAIN -->
+<!-- MAIN: centered column, max-width 1100 -->
 <main class="main">
 
   <div class="page-head">
-    <h1 class="page-title">4 月 22 日 · 今日精选</h1>
+    <h1 class="page-title">4 月 21 日 · 今日精选</h1>
     <div class="page-meta">
-      <span>2026-04-22 Wed</span>
+      <span>2026-04-21 Tue</span>
       <span class="dot">·</span>
       <span>战略 3</span>
       <span class="dot">·</span>
@@ -361,17 +388,17 @@
       <span class="dot">·</span>
       <span>洞察 2</span>
       <span class="dot">·</span>
-      <span>11 Min Read</span>
+      <span>10 Min Read</span>
     </div>
   </div>
 
   <div class="briefing">
     <div class="briefing-label">Today's Briefing</div>
-    <h2 class="briefing-title">Vibe coding 进入信任审查期：安全和可靠性成为 AI 产品的新分水岭</h2>
+    <h2 class="briefing-title">Anthropic 一周三连发：模型公司开始下场做应用；Agent 在 Linear 和 Cursor 走进生产线</h2>
     <div class="briefing-lines">
-      <div><span class="briefing-num">01</span><span class="briefing-text">Replit 同周发 <b>Defense in Depth（4/20 Luis Chávez）+ Security Agent（4/21）</b>、Cursor 发"Keeping the app stable"（4/21）——三条"把稳定与安全当一等公民"的动作，Vibe coding 开始被当成需要全栈防御的 stack。</span></div>
-      <div><span class="briefing-num">02</span><span class="briefing-text">HuggingFace 喊 <b>"开放性才让 AI 更安全"</b>（4/21）+ Vercel 晒 Zo Computer 可靠性 20x（4/17）+ GitHub 改 Copilot Individual 定价（4/20）——三家不同位阶玩家各自把"信任 / 可靠性"讲成新决胜点。</span></div>
-      <div><span class="briefing-num">03</span><span class="briefing-text">洞察：当 Vibe coding 从 hype 走到"对用户负责"的阶段，<b>安全从 bonus 变成 AI 产品的新入场券</b>。</span></div>
+      <div><span class="briefing-num">01</span><span class="briefing-text">Anthropic 在 4 月中旬 <b>连发 Opus 4.7（4/16）+ Claude Design（4/17）+ Vas Narasimhan 入 LTBT 董事会（4/14）</b>——模型、应用、治理三线同时动作，集体姿态是"不再只做模型厂"。</span></div>
+      <div><span class="briefing-num">02</span><span class="briefing-text">Cursor 披露用 <b>multi-agent 系统把 GPU kernel 提速 38%</b>、Linear PM 发文复盘 <b>"我们自己在公司里怎么用 Linear Agent"</b>——同一周两条"agent 从 demo 走进生产线"的证据。</span></div>
+      <div><span class="briefing-num">03</span><span class="briefing-text">洞察：当"模型公司做应用"和"产品公司用 agent 造产品"两条叙事线互相走近，下游 AI 产品 PM 的护城河必须从"调用模型"升级到"调用之上还有什么"。</span></div>
     </div>
   </div>
 
@@ -383,57 +410,57 @@
       <span class="section-count">3 / 3</span>
     </div>
 
-    <a class="item" href="https://huggingface.co/blog/cybersecurity-openness" target="_blank" rel="noopener">
+    <a class="item" href="https://www.anthropic.com/news/claude-opus-4-7" target="_blank" rel="noopener">
       <div>
-        <div class="who-mono">HuggingFace</div>
-        <div class="who-sub">官方博客<br>立场声明</div>
+        <div class="who-mono">Anthropic</div>
+        <div class="who-sub">官方 News<br>产品发布</div>
       </div>
       <div>
-        <div class="body-title">AI and the Future of Cybersecurity：开放性才让 AI 更安全</div>
-        <div class="body-text">HuggingFace 在 4 月 21 日发文明确表达一个立场：<b>AI 安全问题不能靠"藏起来"解决，反而要靠"被更多人看到"</b>。对比当前 frontier 基座公司普遍走 closed-down 路径，HF 这篇像是一次开源阵营的姿态重申——开放不是漏洞源头，是审视漏洞的眼睛。对 toB PM：当你选择基座模型时，"开源 vs 闭源"的决策过去主要看成本 + 可定制，现在开始要带<b>安全论据</b>——哪边的漏洞被更多双眼睛看过、哪边的补丁响应链更短，会越来越进入买家的 checklist。</div>
-        <div class="body-tags"><span>#开源</span><span>#AI 安全</span><span>#基座选型</span></div>
+        <div class="body-title">Introducing Claude Opus 4.7：把"agent 能力"单独列成了一个 KPI 维度</div>
+        <div class="body-text">Anthropic 在 4 月 16 日发布 Opus 4.7，官方定位强调模型在 <b>coding / agents / vision / multi-step tasks</b> 四条轴线上"更强、更一致"。产品层面值得看的不是跑分——而是 agents 被单列成维度：模型厂商开始把"我的模型能不能当 agent 用"当成独立 KPI，不再是某任务的 side effect。对 PM 的直接映射：下次选基座模型时，你买的是综合能力还是"agent 专门调优"，这个问题从此有了单独回答。</div>
+        <div class="body-tags"><span>#模型迭代</span><span>#Agent 能力</span><span>#基座选型</span></div>
       </div>
       <div class="right-meta">
-        <div class="right-source-type"><span class="arrow">↗</span>Blog</div>
-        <div class="right-author">HuggingFace · 官方</div>
-        <div class="right-date">2026-04-21</div>
+        <div class="right-source-type"><span class="arrow">↗</span>News</div>
+        <div class="right-author">Anthropic · 官方</div>
+        <div class="right-date">2026-04-16</div>
         <div class="right-days">2 min</div>
       </div>
     </a>
 
-    <a class="item" href="https://vercel.com/blog/how-zo-computer-improved-ai-reliability-20x-on-vercel" target="_blank" rel="noopener">
+    <a class="item" href="https://www.anthropic.com/news/claude-design-anthropic-labs" target="_blank" rel="noopener">
       <div>
-        <div class="who-mono">Vercel</div>
-        <div class="who-sub">官方博客<br>客户案例</div>
+        <div class="who-mono">Anthropic Labs</div>
+        <div class="who-sub">官方 News<br>产品发布</div>
       </div>
       <div>
-        <div class="body-title">How Zo Computer improved AI reliability 20x on Vercel：infra 公司把 reliability 做成核心卖点</div>
-        <div class="body-text">Vercel 发了一篇"客户 Zo Computer 在我们平台上把 AI 可靠性提升 20 倍"的案例。数字可以打折看，重点是 <b>叙事的转变</b>——过去一年这类文章讲的都是"我们跑模型多快、多便宜"，现在讲的是"跑得稳"。可靠性开始成为 AI infrastructure 公司对外的核心卖点。对 PM：当基座模型能力趋同，决定用户"敢不敢用"的是跑模型的那一层；infra 选型未来要加一个维度——故障恢复、可观测性、稳定性保障。</div>
-        <div class="body-tags"><span>#AI infra</span><span>#可靠性</span><span>#基础设施竞争</span></div>
+        <div class="body-title">Introducing Claude Design：模型公司自己下场做应用层</div>
+        <div class="body-text">Opus 4.7 发布的第二天，Anthropic Labs 推出 Claude Design——一款用于"协作创建视觉产出（设计稿、原型、幻灯片、一页文档）"的产品，对标方向是 Cursor Canvas / ChatGPT Canvas / Figma Make。这不是一次普通新品发布，是一次 <b>位阶上移</b>：一家以"我做模型、你做应用"闻名的公司，自己下场做面向终端用户的应用。对下游 AI 产品 PM 的警示：你产品的护城河如果只是"把 API 包一层 UI"，那基座方可以随时从你底下抽牌。</div>
+        <div class="body-tags"><span>#模型公司产品化</span><span>#应用层竞争</span><span>#护城河</span></div>
       </div>
       <div class="right-meta">
-        <div class="right-source-type"><span class="arrow">↗</span>Blog</div>
-        <div class="right-author">Vercel · 官方</div>
+        <div class="right-source-type"><span class="arrow">↗</span>News</div>
+        <div class="right-author">Anthropic · Labs</div>
         <div class="right-date">2026-04-17</div>
         <div class="right-days">2 min</div>
       </div>
     </a>
 
-    <a class="item" href="https://github.blog/news-insights/company-news/changes-to-github-copilot-individual-plans/" target="_blank" rel="noopener">
+    <a class="item" href="https://www.anthropic.com/news/narasimhan-board" target="_blank" rel="noopener">
       <div>
-        <div class="who-mono">Joe Binder</div>
-        <div class="who-sub">GitHub<br>官方 Company News</div>
+        <div class="who-mono">Anthropic LTBT</div>
+        <div class="who-sub">官方 Announcement<br>治理层动态</div>
       </div>
       <div>
-        <div class="body-title">Changes to GitHub Copilot Individual plans：dev tool 进入"按价值分层"定价阶段</div>
-        <div class="body-text">GitHub 在 4 月 20 日调整了 Copilot Individual plans 的定价结构。表面是一次普通定价调整，深层是<b>商业模式信号</b>——dev tool 市场从"按席位按 token 粗算"进入"按信任 / 按价值分层定价"阶段。分层意味着不同用户愿为不同东西付钱：高阶用户付"Agent 能跑关键任务"，基础用户付"代码补全"。对 PM：定价变动是比产品发布更精确的战略信号——它告诉你哪些人群、哪些功能被公司认定为"真正有差异化价值"。</div>
-        <div class="body-tags"><span>#商业化</span><span>#dev tool</span><span>#定价战略</span></div>
+        <div class="body-title">前诺华 CEO Vas Narasimhan 加入 Anthropic Long-Term Benefit Trust 董事会</div>
+        <div class="body-text">这条动态看似是"董事会公告"，但战略位次不低——LTBT 是 Anthropic 特有的治理层，专门仲裁 AI 安全相关问题。挑一个从 <b>药厂</b>（另一个高度受监管行业）走出来的 CEO 进来，是一个信号：Anthropic 把自己未来可能面对的监管场景，在主动对标医药级别。做 toB AI 产品的国内 PM，合规参照系可能也要从"互联网标准"升级到"医药/金融标准"——这不是夸张，是基座厂商自己在这么对表。</div>
+        <div class="body-tags"><span>#AI 治理</span><span>#合规对标</span><span>#Anthropic</span></div>
       </div>
       <div class="right-meta">
-        <div class="right-source-type"><span class="arrow">↗</span>News</div>
-        <div class="right-author">GitHub · 官方</div>
-        <div class="right-date">2026-04-20</div>
-        <div class="right-days">2 min</div>
+        <div class="right-source-type"><span class="arrow">↗</span>Announcement</div>
+        <div class="right-author">Anthropic · LTBT</div>
+        <div class="right-date">2026-04-14</div>
+        <div class="right-days">1 min</div>
       </div>
     </a>
   </section>
@@ -446,56 +473,56 @@
       <span class="section-count">3 / 3</span>
     </div>
 
-    <a class="item" href="https://blog.replit.com/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack" target="_blank" rel="noopener">
+    <a class="item" href="https://cursor.com/blog/better-models-ambitious-work" target="_blank" rel="noopener">
       <div>
-        <div class="who-mono">Luis Héctor Chávez</div>
-        <div class="who-sub">Replit · 安全工程<br>官方博客</div>
-      </div>
-      <div>
-        <div class="body-title">Defense in Depth：Vibe coding 第一次被当成需要全栈防御的 stack</div>
-        <div class="body-text">Replit 的 Luis Chávez 发了一篇特别值得 PM 细读的长文——把 vibe coding 第一次当成 <b>可以建模的 stack</b> 来讨论。从生成代码的 AI、到运行代码的沙箱、到部署代码的权限，三层都要独立防御。Karpathy 在 2025 年初造出"vibe coding"这个词时它还是 hype 概念（"你跟 AI 聊聊它就帮你写代码"），一年之后，Luis 把它当成<b>需要产品责任的 stack</b> 来写。对做 AI 编码工具的 PM：你家买家以后问的不再是"你的 AI 写代码多聪明"，是"<b>你的沙箱怎么分层、权限怎么隔离</b>"——评估标准从能力侧滑到架构侧。</div>
-        <div class="body-tags"><span>#Vibe Coding</span><span>#安全架构</span><span>#Defense in Depth</span></div>
-      </div>
-      <div class="right-meta">
-        <div class="right-source-type"><span class="arrow">↗</span>Blog</div>
-        <div class="right-author">Replit · Security</div>
-        <div class="right-date">2026-04-20</div>
-        <div class="right-days">3 min</div>
-      </div>
-    </a>
-
-    <a class="item" href="https://blog.replit.com/meet-replit-security-agent" target="_blank" rel="noopener">
-      <div>
-        <div class="who-mono">Replit Team</div>
-        <div class="who-sub">官方博客<br>产品发布</div>
-      </div>
-      <div>
-        <div class="body-title">Meet Replit Security Agent：安全从 feature 升级到独立产品</div>
-        <div class="body-text">Replit 发布 Security Agent——专门监控 AI 生成代码安全问题的 agent。新品本身不是重点，<b>重点是"安全"作为功能升级到了独立产品</b>。过去一年 AI 安全工具大多是 IDE 里的一个小图标或 linter 里的一条规则；现在它是独立可买的 product。市场结构在变：<b>从"产品带安全"到"安全成产品"</b>。对 PM：当竞品开始把某个内嵌能力独立商业化，通常意味着这个能力的买家群体已经够大、愿意单独付钱——安全进入了这个阶段。</div>
-        <div class="body-tags"><span>#Agent 新品</span><span>#AI 安全</span><span>#市场结构</span></div>
-      </div>
-      <div class="right-meta">
-        <div class="right-source-type"><span class="arrow">↗</span>Blog</div>
-        <div class="right-author">Replit · Team</div>
-        <div class="right-date">2026-04-21</div>
-        <div class="right-days">2 min</div>
-      </div>
-    </a>
-
-    <a class="item" href="https://cursor.com/blog/app-stability" target="_blank" rel="noopener">
-      <div>
-        <div class="who-mono">Andrew & Kevin</div>
+        <div class="who-mono">Luke Melas-Kyriazi</div>
         <div class="who-sub">Cursor / Anysphere<br>官方博客</div>
       </div>
       <div>
-        <div class="body-title">Keeping the Cursor app stable：AI 工具公司开始公开谈"稳定性工程"</div>
-        <div class="body-text">Cursor 团队的 Andrew & Kevin 发文讨论他们如何保持应用的稳定。<b>这类"工程反思型"文章在 AI 工具公司里是比较新的</b>——过去一年 Cursor 的发文大都是"我们又发了什么新功能"，这周开始讲"我们怎么让已有功能不崩"。对 PM：这是产品成熟度的信号。当一个工具公司公开谈稳定性工程时，意味着用户对"每天都能用"的期待已经超过了对"新奇功能"的兴趣——从"demo 阶段"过渡到"daily driver 阶段"的分水岭。</div>
-        <div class="body-tags"><span>#工程反思</span><span>#稳定性</span><span>#产品成熟度</span></div>
+        <div class="body-title">Better AI models enable more ambitious work：评估下一代模型，该算哪本账</div>
+        <div class="body-text">Luke 在 Cursor 博客写了一篇产品观察：模型每提升一代，真正的红利不是让原有任务做得更好，而是让一整批"以前想都没想过"的任务变得可能——<b>更强的模型 → 更野心的工作</b>。对 PM 的映射：评估是否接入下一代模型时，默认算账逻辑是"省多少 token / 快多少毫秒"，但真正关键的账是"能打开哪些以前做不了的使用场景"。前者是节流，后者是开源。</div>
+        <div class="body-tags"><span>#模型升级</span><span>#用例扩张</span><span>#PM 决策</span></div>
       </div>
       <div class="right-meta">
         <div class="right-source-type"><span class="arrow">↗</span>Blog</div>
         <div class="right-author">Cursor · Team</div>
-        <div class="right-date">2026-04-21</div>
+        <div class="right-date">2026-04-15</div>
+        <div class="right-days">2 min</div>
+      </div>
+    </a>
+
+    <a class="item" href="https://cursor.com/blog/multi-agent-kernels" target="_blank" rel="noopener">
+      <div>
+        <div class="who-mono">Cursor 团队</div>
+        <div class="who-sub">Anysphere<br>官方技术博客</div>
+      </div>
+      <div>
+        <div class="body-title">Speeding up GPU kernels by 38% with a multi-agent system：Agent 真的跑进了性能关键工程环节</div>
+        <div class="body-text">Cursor 团队披露他们用一套 multi-agent 系统给 CUDA kernel 自动提速 38%。这类"我们内部用 agent 做了个什么"的发文最近几周突然变多，意义在于：<b>agent 第一次真实地进入了公司内部的性能关键工程环节</b>，不再只是演 demo。对做 AI 工具类 PM：你的用户正在从"好奇 agent"过渡到"敢让 agent 干关键活"，产品里的"置信度展示"和"过程可观测"会从锦上添花变成决定性功能。</div>
+        <div class="body-tags"><span>#Agent 落地</span><span>#Production 化</span><span>#可观测</span></div>
+      </div>
+      <div class="right-meta">
+        <div class="right-source-type"><span class="arrow">↗</span>Blog</div>
+        <div class="right-author">Cursor · Team</div>
+        <div class="right-date">2026-04-14</div>
+        <div class="right-days">2 min</div>
+      </div>
+    </a>
+
+    <a class="item" href="https://linear.app/now/how-we-use-linear-agent-at-linear" target="_blank" rel="noopener">
+      <div>
+        <div class="who-mono">Rhea Purohit</div>
+        <div class="who-sub">Linear · PM<br>官方博客</div>
+      </div>
+      <div>
+        <div class="body-title">How we use Linear Agent at Linear：工具公司的"吃自家狗粮"正在变成新合规要求</div>
+        <div class="body-text">Linear 产品经理 Rhea Purohit 发文记录 Linear 自己团队如何使用 Linear Agent——哪些场景派 agent、哪些保留人工判断、agent 输出如何进入人的 triage 流。文章像一份"产品自用说明书"。对做 PM 工具的同行是一面镜子：当你号称"用 agent 重做 SaaS"，你自己的团队有没有先把自家产品里的 agent 用顺？这篇的产品意义不在具体做法，在于<b>它存在本身</b>——Linear 在公开示范"我们自己吃自己的 agent 狗粮"，而这件事正在变成一类工具公司的新合规要求。</div>
+        <div class="body-tags"><span>#Dogfooding</span><span>#Agent 落地</span><span>#PM 工具</span></div>
+      </div>
+      <div class="right-meta">
+        <div class="right-source-type"><span class="arrow">↗</span>Blog</div>
+        <div class="right-author">Linear · PM</div>
+        <div class="right-date">2026-04-10</div>
         <div class="right-days">2 min</div>
       </div>
     </a>
@@ -509,38 +536,38 @@
       <span class="section-count">2 / 2</span>
     </div>
 
-    <a class="item insight" href="insight-vibe-coding-trust-review.html">
+    <a class="item insight" href="insight-anthropic-productizing.html">
       <div>
         <div class="who-mono">主题聚合</div>
-        <div class="who-sub">涉及 Replit 两条动态</div>
+        <div class="who-sub">涉及 Anthropic 三条动态</div>
       </div>
       <div>
-        <div class="body-title">Vibe coding 进入信任审查期：从 hype 概念到需要产品责任的 stack</div>
-        <div class="body-text">两条 4/20-21 的 Replit 动作串起来是一次姿态重排：Luis Chávez 的 Defense in Depth 长文 + 产品化的 Security Agent。从 Karpathy 2025 年初造词至今一年，<b>vibe coding 第一次被当成需要全栈防御的产品</b>，而不是炫技 demo。对做 AI 编码工具的 PM：从 hype 到 production 的分水岭不是能力而是责任——终于到了对谁输掉的代码负责、对谁跑失的沙箱负责、对谁被误操作的生产环境负责的时刻。你产品的 buying criteria 开始含"沙箱怎么分层"。</div>
-        <div class="body-tags"><span>#Vibe Coding</span><span>#产品责任</span><span>#分水岭</span></div>
+        <div class="body-title">模型公司开始做产品：Anthropic 一周三连发的位阶重排</div>
+        <div class="body-text">Opus 4.7（4/16）到 Claude Design（4/17）之间只间隔一天；再叠上 4/14 的 Narasimhan 入 LTBT 董事会——Anthropic 这一周把"模型 / 应用 / 治理"三条线同步往前推。对下游 AI 产品 PM：当你的基座厂商自己下场做应用时，你的护城河必须从"调用模型"升级到"调用之上还有什么"，否则很容易被基座吸走。对 toB PM：当基座厂商的治理规格在主动对标医药级别，你产品的合规叙事窗口也在被一起抬高。</div>
+        <div class="body-tags"><span>#模型公司产品化</span><span>#护城河</span><span>#合规</span></div>
       </div>
       <div class="right-meta">
         <div class="right-source-type"><span class="arrow">↗</span>聚合页</div>
         <div class="right-author">INSIGHT</div>
-        <div class="right-date">涉及 2 条</div>
+        <div class="right-date">涉及 3 条</div>
         <div class="right-days">3 min</div>
       </div>
     </a>
 
-    <a class="item insight" href="insight-reliability-as-differentiator.html">
+    <a class="item insight" href="insight-agent-to-production.html">
       <div>
         <div class="who-mono">行业观察</div>
-        <div class="who-sub">涉及 HF / Vercel / Cursor</div>
+        <div class="who-sub">涉及 Cursor / Linear</div>
       </div>
       <div>
-        <div class="body-title">安全/可靠性成为 AI 产品的新差异化：从可用性竞争升级到信任度竞争</div>
-        <div class="body-text">HF 4/21 说"开放性才是安全的来源"、Vercel 4/17 用客户案例晒"可靠性 20x"、Cursor 4/21 反思"如何让自家应用保持稳定"——三家不同位阶玩家同一周不约而同把"信任/可靠性"讲成差异化卖点。<b>模型能力趋同之后，新的护城河不是"谁的模型更强"，是"谁的产品更让人敢把关键流程交出去"</b>。对 PM：这影响投资 / 并购的评估维度，过去看 benchmark + DAU，未来要看 uptime + post-mortem 质量 + 用户把 agent 接入关键流程的深度。</div>
-        <div class="body-tags"><span>#信任度</span><span>#差异化</span><span>#可靠性经济</span></div>
+        <div class="body-title">Agent 从 Demo 走进 Production：这一周两条"真实在用"的证据</div>
+        <div class="body-text">4/14 Cursor 用 multi-agent 系统给自己的 GPU kernel 提速 38%、4/10 Linear 团队发文复盘"我们怎么在公司里用 Linear Agent"——同一周两条"agent 走进生产环境"的证据。过去一年 agent 叙事大多停留在 demo / 跑分 / showcase，最近几周开始变成"它在我们生产里长成什么样"。对做 AI 产品的 PM：用户对 agent 的心理正在从"新奇"过渡到"放心敢用"，而这个过渡不靠模型更强驱动，靠的是 social proof——"别人已经真的在用"。</div>
+        <div class="body-tags"><span>#Agent 落地</span><span>#Production</span><span>#Social Proof</span></div>
       </div>
       <div class="right-meta">
         <div class="right-source-type"><span class="arrow">↗</span>聚合页</div>
         <div class="right-author">INSIGHT</div>
-        <div class="right-date">涉及 3 家</div>
+        <div class="right-date">涉及 2 组</div>
         <div class="right-days">3 min</div>
       </div>
     </a>
@@ -549,7 +576,7 @@
 </main>
 
 <div class="foot">
-  <div>AI 早报 · Daily Briefing No. 006</div>
+  <div>AI 早报 · Daily Briefing No. 005</div>
   <div>Internal · Product Team · 2026</div>
 </div>
 
