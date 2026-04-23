@@ -268,100 +268,107 @@
     <a href="builders.html">Builders</a>
     <a href="archive.html">Archive</a>
   </nav>
-  <div class="top-tag">Daily · 006</div>
+  <div class="top-tag">Daily · 007</div>
 </div>
 
 <main class="main">
 
-  <a class="back-link" href="feed-006.html">
-    <span class="arrow">←</span> Back to Daily 006
+  <a class="back-link" href="feed.html">
+    <span class="arrow">←</span> Back to Daily 007
   </a>
 
   <div class="kicker">Insight · 主题聚合</div>
 
-  <h1 class="article-title">Vibe coding 进入信任审查期：从 hype 概念到需要产品责任的 stack</h1>
-  <div class="article-sub-en">When the vibe becomes a responsibility.</div>
+  <h1 class="article-title">AI 编码工具的垂直整合：从调模型到炼模型</h1>
+  <div class="article-sub-en">When the tool maker becomes the model maker.</div>
 
   <div class="article-meta">
-    <span>Daily 006</span>
-    <span>2026-04-22</span>
+    <span>Daily 007</span>
+    <span>2026-04-23</span>
     <span>2 Sources</span>
     <span>4 Min Read</span>
   </div>
 
   <div class="lede">
-    Replit 在 4 月 20-21 的两次公开动作——Luis Chávez 的《Defense in Depth》长文 + 产品化的 Security Agent——串起来看是一次姿态重排。Karpathy 2025 年初造出 "vibe coding" 这个词至今一年，它第一次被当成<b>需要全栈防御的 stack</b>，而不是炫技 demo。
+    Cursor 在 4/21 宣布用 xAI 的 Colossus 基础设施自炼模型，4/23 发布 NAB 6000 开发者标准化部署案例。两件事串起来是一个完整的垂直整合叙事：<b>向上整合算力和模型训练能力，向下锁定企业客户</b>。AI 编码工具公司正从"中间层调用者"走向"垂直整合平台"。
   </div>
 
   <div class="builder-row">
-    <a class="builder-badge" href="https://blog.replit.com/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack" target="_blank" rel="noopener">
-      <span class="mono">LC</span>
-      <span>Luis Chávez</span>
-      <span style="color:#888">· Replit</span>
+    <a class="builder-badge" href="https://cursor.com/blog/spacex-model-training" target="_blank" rel="noopener">
+      <span class="mono">CT</span>
+      <span>Model Training</span>
+      <span style="color:#888">· Cursor</span>
     </a>
-    <a class="builder-badge" href="https://blog.replit.com/meet-replit-security-agent" target="_blank" rel="noopener">
-      <span class="mono">SA</span>
-      <span>Security Agent</span>
-      <span style="color:#888">· Replit</span>
+    <a class="builder-badge" href="https://cursor.com/blog/nab" target="_blank" rel="noopener">
+      <span class="mono">NAB</span>
+      <span>Enterprise Case</span>
+      <span style="color:#888">· Cursor</span>
     </a>
   </div>
 
   <section class="article-section">
     <div class="section-num">§ 01</div>
-    <h2 class="section-h"><span class="en">Stack.</span>Vibe coding 第一次被当成可建模的三层 stack</h2>
+    <h2 class="section-h"><span class="en">Upstream.</span>从调 API 到自研模型：工具公司的上游整合</h2>
     <div class="section-body">
-      <p>Luis Chávez 的文章里，vibe coding 不再是"你跟 AI 聊聊它就帮你写代码"的模糊描述，而是一个有明确架构的 stack：<b>生成代码的 AI 层 / 运行代码的沙箱层 / 部署代码的权限层</b>。每一层都有自己的失败模式，都需要独立防御。<a class="src-inline" href="https://blog.replit.com/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack" target="_blank">↗ Blog</a></p>
-      <p>这个框架把一个抽象的 buzzword 变成了产品术语。过去谈 vibe coding 没有共同词汇——每家的"AI 写代码"都不一样，买家也说不出自己想要什么。现在有了 stack 视角，讨论就可以变得精确：<b>你家的沙箱隔离到什么程度？你的 AI 层和部署层之间有 human-in-the-loop 吗？权限粒度是 repo 级还是 file 级？</b> 这些问题是 stack 被建模后才能被提出来的。</p>
-      <div class="pull-quote">"vibe coding 终于有了可以和甲方 checklist 对齐的词汇表。"</div>
+      <p>过去一年，AI 编码工具的竞争焦点是"中间层能力"——谁的 context 管理好、谁的 prompt 写得好、谁在 IDE 里的体验流畅。模型本身是"调来用的"，大家接的都是 GPT-4 / Claude / Gemini，差异化空间有限。<a class="src-inline" href="https://cursor.com/blog/spacex-model-training" target="_blank">↗ Blog</a></p>
+      <p>Cursor 的 Composer 系列改变了这个等式。从首代 Composer 到 Composer 2，强化学习规模扩大 20 倍+，以远低于同类模型的成本达到前沿水平。现在拿到 xAI Colossus 的算力支持，意味着它有条件把训练规模再推一个量级。</p>
+      <p><b>这是 AI 编码工具赛道第一次出现"工具公司自己炼模型"的明确信号</b>。过去这类公司和基座模型公司是上下游关系（你提供模型，我做好工程化），现在边界开始模糊——Cursor 既是工具公司又是模型公司。</p>
+      <div class="pull-quote">"当工具公司开始拥有自己的模型训练能力，'你家接的哪个 API'不再是核心问题。"</div>
     </div>
   </section>
 
   <section class="article-section">
     <div class="section-num">§ 02</div>
-    <h2 class="section-h"><span class="en">Product.</span>Security 从 feature 升到独立 agent</h2>
+    <h2 class="section-h"><span class="en">Downstream.</span>从个人试用到万人标准化：工具公司的下游锁定</h2>
     <div class="section-body">
-      <p>同一天 Replit 发布 Security Agent——一个**独立的、监控 AI 生成代码安全问题的 agent**。这是一个产品化层面的 signal。<a class="src-inline" href="https://blog.replit.com/meet-replit-security-agent" target="_blank">↗ Blog</a></p>
-      <p>过去一年 AI 安全工具大多嵌在 IDE 里做一条 linter 规则或一个小图标；现在它是独立 product，甚至是独立定价的 agent。这通常意味着市场结构的微调：<b>某个买家群体已经足够大、愿意单独为这个能力付钱</b>。Replit 把 Security 单拎出来做 agent，不是在 feature 层面做差异化，是在 <b>产品品类层面</b> 做差异化——它在赌："会有一批买家愿意为'专门有 AI 安全监控'这件事付钱"。</p>
-      <p>对做 AI 编码工具的 PM：盯住竞品"内嵌能力独立商业化"的动作。那个动作是一个市场发出的信号——某能力已经进入"愿意独立付费"的成熟度。如果你的工具里也有类似能力（agent 行为审计、权限细粒度、沙箱日志可视化），可能到了独立包装的时候。</p>
+      <p>NAB 的案例提供了另一半拼图。一家管理着数千亿资产的澳大利亚银行，在评估了 Amazon Q 和 GitHub Copilot 之后，选择将 6000+ 开发者标准化到 Cursor，并计划扩至 10000+。<a class="src-inline" href="https://cursor.com/blog/nab" target="_blank">↗ Case Study</a></p>
+      <p>几个值得注意的数据点：<b>Assembly 大型机迁移提速 3 倍</b>（此前因缺 Assembly 人才而搁置多年）、<b>3 周完成原计划 4 个月的支付 app</b>（团队此前无 Kotlin/Android 经验）、首席工程师 Chris De Lorenzo 称"开发速度提升 5-8x，但关键是——我们以前根本不会尝试"。</p>
+      <p>对 PM 来说，最重要的不是这些加速数字，而是<b>采用路径的变化</b>。AI 编码工具过去的增长模式是 bottom-up——个人开发者觉得好用 → 团队开始用 → 公司默许。NAB 的模式是 top-down——IT 战略层面做评估、做选型、做标准化部署。这意味着 <b>buying criteria 升级了</b>：不再只是"写代码多快"，还要看安全审查、合规对接、管理可控性。</p>
+    </div>
+  </section>
+
+  <section class="article-section">
+    <div class="section-num">§ 03</div>
+    <h2 class="section-h"><span class="en">Pattern.</span>垂直整合的经典路径：上游控制 + 下游锁定</h2>
+    <div class="section-body">
+      <p>把 Cursor 这两件事放在一起看，会发现一个经典的<b>垂直整合路径</b>：</p>
+      <p><b>向上</b>：拥有算力 → 自炼模型 → 模型性能不依赖第三方，不受"OpenAI 涨价 / Claude 限速"的上游风险。<br>
+      <b>向下</b>：锁定企业客户 → 标准化部署 → 迁移成本变高，客户黏性增强。</p>
+      <p>这个路径在科技史上反复出现：Apple 从组装 PC 到自研芯片 + 控制零售渠道，Salesforce 从 CRM SaaS 到收购 MuleSoft + 控制数据集成，Tesla 从买电池到自建 Gigafactory + 直营销售。<b>每一次垂直整合的共同逻辑是：中间层做到极致后，必然向上下游扩张</b>。</p>
+      <p>Cursor 目前处在这个路径的早期——模型训练还在用合作方的算力（xAI Colossus），企业客户的标准化部署是一个 case 而非普遍现象。但方向已经很明确。</p>
     </div>
   </section>
 
   <section class="article-section synthesis">
-    <div class="section-num">§ 03</div>
-    <h2 class="section-h"><span class="en">Synthesis.</span>分水岭不是能力，是责任</h2>
+    <div class="section-num">§ 04</div>
+    <h2 class="section-h"><span class="en">Synthesis.</span>对 PM 意味着什么</h2>
     <div class="section-body">
-      <p>把这两件事放在一起，会发现一个不太好听但对 PM 特别重要的真相：<b>vibe coding 的下一程不是"AI 写得更好"，是"谁来对后果负责"</b>。</p>
-      <p>过去一年比赛的是"AI 能写多复杂的代码"——上下文窗口、多文件编辑、repo 级理解。那条赛道的冠军很明确（Cursor / Claude Code / Replit Agent 都在同一梯队），差距也越来越小。但赛道之外冒出来的新问题，是一年前没人问的：</p>
-      <p><b>你输出的代码谁负责？</b> 如果 AI 写的代码带 SQL 注入，被攻击，账由谁担？<br>
-      <b>你的沙箱跑谁的任务？</b> 如果用户要 AI 执行"我们生产 DB 备份一下"，sandbox 有没有边界？<br>
-      <b>你的部署权限给谁？</b> 如果 AI 一键 push 到生产，谁来 review、回滚？</p>
-      <p>这三个问题是 vibe coding 从 hype 到 production 必须回答的。Luis 的 Defense in Depth 从架构侧回答；Security Agent 从产品侧回答。两个动作合起来是一个信号：<b>Replit 已经把 vibe coding 当成"对用户负责的产品"来维护</b>，而不是一个 demo 时期的炫技 feature。</p>
-      <p>对 PM 的最终映射：你在评估 AI 编码工具（给自己团队用 or 作为产品参考）时，<b>buying criteria 需要升级</b>。过去问"它写得多聪明"，未来要问：</p>
-      <p>1. 沙箱是每个 session 独立的吗？还是共享的？<br>
-      2. 生产环境部署有没有 human-in-the-loop？<br>
-      3. 有没有 agent 行为审计？出问题后能查到谁让它做了什么？<br>
-      4. 权限最小化是怎么做的？AI 能 sudo 吗？</p>
-      <p>这不是安全工程师的问题，是 PM 在产品决策时就要纳入的 criteria。因为 <b>一旦这些问题出事，负责的是产品，不是安全部门</b>。</p>
+      <p>如果你在评估 AI 编码工具（给自己团队用或作为竞品参考），<b>决策维度需要升级</b>：</p>
+      <p>1. <b>模型自研 vs 调用</b>：工具的核心智能是自研的还是调第三方 API？自研意味着性能迭代不受上游节奏限制，但也意味着研发成本更高、模型 diversity 可能更低。<br>
+      2. <b>算力来源</b>：自研模型的算力从哪来？自建、合作、还是按需购买？这决定了工具公司在 AI winter（如果来的话）的生存能力。<br>
+      3. <b>企业锁定深度</b>：标准化部署后，迁移成本有多高？数据 / 配置 / 工作流的可移植性如何？<br>
+      4. <b>上下游风险</b>：纯 API wrapper 类工具面临上游涨价 / 限速的风险，垂直整合类工具面临"自研模型不如第三方好"的风险。两种风险的对冲方式不同。</p>
+      <p><b>底线判断</b>：AI 编码工具赛道正在从"中间层工程化竞争"进入"垂直整合平台竞争"。纯粹靠 prompt engineering + context management 做差异化的窗口期在收窄。</p>
     </div>
   </section>
 
   <div class="references">
     <div class="ref-label">Sources · 2 References</div>
 
-    <a class="ref-item" href="https://blog.replit.com/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://cursor.com/blog/spacex-model-training" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Luis Héctor Chávez · Replit</div>
-        <div class="ref-title">Defense in Depth: How Replit Secures Every Layer of the Vibe Coding Stack</div>
-      </div>
-      <div class="ref-right">↗ Blog · 2026-04-20</div>
-    </a>
-
-    <a class="ref-item" href="https://blog.replit.com/meet-replit-security-agent" target="_blank" rel="noopener">
-      <div class="ref-left">
-        <div class="ref-who">Replit Team</div>
-        <div class="ref-title">Meet Replit Security Agent</div>
+        <div class="ref-who">Cursor Team · Anysphere</div>
+        <div class="ref-title">Cursor partners with SpaceX on model training</div>
       </div>
       <div class="ref-right">↗ Blog · 2026-04-21</div>
+    </a>
+
+    <a class="ref-item" href="https://cursor.com/blog/nab" target="_blank" rel="noopener">
+      <div class="ref-left">
+        <div class="ref-who">Cursor Team · Anysphere</div>
+        <div class="ref-title">National Australia Bank accelerates legacy migrations with Cursor</div>
+      </div>
+      <div class="ref-right">↗ Case Study · 2026-04-23</div>
     </a>
 
   </div>
@@ -370,7 +377,7 @@
 
 <div class="foot">
   <div>AI 早报 · Insight · 主题聚合</div>
-  <div>Daily 006 · 2026-04-22</div>
+  <div>Daily 007 · 2026-04-23</div>
 </div>
 
 </body>

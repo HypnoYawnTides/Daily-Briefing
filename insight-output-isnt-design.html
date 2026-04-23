@@ -268,100 +268,107 @@
     <a href="builders.html">Builders</a>
     <a href="archive.html">Archive</a>
   </nav>
-  <div class="top-tag">Daily · 006</div>
+  <div class="top-tag">Daily · 007</div>
 </div>
 
 <main class="main">
 
-  <a class="back-link" href="feed-006.html">
-    <span class="arrow">←</span> Back to Daily 006
+  <a class="back-link" href="feed.html">
+    <span class="arrow">←</span> Back to Daily 007
   </a>
 
-  <div class="kicker">Insight · 主题聚合</div>
+  <div class="kicker">Insight · 行业观察</div>
 
-  <h1 class="article-title">Vibe coding 进入信任审查期：从 hype 概念到需要产品责任的 stack</h1>
-  <div class="article-sub-en">When the vibe becomes a responsibility.</div>
+  <h1 class="article-title">产出≠设计：AI 加速时代的慢思考</h1>
+  <div class="article-sub-en">Output isn't design — understanding is.</div>
 
   <div class="article-meta">
-    <span>Daily 006</span>
-    <span>2026-04-22</span>
+    <span>Daily 007</span>
+    <span>2026-04-23</span>
     <span>2 Sources</span>
     <span>4 Min Read</span>
   </div>
 
   <div class="lede">
-    Replit 在 4 月 20-21 的两次公开动作——Luis Chávez 的《Defense in Depth》长文 + 产品化的 Security Agent——串起来看是一次姿态重排。Karpathy 2025 年初造出 "vibe coding" 这个词至今一年，它第一次被当成<b>需要全栈防御的 stack</b>，而不是炫技 demo。
+    Qwen3.6-27B 用 27B 参数达到旗舰级编码水平——AI 的产出速度正在被极致压缩。同一周，Linear CEO Karri Saarinen 写下「Output isn't design」：<b>AI 工具让产出更快，但不帮你理解问题</b>。一边是产出成本趋零的加速度，另一边是"快的产出不是设计"的刹车声。
   </div>
 
   <div class="builder-row">
-    <a class="builder-badge" href="https://blog.replit.com/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack" target="_blank" rel="noopener">
-      <span class="mono">LC</span>
-      <span>Luis Chávez</span>
-      <span style="color:#888">· Replit</span>
+    <a class="builder-badge" href="https://simonwillison.net/2026/Apr/22/qwen36-27b/" target="_blank" rel="noopener">
+      <span class="mono">SW</span>
+      <span>Qwen3.6-27B</span>
+      <span style="color:#888">· Willison</span>
     </a>
-    <a class="builder-badge" href="https://blog.replit.com/meet-replit-security-agent" target="_blank" rel="noopener">
-      <span class="mono">SA</span>
-      <span>Security Agent</span>
-      <span style="color:#888">· Replit</span>
+    <a class="builder-badge" href="https://linear.app/now/output-isn-t-design" target="_blank" rel="noopener">
+      <span class="mono">KS</span>
+      <span>Output isn't design</span>
+      <span style="color:#888">· Saarinen</span>
     </a>
   </div>
 
   <section class="article-section">
     <div class="section-num">§ 01</div>
-    <h2 class="section-h"><span class="en">Stack.</span>Vibe coding 第一次被当成可建模的三层 stack</h2>
+    <h2 class="section-h"><span class="en">Faster.</span>27B 参数写出旗舰级代码：产出速度的极致压缩</h2>
     <div class="section-body">
-      <p>Luis Chávez 的文章里，vibe coding 不再是"你跟 AI 聊聊它就帮你写代码"的模糊描述，而是一个有明确架构的 stack：<b>生成代码的 AI 层 / 运行代码的沙箱层 / 部署代码的权限层</b>。每一层都有自己的失败模式，都需要独立防御。<a class="src-inline" href="https://blog.replit.com/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack" target="_blank">↗ Blog</a></p>
-      <p>这个框架把一个抽象的 buzzword 变成了产品术语。过去谈 vibe coding 没有共同词汇——每家的"AI 写代码"都不一样，买家也说不出自己想要什么。现在有了 stack 视角，讨论就可以变得精确：<b>你家的沙箱隔离到什么程度？你的 AI 层和部署层之间有 human-in-the-loop 吗？权限粒度是 repo 级还是 file 级？</b> 这些问题是 stack 被建模后才能被提出来的。</p>
-      <div class="pull-quote">"vibe coding 终于有了可以和甲方 checklist 对齐的词汇表。"</div>
+      <p>Qwen3.6-27B 是一个有标志意义的节点。它用 27B 参数的稠密架构，在所有主要编码基准上超越了上一代 397B MoE 旗舰（Qwen3.5-397B-A17B）。模型体积从 807GB 缩到 55.6GB，量化版仅 16.8GB，可以在个人电脑上本地运行。<a class="src-inline" href="https://simonwillison.net/2026/Apr/22/qwen36-27b/" target="_blank">↗ Blog</a></p>
+      <p>Simon Willison 在本地测评后称结果"outstanding"——一个 16.8GB 的模型就能生成结构精确的 SVG 图形，速度约 25 tokens/s。</p>
+      <p>这意味着什么？<b>"小模型 = 弱模型"的等式被打破</b>。过去选择"本地跑小模型"意味着接受能力折扣，现在本地模型也能达到旗舰水平。产出的门槛进一步降低——不需要 API、不需要付费、不需要网络，一台笔记本就能写出前沿水平的代码。</p>
     </div>
   </section>
 
   <section class="article-section">
     <div class="section-num">§ 02</div>
-    <h2 class="section-h"><span class="en">Product.</span>Security 从 feature 升到独立 agent</h2>
+    <h2 class="section-h"><span class="en">Slower.</span>Karri 说：形式不等于解决方案</h2>
     <div class="section-body">
-      <p>同一天 Replit 发布 Security Agent——一个**独立的、监控 AI 生成代码安全问题的 agent**。这是一个产品化层面的 signal。<a class="src-inline" href="https://blog.replit.com/meet-replit-security-agent" target="_blank">↗ Blog</a></p>
-      <p>过去一年 AI 安全工具大多嵌在 IDE 里做一条 linter 规则或一个小图标；现在它是独立 product，甚至是独立定价的 agent。这通常意味着市场结构的微调：<b>某个买家群体已经足够大、愿意单独为这个能力付钱</b>。Replit 把 Security 单拎出来做 agent，不是在 feature 层面做差异化，是在 <b>产品品类层面</b> 做差异化——它在赌："会有一批买家愿意为'专门有 AI 安全监控'这件事付钱"。</p>
-      <p>对做 AI 编码工具的 PM：盯住竞品"内嵌能力独立商业化"的动作。那个动作是一个市场发出的信号——某能力已经进入"愿意独立付费"的成熟度。如果你的工具里也有类似能力（agent 行为审计、权限细粒度、沙箱日志可视化），可能到了独立包装的时候。</p>
+      <p>就在 AI 产出速度被极致压缩的同一周，Linear CEO Karri Saarinen 写了一篇反方向的文章。他的核心论点用一句话概括：<b>设计不是产出，设计是理解问题</b>。<a class="src-inline" href="https://linear.app/now/output-isn-t-design" target="_blank">↗ Essay</a></p>
+      <p>他引用 Christopher Alexander 在《形式综合论》中的框架——设计是寻找"形式与其语境之间的良好契合"。语境不是背景条件，而是构成问题的全部力量：人的需求、技术约束、冲突的要求、边缘情况。</p>
+      <p>关于 AI 工具，他的判断很直接："They generate outputs, instead first trying to shape the problem or the form to the real conditions of the problem." AI 工具加速了产出，但<b>加剧了"把产出等同于设计"的误解</b>。</p>
+      <p>他更偏好手动视觉设计——不是因为"手工 = 好"，而是因为<b>慢的过程让思考与工作同步</b>。就像写作帮助整理思维，而让 AI 代写"usually does not rearrange your thinking"。</p>
+      <div class="pull-quote">"The risk is mistaking generated form for solved problems."</div>
+    </div>
+  </section>
+
+  <section class="article-section">
+    <div class="section-num">§ 03</div>
+    <h2 class="section-h"><span class="en">Line.</span>什么该加速，什么该保护性放慢</h2>
+    <div class="section-body">
+      <p>把这两件事放在一起，会发现一个对 PM 特别有用的框架：<b>不是所有工作都应该被 AI 加速</b>。</p>
+      <p>有些工作天然适合加速——代码生成、CVE 补丁、格式转换、数据清洗。这些工作的价值在于"做完"，速度就是一切。Qwen3.6-27B 在这个方向上的进步是纯正面的。</p>
+      <p>有些工作天然需要慢——问题定义、用户理解、架构决策、产品策略。这些工作的价值不在于"做完"，在于"想透"。Karri 说的"手动视觉设计"不是反技术，是<b>保护"思考与工作同步"这个过程</b>。</p>
+      <p>关键问题是：<b>这条线画在哪</b>？哪些环节交给 AI 越快越好，哪些环节需要人类有意地放慢？</p>
+      <p>一个粗略但实用的判断标准：<b>如果这个环节的目的是"生成已知答案的具体形式"，加速它；如果目的是"理解一个尚未被充分定义的问题"，保护它</b>。</p>
     </div>
   </section>
 
   <section class="article-section synthesis">
-    <div class="section-num">§ 03</div>
-    <h2 class="section-h"><span class="en">Synthesis.</span>分水岭不是能力，是责任</h2>
+    <div class="section-num">§ 04</div>
+    <h2 class="section-h"><span class="en">Synthesis.</span>PM 的核心竞争力正在转移</h2>
     <div class="section-body">
-      <p>把这两件事放在一起，会发现一个不太好听但对 PM 特别重要的真相：<b>vibe coding 的下一程不是"AI 写得更好"，是"谁来对后果负责"</b>。</p>
-      <p>过去一年比赛的是"AI 能写多复杂的代码"——上下文窗口、多文件编辑、repo 级理解。那条赛道的冠军很明确（Cursor / Claude Code / Replit Agent 都在同一梯队），差距也越来越小。但赛道之外冒出来的新问题，是一年前没人问的：</p>
-      <p><b>你输出的代码谁负责？</b> 如果 AI 写的代码带 SQL 注入，被攻击，账由谁担？<br>
-      <b>你的沙箱跑谁的任务？</b> 如果用户要 AI 执行"我们生产 DB 备份一下"，sandbox 有没有边界？<br>
-      <b>你的部署权限给谁？</b> 如果 AI 一键 push 到生产，谁来 review、回滚？</p>
-      <p>这三个问题是 vibe coding 从 hype 到 production 必须回答的。Luis 的 Defense in Depth 从架构侧回答；Security Agent 从产品侧回答。两个动作合起来是一个信号：<b>Replit 已经把 vibe coding 当成"对用户负责的产品"来维护</b>，而不是一个 demo 时期的炫技 feature。</p>
-      <p>对 PM 的最终映射：你在评估 AI 编码工具（给自己团队用 or 作为产品参考）时，<b>buying criteria 需要升级</b>。过去问"它写得多聪明"，未来要问：</p>
-      <p>1. 沙箱是每个 session 独立的吗？还是共享的？<br>
-      2. 生产环境部署有没有 human-in-the-loop？<br>
-      3. 有没有 agent 行为审计？出问题后能查到谁让它做了什么？<br>
-      4. 权限最小化是怎么做的？AI 能 sudo 吗？</p>
-      <p>这不是安全工程师的问题，是 PM 在产品决策时就要纳入的 criteria。因为 <b>一旦这些问题出事，负责的是产品，不是安全部门</b>。</p>
+      <p>当产出成本趋近于零，PM 的工作结构会发生一次静悄悄的重心转移：</p>
+      <p><b>过去</b>：PM 的大量时间花在"推进产出"上——写 PRD、跟进开发进度、协调资源、确认交付。这些工作本质上是"让已知答案变成具体形式"。<br>
+      <b>未来</b>：当 AI 接管了大部分"推进产出"的工作，PM 的核心价值回归到<b>定义正确的问题</b>——理解用户真正的痛点是什么、技术约束的边界在哪、多个利益相关方的冲突如何取舍、产品策略的本质是在赌什么。</p>
+      <p>Karri 说"设计是理解问题"。对 PM 来说同理：<b>产品管理不是推进产出，是定义问题</b>。当 AI 把"推进产出"的成本降到接近零，"定义问题"的能力反而变得更值钱——因为它是唯一不能被产出速度替代的东西。</p>
+      <p>具体到日常工作：花更多时间在用户访谈、问题拆解、策略对齐上，花更少时间在撰写执行文档上。前者是 AI 加速不了的，后者是 AI 正在让它变得免费的。</p>
     </div>
   </section>
 
   <div class="references">
     <div class="ref-label">Sources · 2 References</div>
 
-    <a class="ref-item" href="https://blog.replit.com/defense-in-depth-how-replit-secures-every-layer-of-the-vibe-coding-stack" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://simonwillison.net/2026/Apr/22/qwen36-27b/" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Luis Héctor Chávez · Replit</div>
-        <div class="ref-title">Defense in Depth: How Replit Secures Every Layer of the Vibe Coding Stack</div>
+        <div class="ref-who">Simon Willison</div>
+        <div class="ref-title">Qwen3.6-27B: Flagship-Level Coding in a 27B Dense Model</div>
       </div>
-      <div class="ref-right">↗ Blog · 2026-04-20</div>
+      <div class="ref-right">↗ Blog · 2026-04-22</div>
     </a>
 
-    <a class="ref-item" href="https://blog.replit.com/meet-replit-security-agent" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://linear.app/now/output-isn-t-design" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Replit Team</div>
-        <div class="ref-title">Meet Replit Security Agent</div>
+        <div class="ref-who">Karri Saarinen · Linear</div>
+        <div class="ref-title">Output isn't design</div>
       </div>
-      <div class="ref-right">↗ Blog · 2026-04-21</div>
+      <div class="ref-right">↗ Essay · 2026-04-17</div>
     </a>
 
   </div>
@@ -369,8 +376,8 @@
 </main>
 
 <div class="foot">
-  <div>AI 早报 · Insight · 主题聚合</div>
-  <div>Daily 006 · 2026-04-22</div>
+  <div>AI 早报 · Insight · 行业观察</div>
+  <div>Daily 007 · 2026-04-23</div>
 </div>
 
 </body>
