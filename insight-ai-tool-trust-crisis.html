@@ -268,74 +268,79 @@
     <a href="builders.html">Builders</a>
     <a href="archive.html">Archive</a>
   </nav>
-  <div class="top-tag">Daily · 007</div>
+  <div class="top-tag">Daily · 008</div>
 </div>
 
 <main class="main">
 
-  <a class="back-link" href="feed-007.html">
-    <span class="arrow">←</span> Back to Daily 007
+  <a class="back-link" href="feed.html">
+    <span class="arrow">←</span> Back to Daily 008
   </a>
 
-  <div class="kicker">Insight · 主题聚合</div>
+  <div class="kicker">Insight · 行业观察</div>
 
-  <h1 class="article-title">AI 编码工具的垂直整合：从调模型到炼模型</h1>
-  <div class="article-sub-en">When the tool maker becomes the model maker.</div>
+  <h1 class="article-title">AI 工具的信任危机与生态重建</h1>
+  <div class="article-sub-en">Trust is the new moat — and it breaks faster than it builds.</div>
 
   <div class="article-meta">
-    <span>Daily 007</span>
-    <span>2026-04-23</span>
-    <span>2 Sources</span>
+    <span>Daily 008</span>
+    <span>2026-04-24</span>
+    <span>3 Sources</span>
     <span>4 Min Read</span>
   </div>
 
   <div class="lede">
-    Cursor 在 4/21 宣布用 xAI 的 Colossus 基础设施自炼模型，4/23 发布 NAB 6000 开发者标准化部署案例。两件事串起来是一个完整的垂直整合叙事：<b>向上整合算力和模型训练能力，向下锁定企业客户</b>。AI 编码工具公司正从"中间层调用者"走向"垂直整合平台"。
+    Claude Code 定价测试暴露了 AI 工具公司的信任脆弱性——一次"2% 用户实验"造成的品牌损害等同于正式涨价。与此同时 Linear 把 Agent 做成跨工具中枢、Replit 靠 Google Cloud 背书继续扩张。<b>三条动态指向同一命题：AI 工具的护城河正从"功能领先"转向"信任 + 生态锁定"</b>。
   </div>
 
   <div class="builder-row">
-    <a class="builder-badge" href="https://cursor.com/blog/spacex-model-training" target="_blank" rel="noopener">
-      <span class="mono">CT</span>
-      <span>Model Training</span>
-      <span style="color:#888">· Cursor</span>
+    <a class="builder-badge" href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/" target="_blank" rel="noopener">
+      <span class="mono">CC</span>
+      <span>Claude Code 定价</span>
+      <span style="color:#888">· via Simon Willison</span>
     </a>
-    <a class="builder-badge" href="https://cursor.com/blog/nab" target="_blank" rel="noopener">
-      <span class="mono">NAB</span>
-      <span>Enterprise Case</span>
-      <span style="color:#888">· Cursor</span>
+    <a class="builder-badge" href="https://linear.app/changelog/2026-04-23-linear-agent-mcp-support" target="_blank" rel="noopener">
+      <span class="mono">LN</span>
+      <span>Linear Agent MCP</span>
+      <span style="color:#888">· Linear</span>
+    </a>
+    <a class="builder-badge" href="https://blog.replit.com/google-cloud-partner-award-winner" target="_blank" rel="noopener">
+      <span class="mono">RP</span>
+      <span>Replit Award</span>
+      <span style="color:#888">· Replit</span>
     </a>
   </div>
 
   <section class="article-section">
     <div class="section-num">§ 01</div>
-    <h2 class="section-h"><span class="en">Upstream.</span>从调 API 到自研模型：工具公司的上游整合</h2>
+    <h2 class="section-h"><span class="en">Trust shattered.</span>Claude Code 风波：一次测试如何损害品牌信任</h2>
     <div class="section-body">
-      <p>过去一年，AI 编码工具的竞争焦点是"中间层能力"——谁的 context 管理好、谁的 prompt 写得好、谁在 IDE 里的体验流畅。模型本身是"调来用的"，大家接的都是 GPT-4 / Claude / Gemini，差异化空间有限。<a class="src-inline" href="https://cursor.com/blog/spacex-model-training" target="_blank">↗ Blog</a></p>
-      <p>Cursor 的 Composer 系列改变了这个等式。从首代 Composer 到 Composer 2，强化学习规模扩大 20 倍+，以远低于同类模型的成本达到前沿水平。现在拿到 xAI Colossus 的算力支持，意味着它有条件把训练规模再推一个量级。</p>
-      <p><b>这是 AI 编码工具赛道第一次出现"工具公司自己炼模型"的明确信号</b>。过去这类公司和基座模型公司是上下游关系（你提供模型，我做好工程化），现在边界开始模糊——Cursor 既是工具公司又是模型公司。</p>
-      <div class="pull-quote">"当工具公司开始拥有自己的模型训练能力，'你家接的哪个 API'不再是核心问题。"</div>
+      <p>4 月 22 日，Anthropic 悄然更新了 claude.com/pricing 页面——Claude Code 从 $20/月的 Pro 计划移除，仅在 $100+ 的 Max 计划可用。没有公告、没有邮件、没有博客。Internet Archive 很快抓到了变更。<a class="src-inline" href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/" target="_blank">↗ Blog</a></p>
+      <p>社区反应激烈。Anthropic 增长负责人 Amol Avasare 在推特上说这是"面向约 2% 新注册用户的测试"。Simon Willison 的批评直指三个要害：</p>
+      <p><b>信任损害</b>——一条推文不是传达重大定价变更的方式。<b>可及性</b>——他已写了 105+ 篇 Claude Code 教程，明确拒绝围绕 $100/月工具做教学。<b>竞争机会拱手让人</b>——OpenAI Codex 工程负责人趁机发推强调"Codex 继续在免费和 $20 计划中可用"。</p>
+      <p>Anthropic 最终撤回了页面变更，但 Simon 指出一个讽刺：Claude Cowork（本质上是 Claude Code 的重新包装版）仍保留在 $20 计划中。</p>
+      <div class="pull-quote">"A pricing test that gets discovered does the same brand damage as a real price hike."</div>
     </div>
   </section>
 
   <section class="article-section">
     <div class="section-num">§ 02</div>
-    <h2 class="section-h"><span class="en">Downstream.</span>从个人试用到万人标准化：工具公司的下游锁定</h2>
+    <h2 class="section-h"><span class="en">Building the hub.</span>Linear Agent MCP 化：从 issue tracker 到跨工具中枢</h2>
     <div class="section-body">
-      <p>NAB 的案例提供了另一半拼图。一家管理着数千亿资产的澳大利亚银行，在评估了 Amazon Q 和 GitHub Copilot 之后，选择将 6000+ 开发者标准化到 Cursor，并计划扩至 10000+。<a class="src-inline" href="https://cursor.com/blog/nab" target="_blank">↗ Case Study</a></p>
-      <p>几个值得注意的数据点：<b>Assembly 大型机迁移提速 3 倍</b>（此前因缺 Assembly 人才而搁置多年）、<b>3 周完成原计划 4 个月的支付 app</b>（团队此前无 Kotlin/Android 经验）、首席工程师 Chris De Lorenzo 称"开发速度提升 5-8x，但关键是——我们以前根本不会尝试"。</p>
-      <p>对 PM 来说，最重要的不是这些加速数字，而是<b>采用路径的变化</b>。AI 编码工具过去的增长模式是 bottom-up——个人开发者觉得好用 → 团队开始用 → 公司默许。NAB 的模式是 top-down——IT 战略层面做评估、做选型、做标准化部署。这意味着 <b>buying criteria 升级了</b>：不再只是"写代码多快"，还要看安全审查、合规对接、管理可控性。</p>
+      <p>与此同时，Linear 在走一条完全不同的路——不是在定价上做文章，而是在<b>生态连接度</b>上做文章。<a class="src-inline" href="https://linear.app/changelog/2026-04-23-linear-agent-mcp-support" target="_blank">↗ Changelog</a></p>
+      <p>Linear Agent 新增 MCP 支持意味着：Agent 可以从 Granola 拉会议要点、用 Glean 知识库起草规格、从 PostHog 拉数据验证假设、把 Notion 笔记转化为需求——<b>Linear 不再只是存任务的地方，而是 Agent 获取跨系统上下文的中枢</b>。</p>
+      <p>配合 ⌘J 快捷键（选中文本直接发给 Agent）和最大化覆盖层，Agent 正在融入用户的日常操作流程。管理员通过允许列表和工作区权限控制 MCP 连接，满足企业级安全需求。</p>
+      <p>这是一个经典的<b>平台策略</b>：当你成为其他工具的连接点，用户的迁移成本自然升高——不是因为 Linear 锁住了数据，而是因为离开 Linear 意味着重建所有外部工具的连接。</p>
     </div>
   </section>
 
   <section class="article-section">
     <div class="section-num">§ 03</div>
-    <h2 class="section-h"><span class="en">Pattern.</span>垂直整合的经典路径：上游控制 + 下游锁定</h2>
+    <h2 class="section-h"><span class="en">Credentialing.</span>Replit + Google Cloud：平台信任的背书机制</h2>
     <div class="section-body">
-      <p>把 Cursor 这两件事放在一起看，会发现一个经典的<b>垂直整合路径</b>：</p>
-      <p><b>向上</b>：拥有算力 → 自炼模型 → 模型性能不依赖第三方，不受"OpenAI 涨价 / Claude 限速"的上游风险。<br>
-      <b>向下</b>：锁定企业客户 → 标准化部署 → 迁移成本变高，客户黏性增强。</p>
-      <p>这个路径在科技史上反复出现：Apple 从组装 PC 到自研芯片 + 控制零售渠道，Salesforce 从 CRM SaaS 到收购 MuleSoft + 控制数据集成，Tesla 从买电池到自建 Gigafactory + 直营销售。<b>每一次垂直整合的共同逻辑是：中间层做到极致后，必然向上下游扩张</b>。</p>
-      <p>Cursor 目前处在这个路径的早期——模型训练还在用合作方的算力（xAI Colossus），企业客户的标准化部署是一个 case 而非普遍现象。但方向已经很明确。</p>
+      <p>Replit 获得 2026 年 Google Cloud AI 工具合作伙伴年度奖，同时宣布 Agent 4（速度 10 倍、多 Agent 并行）和上架 Google Cloud Marketplace。<a class="src-inline" href="https://blog.replit.com/google-cloud-partner-award-winner" target="_blank">↗ Blog</a></p>
+      <p>数字很亮眼——5000 万用户、85% 财富 500 强、90 亿估值。但更值得关注的是<b>信任建设的路径</b>：获得 Google Cloud 年度奖 → 上架 Marketplace → 企业可通过 GCP 合同采购 → <b>采购决策从"我试试这个工具"变成"公司 IT 部门批准的可信供应商"</b>。</p>
+      <p>和 Claude Code 的信任受损形成对比——Replit 在主动<b>积累信任资产</b>（第三方背书、企业渠道、安全三连发），而不是在定价测试中消耗信任。</p>
     </div>
   </section>
 
@@ -343,32 +348,39 @@
     <div class="section-num">§ 04</div>
     <h2 class="section-h"><span class="en">Synthesis.</span>对 PM 意味着什么</h2>
     <div class="section-body">
-      <p>如果你在评估 AI 编码工具（给自己团队用或作为竞品参考），<b>决策维度需要升级</b>：</p>
-      <p>1. <b>模型自研 vs 调用</b>：工具的核心智能是自研的还是调第三方 API？自研意味着性能迭代不受上游节奏限制，但也意味着研发成本更高、模型 diversity 可能更低。<br>
-      2. <b>算力来源</b>：自研模型的算力从哪来？自建、合作、还是按需购买？这决定了工具公司在 AI winter（如果来的话）的生存能力。<br>
-      3. <b>企业锁定深度</b>：标准化部署后，迁移成本有多高？数据 / 配置 / 工作流的可移植性如何？<br>
-      4. <b>上下游风险</b>：纯 API wrapper 类工具面临上游涨价 / 限速的风险，垂直整合类工具面临"自研模型不如第三方好"的风险。两种风险的对冲方式不同。</p>
-      <p><b>底线判断</b>：AI 编码工具赛道正在从"中间层工程化竞争"进入"垂直整合平台竞争"。纯粹靠 prompt engineering + context management 做差异化的窗口期在收窄。</p>
+      <p>三条动态串起来的图景：<b>AI 工具的护城河正在从功能层转向信任层</b>。</p>
+      <p>1. <b>信任是非对称资产</b>：建设慢、损害快。Anthropic 花了一年建立的 Claude Code 品牌信任，一次被发现的定价测试就造成了实质性损害。Simon 的 105 篇教程、NICAR 大会课程——这些是 Anthropic 最好的增长飞轮，但一次 $20→$100 的测试就让飞轮的驱动者公开考虑转向 Codex。</p>
+      <p>2. <b>生态连接 > 功能锁定</b>：Linear 通过 MCP 让 Agent 成为跨工具编排器，用户的迁移成本不是来自数据锁定，而是来自<b>连接锁定</b>——离开意味着重建所有外部工具的集成。这是更温和但更有效的护城河。</p>
+      <p>3. <b>第三方背书是信任的加速器</b>：Replit 的 Google Cloud 年度奖把"vibe coding 工具"变成"企业 IT 可信列表上的选项"。在 AI 工具竞争中，第三方背书（行业奖、Marketplace 上架、合规认证）正在成为和产品功能同等重要的竞争武器。</p>
+      <p><b>底线判断</b>：功能可以被追赶，信任不行。PM 在评估 AI 工具时，需要把"<b>这家公司如何建设和维护信任</b>"放进决策框架——定价透明度、生态开放度、第三方背书、社区关系，这些"软指标"的长期价值可能超过任何单一功能。</p>
     </div>
   </section>
 
   <div class="references">
-    <div class="ref-label">Sources · 2 References</div>
+    <div class="ref-label">Sources · 3 References</div>
 
-    <a class="ref-item" href="https://cursor.com/blog/spacex-model-training" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Cursor Team · Anysphere</div>
-        <div class="ref-title">Cursor partners with SpaceX on model training</div>
+        <div class="ref-who">Simon Willison · 独立观察者</div>
+        <div class="ref-title">Is Claude Code going to cost $100/month? Probably not—it's all very confusing</div>
       </div>
-      <div class="ref-right">↗ Blog · 2026-04-21</div>
+      <div class="ref-right">↗ Blog · 2026-04-22</div>
     </a>
 
-    <a class="ref-item" href="https://cursor.com/blog/nab" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://linear.app/changelog/2026-04-23-linear-agent-mcp-support" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Cursor Team · Anysphere</div>
-        <div class="ref-title">National Australia Bank accelerates legacy migrations with Cursor</div>
+        <div class="ref-who">Linear Team</div>
+        <div class="ref-title">Linear Agent MCP support</div>
       </div>
-      <div class="ref-right">↗ Case Study · 2026-04-23</div>
+      <div class="ref-right">↗ Changelog · 2026-04-23</div>
+    </a>
+
+    <a class="ref-item" href="https://blog.replit.com/google-cloud-partner-award-winner" target="_blank" rel="noopener">
+      <div class="ref-left">
+        <div class="ref-who">Replit Team</div>
+        <div class="ref-title">Replit Wins 2026 Google Cloud Partner of the Year Award</div>
+      </div>
+      <div class="ref-right">↗ Blog · 2026-04-21</div>
     </a>
 
   </div>
@@ -376,8 +388,8 @@
 </main>
 
 <div class="foot">
-  <div>AI 早报 · Insight · 主题聚合</div>
-  <div>Daily 007 · 2026-04-23</div>
+  <div>AI 早报 · Insight · 行业观察</div>
+  <div>Daily 008 · 2026-04-24</div>
 </div>
 
 </body>
