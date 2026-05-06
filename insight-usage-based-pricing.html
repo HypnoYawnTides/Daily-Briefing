@@ -268,79 +268,78 @@
     <a href="builders.html">Builders</a>
     <a href="archive.html">Archive</a>
   </nav>
-  <div class="top-tag">Daily · 008</div>
+  <div class="top-tag">Daily · 009</div>
 </div>
 
 <main class="main">
 
-  <a class="back-link" href="feed-008.html">
-    <span class="arrow">←</span> Back to Daily 008
+  <a class="back-link" href="feed.html">
+    <span class="arrow">←</span> Back to Daily 009
   </a>
 
-  <div class="kicker">Insight · 行业观察</div>
+  <div class="kicker">Insight · 主题聚合</div>
 
-  <h1 class="article-title">AI 工具的信任危机与生态重建</h1>
-  <div class="article-sub-en">Trust is the new moat — and it breaks faster than it builds.</div>
+  <h1 class="article-title">AI 工具定价大迁移：从席位制到用量制</h1>
+  <div class="article-sub-en">When a chat costs pennies but an agent session costs dollars, per-seat pricing breaks.</div>
 
   <div class="article-meta">
-    <span>Daily 008</span>
-    <span>2026-04-24</span>
+    <span>Daily 009</span>
+    <span>2026-05-06</span>
     <span>3 Sources</span>
     <span>4 Min Read</span>
   </div>
 
   <div class="lede">
-    Claude Code 定价测试暴露了 AI 工具公司的信任脆弱性——一次"2% 用户实验"造成的品牌损害等同于正式涨价。与此同时 Linear 把 Agent 做成跨工具中枢、Replit 靠 Google Cloud 背书继续扩张。<b>三条动态指向同一命题：AI 工具的护城河正从"功能领先"转向"信任 + 生态锁定"</b>。
+    GitHub Copilot 6 月 1 日转 usage-based billing、Notion Custom Agents 推 $10/1000 credits 定价、Cursor 推弹性限额 + 用量分析——<b>三家工具在同一周完成了定价模型的范式转移</b>。底层逻辑一致：当 AI agent 能执行差异化巨大的任务时，按人头收费不再能反映价值。
   </div>
 
   <div class="builder-row">
-    <a class="builder-badge" href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/" target="_blank" rel="noopener">
-      <span class="mono">CC</span>
-      <span>Claude Code 定价</span>
-      <span style="color:#888">· via Simon Willison</span>
+    <a class="builder-badge" href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/" target="_blank" rel="noopener">
+      <span class="mono">GH</span>
+      <span>Copilot Billing</span>
+      <span style="color:#888">· Mario Rodriguez</span>
     </a>
-    <a class="builder-badge" href="https://linear.app/changelog/2026-04-23-linear-agent-mcp-support" target="_blank" rel="noopener">
-      <span class="mono">LN</span>
-      <span>Linear Agent MCP</span>
-      <span style="color:#888">· Linear</span>
+    <a class="builder-badge" href="https://www.notion.com/blog/what-we-learned-during-the-custom-agents-beta" target="_blank" rel="noopener">
+      <span class="mono">NT</span>
+      <span>Custom Agents</span>
+      <span style="color:#888">· Akshay Kothari</span>
     </a>
-    <a class="builder-badge" href="https://blog.replit.com/google-cloud-partner-award-winner" target="_blank" rel="noopener">
-      <span class="mono">RP</span>
-      <span>Replit Award</span>
-      <span style="color:#888">· Replit</span>
+    <a class="builder-badge" href="https://cursor.com/changelog/05-04-26" target="_blank" rel="noopener">
+      <span class="mono">CR</span>
+      <span>Enterprise Controls</span>
+      <span style="color:#888">· Cursor</span>
     </a>
   </div>
 
   <section class="article-section">
     <div class="section-num">§ 01</div>
-    <h2 class="section-h"><span class="en">Trust shattered.</span>Claude Code 风波：一次测试如何损害品牌信任</h2>
+    <h2 class="section-h"><span class="en">The trigger.</span>为什么席位制不再适用</h2>
     <div class="section-body">
-      <p>4 月 22 日，Anthropic 悄然更新了 claude.com/pricing 页面——Claude Code 从 $20/月的 Pro 计划移除，仅在 $100+ 的 Max 计划可用。没有公告、没有邮件、没有博客。Internet Archive 很快抓到了变更。<a class="src-inline" href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/" target="_blank">↗ Blog</a></p>
-      <p>社区反应激烈。Anthropic 增长负责人 Amol Avasare 在推特上说这是"面向约 2% 新注册用户的测试"。Simon Willison 的批评直指三个要害：</p>
-      <p><b>信任损害</b>——一条推文不是传达重大定价变更的方式。<b>可及性</b>——他已写了 105+ 篇 Claude Code 教程，明确拒绝围绕 $100/月工具做教学。<b>竞争机会拱手让人</b>——OpenAI Codex 工程负责人趁机发推强调"Codex 继续在免费和 $20 计划中可用"。</p>
-      <p>Anthropic 最终撤回了页面变更，但 Simon 指出一个讽刺：Claude Cowork（本质上是 Claude Code 的重新包装版）仍保留在 $20 计划中。</p>
-      <div class="pull-quote">"A pricing test that gets discovered does the same brand damage as a real price hike."</div>
+      <p>GitHub CPO Mario Rodriguez 在公告中说了一句精准的话："a quick chat question and a multi-hour autonomous coding session can cost the user the same amount"。这是席位制的核心矛盾——<b>当 AI 的使用场景从"问个问题"扩展到"自主工作几小时"，固定月费无法反映真实成本差异</b>。<a class="src-inline" href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/" target="_blank">↗ Blog</a></p>
+      <p>Notion 的 Akshay Kothari 从另一个角度印证了同一逻辑：一个人构建的 Agent 可能惠及整个公司，<b>"价值与席位数脱钩"</b>。当 Ramp 一家公司就创建了 300+ 个 Agent，每个 Agent 的价值差异巨大——有的是简单的 FAQ bot，有的是每天自动扫描竞品动态并更新销售资料的工作流中枢。<a class="src-inline" href="https://www.notion.com/blog/what-we-learned-during-the-custom-agents-beta" target="_blank">↗ Blog</a></p>
+      <p>Cursor 虽然没有直接宣布转向 usage-based pricing，但发布的企业管控三件套（弹性限额 + 用量分析 + 模型白名单）<b>是 usage-based 的前置基础设施</b>——你必须先能精确衡量和控制用量，才能按用量收费。<a class="src-inline" href="https://cursor.com/changelog/05-04-26" target="_blank">↗ Changelog</a></p>
     </div>
   </section>
 
   <section class="article-section">
     <div class="section-num">§ 02</div>
-    <h2 class="section-h"><span class="en">Building the hub.</span>Linear Agent MCP 化：从 issue tracker 到跨工具中枢</h2>
+    <h2 class="section-h"><span class="en">Three models.</span>三家的实现路径</h2>
     <div class="section-body">
-      <p>与此同时，Linear 在走一条完全不同的路——不是在定价上做文章，而是在<b>生态连接度</b>上做文章。<a class="src-inline" href="https://linear.app/changelog/2026-04-23-linear-agent-mcp-support" target="_blank">↗ Changelog</a></p>
-      <p>Linear Agent 新增 MCP 支持意味着：Agent 可以从 Granola 拉会议要点、用 Glean 知识库起草规格、从 PostHog 拉数据验证假设、把 Notion 笔记转化为需求——<b>Linear 不再只是存任务的地方，而是 Agent 获取跨系统上下文的中枢</b>。</p>
-      <p>配合 ⌘J 快捷键（选中文本直接发给 Agent）和最大化覆盖层，Agent 正在融入用户的日常操作流程。管理员通过允许列表和工作区权限控制 MCP 连接，满足企业级安全需求。</p>
-      <p>这是一个经典的<b>平台策略</b>：当你成为其他工具的连接点，用户的迁移成本自然升高——不是因为 Linear 锁住了数据，而是因为离开 Linear 意味着重建所有外部工具的连接。</p>
+      <p><b>GitHub</b>：最彻底。6 月 1 日起所有计划转为 AI Credits（按 token × 模型费率计算），月费不变但内含 Credits 有限。代码补全和 Next Edit 建议继续免费——这是聪明的策略：<b>保持高频低成本功能免费以维持粘性，只对高成本 agent 功能按量收费</b>。企业端引入池化机制，组织内未用 Credits 可共享。</p>
+      <p><b>Notion</b>：$10/1000 credits，按 Business/Enterprise 附加项售卖。轻量模型（Haiku 4.5、GPT-5.4 Mini）消耗最高低 10 倍——<b>用模型选择权把成本控制交给用户</b>。规模化配套：单 Agent 额度限制、全局仪表盘、主动告警和暂停功能。</p>
+      <p><b>Cursor</b>：弹性限额在 50%/80%/100% 阈值自动提醒，替代硬限额。用量分析支持按产品维度拆分（clients / Cloud Agents / automations / Bugbot / Security Review）。<b>这套工具让管理员第一次能回答"我们的 AI 花费到底花在了哪里"</b>。</p>
+      <div class="pull-quote">"A quick chat question and a multi-hour autonomous coding session can cost the user the same amount."<br>— Mario Rodriguez, GitHub CPO</div>
     </div>
   </section>
 
   <section class="article-section">
     <div class="section-num">§ 03</div>
-    <h2 class="section-h"><span class="en">Credentialing.</span>Replit + Google Cloud：平台信任的背书机制</h2>
+    <h2 class="section-h"><span class="en">Implications.</span>Usage-based 的连锁反应</h2>
     <div class="section-body">
-      <p>Replit 获得 2026 年 Google Cloud AI 工具合作伙伴年度奖，同时宣布 Agent 4（速度 10 倍、多 Agent 并行）和上架 Google Cloud Marketplace。<a class="src-inline" href="https://blog.replit.com/google-cloud-partner-award-winner" target="_blank">↗ Blog</a></p>
-      <p>数字很亮眼——5000 万用户、85% 财富 500 强、90 亿估值。但更值得关注的是<b>信任建设的路径</b>：获得 Google Cloud 年度奖 → 上架 Marketplace → 企业可通过 GCP 合同采购 → <b>采购决策从"我试试这个工具"变成"公司 IT 部门批准的可信供应商"</b>。</p>
-      <p>和 Claude Code 的信任受损形成对比——Replit 在主动<b>积累信任资产</b>（第三方背书、企业渠道、安全三连发），而不是在定价测试中消耗信任。</p>
+      <p>定价模型的变化不只是财务问题，它会改变用户行为和产品设计：</p>
+      <p><b>用户行为变化</b>：当每次 agent 调用都有可见成本，用户会更审慎地选择何时使用 agent、使用哪个模型。GitHub 取消了"用完 PRU 后降级到低成本模型"的回退体验——这意味着用户必须主动管理自己的 AI 预算，而不是被动依赖平台兜底。</p>
+      <p><b>产品设计影响</b>：Notion 发现轻量模型可以节省最高 10 倍 credits，这意味着产品团队需要在 UI 中帮助用户做模型选择决策——<b>"默认用最强模型"不再是好的产品策略</b>，"智能路由到性价比最优模型"才是。</p>
+      <p><b>采购流程重塑</b>：当月费固定但用量可变，CFO 的问题从"批准 N 个席位"变成"设定月度 AI 预算上限"。Cursor 的弹性限额和 GitHub 的池化机制都是对这个需求的回应。</p>
     </div>
   </section>
 
@@ -348,39 +347,39 @@
     <div class="section-num">§ 04</div>
     <h2 class="section-h"><span class="en">Synthesis.</span>对 PM 意味着什么</h2>
     <div class="section-body">
-      <p>三条动态串起来的图景：<b>AI 工具的护城河正在从功能层转向信任层</b>。</p>
-      <p>1. <b>信任是非对称资产</b>：建设慢、损害快。Anthropic 花了一年建立的 Claude Code 品牌信任，一次被发现的定价测试就造成了实质性损害。Simon 的 105 篇教程、NICAR 大会课程——这些是 Anthropic 最好的增长飞轮，但一次 $20→$100 的测试就让飞轮的驱动者公开考虑转向 Codex。</p>
-      <p>2. <b>生态连接 > 功能锁定</b>：Linear 通过 MCP 让 Agent 成为跨工具编排器，用户的迁移成本不是来自数据锁定，而是来自<b>连接锁定</b>——离开意味着重建所有外部工具的集成。这是更温和但更有效的护城河。</p>
-      <p>3. <b>第三方背书是信任的加速器</b>：Replit 的 Google Cloud 年度奖把"vibe coding 工具"变成"企业 IT 可信列表上的选项"。在 AI 工具竞争中，第三方背书（行业奖、Marketplace 上架、合规认证）正在成为和产品功能同等重要的竞争武器。</p>
-      <p><b>底线判断</b>：功能可以被追赶，信任不行。PM 在评估 AI 工具时，需要把"<b>这家公司如何建设和维护信任</b>"放进决策框架——定价透明度、生态开放度、第三方背书、社区关系，这些"软指标"的长期价值可能超过任何单一功能。</p>
+      <p>三条动态串起来的图景：<b>AI 工具的定价范式正在从"按人头"转向"按价值"</b>。</p>
+      <p>1. <b>Usage-based 是 agent 时代的必然</b>：当 AI 从"辅助工具"进化为"自主执行者"，任务复杂度的方差急剧放大。按人头收费相当于把重度用户的成本平摊给轻度用户——长期来看既不公平也不可持续。GitHub、Notion、Cursor 同周转向说明这不是个别选择，而是行业共识。</p>
+      <p>2. <b>管控工具是 usage-based 的前置条件</b>：没有用量可见性就无法按量收费。Cursor 的三件套（model controls + spend limits + usage analytics）本质上是为未来的 usage-based pricing 铺路——先给管理员"看到钱花在哪里"的能力，再转向"按花了多少钱收费"。</p>
+      <p>3. <b>PM 需要更新自己产品的定价框架</b>：如果你的产品也在集成 AI 能力，需要思考——你的定价模型是否还能反映 AI 功能的真实价值交付？当用户通过你的产品调用的 AI 成本差异可达 10-100 倍时，一刀切的席位价格会让你要么亏损、要么限制用户使用最有价值的功能。</p>
+      <p><b>底线判断</b>：Usage-based pricing 不是可选项——<b>它是 AI agent 规模化部署的经济基础设施</b>。PM 在设计 AI 功能时，定价模型应该和产品设计同步规划，而不是功能做完后再"配一个价格"。</p>
     </div>
   </section>
 
   <div class="references">
     <div class="ref-label">Sources · 3 References</div>
 
-    <a class="ref-item" href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Simon Willison · 独立观察者</div>
-        <div class="ref-title">Is Claude Code going to cost $100/month? Probably not—it's all very confusing</div>
+        <div class="ref-who">Mario Rodriguez · GitHub CPO</div>
+        <div class="ref-title">GitHub Copilot is moving to usage-based billing</div>
       </div>
-      <div class="ref-right">↗ Blog · 2026-04-22</div>
+      <div class="ref-right">↗ Blog · 2026-04-27</div>
     </a>
 
-    <a class="ref-item" href="https://linear.app/changelog/2026-04-23-linear-agent-mcp-support" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://www.notion.com/blog/what-we-learned-during-the-custom-agents-beta" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Linear Team</div>
-        <div class="ref-title">Linear Agent MCP support</div>
+        <div class="ref-who">Akshay Kothari · Notion 联合创始人</div>
+        <div class="ref-title">What we learned during the Custom Agents beta</div>
       </div>
-      <div class="ref-right">↗ Changelog · 2026-04-23</div>
+      <div class="ref-right">↗ Blog · 2026-05-04</div>
     </a>
 
-    <a class="ref-item" href="https://blog.replit.com/google-cloud-partner-award-winner" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://cursor.com/changelog/05-04-26" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Replit Team</div>
-        <div class="ref-title">Replit Wins 2026 Google Cloud Partner of the Year Award</div>
+        <div class="ref-who">Cursor Team</div>
+        <div class="ref-title">Model controls, spend management, and usage analytics</div>
       </div>
-      <div class="ref-right">↗ Blog · 2026-04-21</div>
+      <div class="ref-right">↗ Changelog · 2026-05-04</div>
     </a>
 
   </div>
@@ -388,8 +387,8 @@
 </main>
 
 <div class="foot">
-  <div>AI 早报 · Insight · 行业观察</div>
-  <div>Daily 008 · 2026-04-24</div>
+  <div>AI 早报 · Insight · 主题聚合</div>
+  <div>Daily 009 · 2026-05-06</div>
 </div>
 
 </body>

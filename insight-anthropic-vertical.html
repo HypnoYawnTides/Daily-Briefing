@@ -268,79 +268,74 @@
     <a href="builders.html">Builders</a>
     <a href="archive.html">Archive</a>
   </nav>
-  <div class="top-tag">Daily · 008</div>
+  <div class="top-tag">Daily · 009</div>
 </div>
 
 <main class="main">
 
-  <a class="back-link" href="feed-008.html">
-    <span class="arrow">←</span> Back to Daily 008
+  <a class="back-link" href="feed.html">
+    <span class="arrow">←</span> Back to Daily 009
   </a>
 
   <div class="kicker">Insight · 行业观察</div>
 
-  <h1 class="article-title">AI 工具的信任危机与生态重建</h1>
-  <div class="article-sub-en">Trust is the new moat — and it breaks faster than it builds.</div>
+  <h1 class="article-title">模型公司下场做垂直：Anthropic 的行业交付转型</h1>
+  <div class="article-sub-en">From selling APIs to delivering industry solutions — Anthropic goes vertical.</div>
 
   <div class="article-meta">
-    <span>Daily 008</span>
-    <span>2026-04-24</span>
-    <span>3 Sources</span>
+    <span>Daily 009</span>
+    <span>2026-05-06</span>
+    <span>2 Sources</span>
     <span>4 Min Read</span>
   </div>
 
   <div class="lede">
-    Claude Code 定价测试暴露了 AI 工具公司的信任脆弱性——一次"2% 用户实验"造成的品牌损害等同于正式涨价。与此同时 Linear 把 Agent 做成跨工具中枢、Replit 靠 Google Cloud 背书继续扩张。<b>三条动态指向同一命题：AI 工具的护城河正从"功能领先"转向"信任 + 生态锁定"</b>。
+    一周内两个动作——10 个金融 agent 模板把"通用模型"变成"行业解决方案"，联合 Blackstone/Goldman/HF 成立企业 AI 服务公司直接做中型企业的系统集成。<b>Anthropic 正在走一条与 OpenAI（消费端产品）和 Google（基础设施）不同的路——向下游走、做垂直交付</b>。
   </div>
 
   <div class="builder-row">
-    <a class="builder-badge" href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/" target="_blank" rel="noopener">
-      <span class="mono">CC</span>
-      <span>Claude Code 定价</span>
-      <span style="color:#888">· via Simon Willison</span>
+    <a class="builder-badge" href="https://www.anthropic.com/news/finance-agents" target="_blank" rel="noopener">
+      <span class="mono">AN</span>
+      <span>Finance Agents</span>
+      <span style="color:#888">· Anthropic</span>
     </a>
-    <a class="builder-badge" href="https://linear.app/changelog/2026-04-23-linear-agent-mcp-support" target="_blank" rel="noopener">
-      <span class="mono">LN</span>
-      <span>Linear Agent MCP</span>
-      <span style="color:#888">· Linear</span>
-    </a>
-    <a class="builder-badge" href="https://blog.replit.com/google-cloud-partner-award-winner" target="_blank" rel="noopener">
-      <span class="mono">RP</span>
-      <span>Replit Award</span>
-      <span style="color:#888">· Replit</span>
+    <a class="builder-badge" href="https://www.anthropic.com/news/enterprise-ai-services-company" target="_blank" rel="noopener">
+      <span class="mono">AN</span>
+      <span>Enterprise AI Co.</span>
+      <span style="color:#888">· Anthropic</span>
     </a>
   </div>
 
   <section class="article-section">
     <div class="section-num">§ 01</div>
-    <h2 class="section-h"><span class="en">Trust shattered.</span>Claude Code 风波：一次测试如何损害品牌信任</h2>
+    <h2 class="section-h"><span class="en">Templates.</span>10 个金融 Agent 模板：从 API 到行业方案的跳跃</h2>
     <div class="section-body">
-      <p>4 月 22 日，Anthropic 悄然更新了 claude.com/pricing 页面——Claude Code 从 $20/月的 Pro 计划移除，仅在 $100+ 的 Max 计划可用。没有公告、没有邮件、没有博客。Internet Archive 很快抓到了变更。<a class="src-inline" href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/" target="_blank">↗ Blog</a></p>
-      <p>社区反应激烈。Anthropic 增长负责人 Amol Avasare 在推特上说这是"面向约 2% 新注册用户的测试"。Simon Willison 的批评直指三个要害：</p>
-      <p><b>信任损害</b>——一条推文不是传达重大定价变更的方式。<b>可及性</b>——他已写了 105+ 篇 Claude Code 教程，明确拒绝围绕 $100/月工具做教学。<b>竞争机会拱手让人</b>——OpenAI Codex 工程负责人趁机发推强调"Codex 继续在免费和 $20 计划中可用"。</p>
-      <p>Anthropic 最终撤回了页面变更，但 Simon 指出一个讽刺：Claude Cowork（本质上是 Claude Code 的重新包装版）仍保留在 $20 计划中。</p>
-      <div class="pull-quote">"A pricing test that gets discovered does the same brand damage as a real price hike."</div>
+      <p>5 月 5 日发布的 10 个 agent 模板覆盖了金融服务的两大高成本领域：<b>研究/客户覆盖</b>（Pitch builder、Meeting preparer、Earnings reviewer、Model builder、Market researcher）和<b>财务/运营</b>（Valuation reviewer、GL reconciler、Month-end closer、Statement auditor、KYC screener）。<a class="src-inline" href="https://www.anthropic.com/news/finance-agents" target="_blank">↗ News</a></p>
+      <p>这些不是概念验证——它们是 <b>ready-to-deploy 的插件</b>，可以直接在 Claude Cowork/Code 中使用，或作为 Managed Agents 的 cookbook。配合 Claude 与 <b>Microsoft 365 的深度整合</b>（Excel、PowerPoint、Word，Outlook 即将加入），agent 可以在实际办公环境中端到端工作。</p>
+      <p>数据合作伙伴的扩展同样值得关注——新增 <b>8 个连接器</b>（Dun & Bradstreet、IBISWorld、Third Bridge 等）和 <b>Moody's MCP 应用</b>（覆盖 6 亿+ 企业数据）。这意味着 agent 不只是能写文档，<b>还能直接访问权威的市场和信用数据</b>来支撑决策。</p>
     </div>
   </section>
 
   <section class="article-section">
     <div class="section-num">§ 02</div>
-    <h2 class="section-h"><span class="en">Building the hub.</span>Linear Agent MCP 化：从 issue tracker 到跨工具中枢</h2>
+    <h2 class="section-h"><span class="en">Services co.</span>自建服务公司：需求超过了合作伙伴的交付能力</h2>
     <div class="section-body">
-      <p>与此同时，Linear 在走一条完全不同的路——不是在定价上做文章，而是在<b>生态连接度</b>上做文章。<a class="src-inline" href="https://linear.app/changelog/2026-04-23-linear-agent-mcp-support" target="_blank">↗ Changelog</a></p>
-      <p>Linear Agent 新增 MCP 支持意味着：Agent 可以从 Granola 拉会议要点、用 Glean 知识库起草规格、从 PostHog 拉数据验证假设、把 Notion 笔记转化为需求——<b>Linear 不再只是存任务的地方，而是 Agent 获取跨系统上下文的中枢</b>。</p>
-      <p>配合 ⌘J 快捷键（选中文本直接发给 Agent）和最大化覆盖层，Agent 正在融入用户的日常操作流程。管理员通过允许列表和工作区权限控制 MCP 连接，满足企业级安全需求。</p>
-      <p>这是一个经典的<b>平台策略</b>：当你成为其他工具的连接点，用户的迁移成本自然升高——不是因为 Linear 锁住了数据，而是因为离开 Linear 意味着重建所有外部工具的连接。</p>
+      <p>5 月 4 日的第二个公告更具战略意义。Anthropic 联合 <b>Blackstone、Hellman & Friedman、Goldman Sachs</b>（另加 General Atlantic、Apollo、Sequoia 等投资方）成立了一家新的 AI 服务公司，专注于帮中型企业将 Claude 整合进核心业务。<a class="src-inline" href="https://www.anthropic.com/news/enterprise-ai-services-company" target="_blank">↗ News</a></p>
+      <p>CFO Krishna Rao 给出了直接理由："<b>Enterprise demand for Claude is significantly outpacing any single delivery model.</b>"——翻译过来就是：合作伙伴（Accenture、Deloitte、PwC）的交付能力已经跟不上需求增长。</p>
+      <p>目标客户精确定位在<b>中型企业</b>（社区银行、制造商、区域医疗系统）——这些组织有 AI 需求但缺乏内部技术团队来部署前沿方案。Anthropic 的 Applied AI 工程师将直接驻场工作。</p>
+      <div class="pull-quote">"Enterprise demand for Claude is significantly outpacing any single delivery model."<br>— Krishna Rao, Anthropic CFO</div>
     </div>
   </section>
 
   <section class="article-section">
     <div class="section-num">§ 03</div>
-    <h2 class="section-h"><span class="en">Credentialing.</span>Replit + Google Cloud：平台信任的背书机制</h2>
+    <h2 class="section-h"><span class="en">Three paths.</span>三家模型公司的不同战略路径</h2>
     <div class="section-body">
-      <p>Replit 获得 2026 年 Google Cloud AI 工具合作伙伴年度奖，同时宣布 Agent 4（速度 10 倍、多 Agent 并行）和上架 Google Cloud Marketplace。<a class="src-inline" href="https://blog.replit.com/google-cloud-partner-award-winner" target="_blank">↗ Blog</a></p>
-      <p>数字很亮眼——5000 万用户、85% 财富 500 强、90 亿估值。但更值得关注的是<b>信任建设的路径</b>：获得 Google Cloud 年度奖 → 上架 Marketplace → 企业可通过 GCP 合同采购 → <b>采购决策从"我试试这个工具"变成"公司 IT 部门批准的可信供应商"</b>。</p>
-      <p>和 Claude Code 的信任受损形成对比——Replit 在主动<b>积累信任资产</b>（第三方背书、企业渠道、安全三连发），而不是在定价测试中消耗信任。</p>
+      <p>把 Anthropic 的选择放在竞争格局中看，三家头部模型公司走向了截然不同的方向：</p>
+      <p><b>OpenAI → 消费端产品</b>：ChatGPT、Codex CLI、DALL·E、Sora——面向个人和开发者，走流量和订阅。</p>
+      <p><b>Google/DeepMind → 基础设施</b>：TPU、Vertex AI、Gemini API——深度绑定 GCP，走云计算捆绑。</p>
+      <p><b>Anthropic → 垂直行业交付</b>：金融 agent 模板、NEC 行业方案、中型企业服务公司——直接走进客户的业务流程。</p>
+      <p>Anthropic 的路径风险更高但锁定更深——<b>一旦 Claude 嵌入了客户的 KYC 流程或月末结账流程，迁移成本不只是 API 切换，而是整个业务流程的重建</b>。这和 Linear 上一期讲的"连接锁定"逻辑一致，只是 Anthropic 把它做到了行业级别。</p>
     </div>
   </section>
 
@@ -348,39 +343,31 @@
     <div class="section-num">§ 04</div>
     <h2 class="section-h"><span class="en">Synthesis.</span>对 PM 意味着什么</h2>
     <div class="section-body">
-      <p>三条动态串起来的图景：<b>AI 工具的护城河正在从功能层转向信任层</b>。</p>
-      <p>1. <b>信任是非对称资产</b>：建设慢、损害快。Anthropic 花了一年建立的 Claude Code 品牌信任，一次被发现的定价测试就造成了实质性损害。Simon 的 105 篇教程、NICAR 大会课程——这些是 Anthropic 最好的增长飞轮，但一次 $20→$100 的测试就让飞轮的驱动者公开考虑转向 Codex。</p>
-      <p>2. <b>生态连接 > 功能锁定</b>：Linear 通过 MCP 让 Agent 成为跨工具编排器，用户的迁移成本不是来自数据锁定，而是来自<b>连接锁定</b>——离开意味着重建所有外部工具的集成。这是更温和但更有效的护城河。</p>
-      <p>3. <b>第三方背书是信任的加速器</b>：Replit 的 Google Cloud 年度奖把"vibe coding 工具"变成"企业 IT 可信列表上的选项"。在 AI 工具竞争中，第三方背书（行业奖、Marketplace 上架、合规认证）正在成为和产品功能同等重要的竞争武器。</p>
-      <p><b>底线判断</b>：功能可以被追赶，信任不行。PM 在评估 AI 工具时，需要把"<b>这家公司如何建设和维护信任</b>"放进决策框架——定价透明度、生态开放度、第三方背书、社区关系，这些"软指标"的长期价值可能超过任何单一功能。</p>
+      <p>两条动态串起来的图景：<b>模型公司正在从"横向平台"走向"垂直交付"</b>。</p>
+      <p>1. <b>行业模板改变了竞争层次</b>：当 Anthropic 直接提供"Pitchbook 生成 agent"和"KYC 筛查 agent"，竞争对象不只是 OpenAI 和 Google，还有金融行业的垂直 SaaS 公司和系统集成商。PM 如果在做金融行业 AI 产品，需要重新评估——<b>你的竞争对手可能不再是另一家 SaaS，而是模型公司本身</b>。</p>
+      <p>2. <b>自建服务公司是"拉力模型"的极致</b>：当需求超过合作伙伴交付能力时，自建是唯一选项。但这也意味着 Anthropic 和自己的合作伙伴（Accenture、Deloitte）之间从纯合作变成了<b>合作 + 竞争关系</b>。PM 在做渠道策略时，这是一个需要持续观察的动态。</p>
+      <p>3. <b>"嵌入业务流程"是最深的护城河</b>：API 可以被替换，但嵌入月末结账流程的 agent 不行。Anthropic 的战略本质是——<b>通过垂直深度来获得横向规模无法提供的客户锁定</b>。对 PM：如果你的产品也在集成 AI，问自己——你是在 API 层集成（随时可换），还是在业务流程层集成（换不掉）？</p>
+      <p><b>底线判断</b>：模型公司做垂直不是"一时兴起"——这是<b>从 API 经济到解决方案经济的结构性转移</b>。PM 需要重新审视自己在 AI 价值链中的位置：你是模型公司的客户、合作伙伴，还是即将被模板替代的中间层？</p>
     </div>
   </section>
 
   <div class="references">
-    <div class="ref-label">Sources · 3 References</div>
+    <div class="ref-label">Sources · 2 References</div>
 
-    <a class="ref-item" href="https://simonwillison.net/2026/Apr/22/claude-code-confusion/" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://www.anthropic.com/news/finance-agents" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Simon Willison · 独立观察者</div>
-        <div class="ref-title">Is Claude Code going to cost $100/month? Probably not—it's all very confusing</div>
+        <div class="ref-who">Anthropic</div>
+        <div class="ref-title">Agents for financial services</div>
       </div>
-      <div class="ref-right">↗ Blog · 2026-04-22</div>
+      <div class="ref-right">↗ News · 2026-05-05</div>
     </a>
 
-    <a class="ref-item" href="https://linear.app/changelog/2026-04-23-linear-agent-mcp-support" target="_blank" rel="noopener">
+    <a class="ref-item" href="https://www.anthropic.com/news/enterprise-ai-services-company" target="_blank" rel="noopener">
       <div class="ref-left">
-        <div class="ref-who">Linear Team</div>
-        <div class="ref-title">Linear Agent MCP support</div>
+        <div class="ref-who">Anthropic</div>
+        <div class="ref-title">Building a new enterprise AI services company with Blackstone, Hellman & Friedman, and Goldman Sachs</div>
       </div>
-      <div class="ref-right">↗ Changelog · 2026-04-23</div>
-    </a>
-
-    <a class="ref-item" href="https://blog.replit.com/google-cloud-partner-award-winner" target="_blank" rel="noopener">
-      <div class="ref-left">
-        <div class="ref-who">Replit Team</div>
-        <div class="ref-title">Replit Wins 2026 Google Cloud Partner of the Year Award</div>
-      </div>
-      <div class="ref-right">↗ Blog · 2026-04-21</div>
+      <div class="ref-right">↗ News · 2026-05-04</div>
     </a>
 
   </div>
@@ -389,7 +376,7 @@
 
 <div class="foot">
   <div>AI 早报 · Insight · 行业观察</div>
-  <div>Daily 008 · 2026-04-24</div>
+  <div>Daily 009 · 2026-05-06</div>
 </div>
 
 </body>
